@@ -4,7 +4,7 @@
 
 Programmed with C# and .NET Framework only. No external libraries, no dependencies.
 
-![Astel UI](https://github.com/user-attachments/assets/56f50d25-5e8d-4fe9-944c-63da278ca2b9)
+![Astel UI](https://github.com/user-attachments/assets/c269e185-a4d4-46f8-be5f-78988584caae)
 
 # Download Astel
 
