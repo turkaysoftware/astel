@@ -251,7 +251,7 @@ namespace Astel{
         private void MainToolTip_Draw(object sender, DrawToolTipEventArgs e){ e.DrawBackground(); e.DrawBorder(); e.DrawText(); }
         // LOAD
         // ======================================================================================================
-        private void Astel_Load(object sender, EventArgs e){ 
+        private void Astel_Load(object sender, EventArgs e){
             Text = TS_SoftwareVersion.TS_SofwareVersion(0, ts_version_mode);
             HeaderMenu.Cursor = Cursors.Hand;
             AstelLoadXMLData();
@@ -262,7 +262,7 @@ namespace Astel{
         }
         // CREATE XML FILE
         // ======================================================================================================
-        private string xmlFilePath = "AstelData.xml";
+        private string xmlFilePath = string.Format("{0}Data.xml", Application.ProductName);
         private void CreateEmptyXmlFile(){
             var ts_xDoc = new XDocument(new XElement("Datas"));
             ts_xDoc.Save(xmlFilePath);
@@ -438,7 +438,7 @@ namespace Astel{
         }
         // TEXTBOX ROTATE DATA
         // ======================================================================================================
-        private void DataMainTable_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
+        private void DataMainTable_CellClick(object sender, DataGridViewCellEventArgs e){
             try{
                 if (e.RowIndex >= 0){
                     DataGridViewRow xml_select_row = DataMainTable.Rows[e.RowIndex];
@@ -481,8 +481,7 @@ namespace Astel{
         private void lightThemeToolStripMenuItem_Click(object sender, EventArgs e){
             if (theme != 1){ theme_engine(1); select_theme_active(sender); }
         }
-        private void darkThemeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void darkThemeToolStripMenuItem_Click(object sender, EventArgs e){
             if (theme != 0){ theme_engine(0); select_theme_active(sender); }
         }
         private void theme_engine(int ts){
@@ -633,8 +632,7 @@ namespace Astel{
         private void englishToolStripMenuItem_Click(object sender, EventArgs e){
             if (lang != "en"){ lang_preload(astel_lang_en, "en"); select_lang_active(sender); }
         }
-        private void turkishToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void turkishToolStripMenuItem_Click(object sender, EventArgs e){
             if (lang != "tr"){ lang_preload(astel_lang_en, "tr"); select_lang_active(sender); }
         }
         private void lang_preload(string lang_type, string lang_code){

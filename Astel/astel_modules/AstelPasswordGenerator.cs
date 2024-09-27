@@ -17,7 +17,7 @@ namespace Astel.astel_modules{
                 modes = new Dictionary<string, (string, string, string, string)>(){
                     { "readable", ("ABCDEFGHJKLMNPQRSTUVWXYZ", "abcdefghjkmnpqrstuvwxyz", "23456789", "") }, // Easy to Read
                     { "writable", ("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "-_") }, // Easy to Write
-                    { "random", ("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "!@#$%^&*()-_=+[]{}|;:,.<>?") } // Random
+                    { "random", ("ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz", "0123456789", "!@#$%^&*()-_=+[]{}|;:,.<>?") } // Mixed
                 };
             }
             // Password generation function
@@ -33,7 +33,8 @@ namespace Astel.astel_modules{
                 if (includeSpecialChars) charSet.Append(selectedMode.specialChars);
                 // If no character set is selected, give an error
                 if (charSet.Length == 0){
-                    throw new ArgumentException("Lütfen en az bir karakter tipi seçiniz.");
+                    TSGetLangs software_lang = new TSGetLangs(Astel.lang_path);
+                    throw new ArgumentException(Encoding.UTF8.GetString(Encoding.Default.GetBytes(software_lang.TSReadLangs("AstelPasswordGenerator", "apg_feature_info").Trim())));
                 }
                 // Randomize password
                 StringBuilder password = new StringBuilder();
@@ -210,7 +211,7 @@ namespace Astel.astel_modules{
                 // Show generated password
                 PassResultLabel.Text = password;
             }catch (Exception ex){
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         // PASSWORD GENERATOR ENGINE START

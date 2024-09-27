@@ -78,11 +78,11 @@
             this.PassResultLabel.BackColor = System.Drawing.Color.White;
             this.PassResultLabel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PassResultLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold);
-            this.PassResultLabel.Location = new System.Drawing.Point(10, 365);
+            this.PassResultLabel.Location = new System.Drawing.Point(10, 372);
             this.PassResultLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.PassResultLabel.Name = "PassResultLabel";
             this.PassResultLabel.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.PassResultLabel.Size = new System.Drawing.Size(558, 60);
+            this.PassResultLabel.Size = new System.Drawing.Size(558, 53);
             this.PassResultLabel.TabIndex = 4;
             this.PassResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PassResultLabel.DoubleClick += new System.EventHandler(this.PassResultLabel_DoubleClick);
@@ -99,6 +99,7 @@
             this.TLP_Control.Controls.Add(this.Panel_Feature, 0, 0);
             this.TLP_Control.Controls.Add(this.Panel_Mode, 1, 0);
             this.TLP_Control.Location = new System.Drawing.Point(10, 68);
+            this.TLP_Control.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.TLP_Control.Name = "TLP_Control";
             this.TLP_Control.RowCount = 1;
             this.TLP_Control.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -114,11 +115,11 @@
             this.Panel_Feature.Controls.Add(this.CheckLowercase);
             this.Panel_Feature.Controls.Add(this.CheckUppercase);
             this.Panel_Feature.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Feature.Location = new System.Drawing.Point(0, 15);
-            this.Panel_Feature.Margin = new System.Windows.Forms.Padding(0, 15, 2, 0);
+            this.Panel_Feature.Location = new System.Drawing.Point(0, 0);
+            this.Panel_Feature.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.Panel_Feature.Name = "Panel_Feature";
             this.Panel_Feature.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel_Feature.Size = new System.Drawing.Size(277, 180);
+            this.Panel_Feature.Size = new System.Drawing.Size(276, 195);
             this.Panel_Feature.TabIndex = 0;
             // 
             // LabelFeature
@@ -130,7 +131,7 @@
             this.LabelFeature.Location = new System.Drawing.Point(10, 10);
             this.LabelFeature.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.LabelFeature.Name = "LabelFeature";
-            this.LabelFeature.Size = new System.Drawing.Size(257, 35);
+            this.LabelFeature.Size = new System.Drawing.Size(256, 35);
             this.LabelFeature.TabIndex = 0;
             this.LabelFeature.Text = "GİRİŞ YAP";
             this.LabelFeature.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,6 +139,8 @@
             // CheckSpecialChars
             // 
             this.CheckSpecialChars.AutoSize = true;
+            this.CheckSpecialChars.Checked = true;
+            this.CheckSpecialChars.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckSpecialChars.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CheckSpecialChars.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.CheckSpecialChars.Location = new System.Drawing.Point(10, 160);
@@ -201,11 +204,11 @@
             this.Panel_Mode.Controls.Add(this.RadioWrite);
             this.Panel_Mode.Controls.Add(this.RadioRead);
             this.Panel_Mode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Mode.Location = new System.Drawing.Point(281, 15);
-            this.Panel_Mode.Margin = new System.Windows.Forms.Padding(2, 15, 0, 0);
+            this.Panel_Mode.Location = new System.Drawing.Point(282, 0);
+            this.Panel_Mode.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.Panel_Mode.Name = "Panel_Mode";
             this.Panel_Mode.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel_Mode.Size = new System.Drawing.Size(277, 180);
+            this.Panel_Mode.Size = new System.Drawing.Size(276, 195);
             this.Panel_Mode.TabIndex = 1;
             // 
             // LabelMode
@@ -217,7 +220,7 @@
             this.LabelMode.Location = new System.Drawing.Point(10, 10);
             this.LabelMode.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.LabelMode.Name = "LabelMode";
-            this.LabelMode.Size = new System.Drawing.Size(257, 35);
+            this.LabelMode.Size = new System.Drawing.Size(256, 35);
             this.LabelMode.TabIndex = 0;
             this.LabelMode.Text = "GİRİŞ YAP";
             this.LabelMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,6 +228,7 @@
             // RadioMixed
             // 
             this.RadioMixed.AutoSize = true;
+            this.RadioMixed.Checked = true;
             this.RadioMixed.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RadioMixed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.RadioMixed.Location = new System.Drawing.Point(10, 126);
@@ -232,6 +236,7 @@
             this.RadioMixed.Name = "RadioMixed";
             this.RadioMixed.Size = new System.Drawing.Size(65, 21);
             this.RadioMixed.TabIndex = 3;
+            this.RadioMixed.TabStop = true;
             this.RadioMixed.Text = "Karışık";
             this.RadioMixed.UseVisualStyleBackColor = true;
             // 
@@ -251,7 +256,6 @@
             // RadioRead
             // 
             this.RadioRead.AutoSize = true;
-            this.RadioRead.Checked = true;
             this.RadioRead.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RadioRead.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.RadioRead.Location = new System.Drawing.Point(10, 58);
@@ -259,7 +263,6 @@
             this.RadioRead.Name = "RadioRead";
             this.RadioRead.Size = new System.Drawing.Size(116, 21);
             this.RadioRead.TabIndex = 1;
-            this.RadioRead.TabStop = true;
             this.RadioRead.Text = "Okuması Kolay";
             this.RadioRead.UseVisualStyleBackColor = true;
             // 
@@ -286,11 +289,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PassLenghtLabel.BackColor = System.Drawing.Color.White;
             this.PassLenghtLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.PassLenghtLabel.Location = new System.Drawing.Point(10, 269);
+            this.PassLenghtLabel.Location = new System.Drawing.Point(10, 271);
             this.PassLenghtLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.PassLenghtLabel.Name = "PassLenghtLabel";
             this.PassLenghtLabel.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.PassLenghtLabel.Size = new System.Drawing.Size(558, 35);
+            this.PassLenghtLabel.Size = new System.Drawing.Size(558, 40);
             this.PassLenghtLabel.TabIndex = 2;
             this.PassLenghtLabel.Text = "Şifre Uzunluğu:";
             this.PassLenghtLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -302,7 +305,7 @@
             this.PassGenLenght.BackColor = System.Drawing.Color.White;
             this.PassGenLenght.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PassGenLenght.LargeChange = 1;
-            this.PassGenLenght.Location = new System.Drawing.Point(10, 312);
+            this.PassGenLenght.Location = new System.Drawing.Point(10, 319);
             this.PassGenLenght.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.PassGenLenght.Maximum = 32;
             this.PassGenLenght.Minimum = 6;
@@ -310,7 +313,7 @@
             this.PassGenLenght.Size = new System.Drawing.Size(558, 45);
             this.PassGenLenght.TabIndex = 3;
             this.PassGenLenght.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.PassGenLenght.Value = 10;
+            this.PassGenLenght.Value = 12;
             this.PassGenLenght.ValueChanged += new System.EventHandler(this.PassGenLenght_ValueChanged);
             // 
             // LabelHeader

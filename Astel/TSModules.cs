@@ -14,8 +14,9 @@ namespace Astel{
         public class TS_LinkSystem{
             public string
             website_link = "https://www.turkaysoftware.com",
-            github_link = "https://github.com/turkaysoftware",
             twitter_link = "https://x.com/turkaysoftware",
+            instagram_link = "https://www.instagram.com/erayturkayy/",
+            github_link = "https://github.com/turkaysoftware",
             //
             github_link_lt = "https://raw.githubusercontent.com/turkaysoftware/astel/main/Astel/SoftwareVersion.txt",
             github_link_lr = "https://github.com/turkaysoftware/astel/releases/latest";
@@ -56,6 +57,61 @@ namespace Astel{
                 StringBuilder stringBuilder = new StringBuilder(512);
                 GetPrivateProfileString(episode, settingName, string.Empty, stringBuilder, 511, _saveFilePath);
                 return stringBuilder.ToString();
+            }
+        }
+        // TS THEME ENGINE
+        // ======================================================================================================
+        public class TS_ThemeEngine{
+            // Light Theme Colors
+            public static readonly Dictionary<string, Color> LightTheme = new Dictionary<string, Color>{
+                // HEADER MENU COLOR MODE
+                { "HeaderBGColor", Color.FromArgb(222, 222, 222) },
+                { "HeaderFEColor", Color.FromArgb(31, 31, 31) },
+                { "HeaderFEColor2", Color.FromArgb(32, 32, 32) },
+                { "HeaderBGColor2", Color.FromArgb(235, 235, 235) },
+                // UI COLOR
+                { "PageContainerBGColor", Color.WhiteSmoke },
+                { "ContentLabelLeftColor", Color.FromArgb(32, 32, 32) },
+                { "ContentLabelRightColor", Color.FromArgb(14, 76, 56) },
+                { "TextboxBGColor", Color.White },
+                { "TextboxFEColor", Color.FromArgb(32, 32, 32) },
+                { "DataGridBGColor", Color.White },
+                { "DataGridFEColor", Color.FromArgb(32, 32, 32) },
+                { "DataGridGridColor", Color.FromArgb(217, 217, 217) },
+                { "DataGridAlternatingColor", Color.FromArgb(235, 235, 235) },
+                { "DataGridHeaderBGColor", Color.FromArgb(14, 76, 56) },
+                { "DataGridHeaderFEColor", Color.WhiteSmoke },
+                { "DynamicThemeActiveBtnBGColor", Color.WhiteSmoke }
+            };
+            // Dark Theme Colors
+            public static readonly Dictionary<string, Color> DarkTheme = new Dictionary<string, Color>{
+                // HEADER MENU COLOR MODE
+                { "HeaderBGColor", Color.FromArgb(31, 31, 31) },
+                { "HeaderFEColor", Color.FromArgb(222, 222, 222) },
+                { "HeaderFEColor2", Color.WhiteSmoke },
+                { "HeaderBGColor2", Color.FromArgb(24, 24, 24) },
+                // UI COLOR
+                { "PageContainerBGColor", Color.FromArgb(31, 31, 31) },
+                { "ContentLabelLeftColor", Color.WhiteSmoke },
+                { "ContentLabelRightColor", Color.FromArgb(19, 97, 72) },
+                { "TextboxBGColor", Color.FromArgb(24, 24, 24) },
+                { "TextboxFEColor", Color.WhiteSmoke },
+                { "DataGridBGColor", Color.FromArgb(24, 24, 24) },
+                { "DataGridFEColor", Color.WhiteSmoke },
+                { "DataGridGridColor", Color.FromArgb(50, 50, 50) },
+                { "DataGridAlternatingColor", Color.FromArgb(31, 31, 31) },
+                { "DataGridHeaderBGColor", Color.FromArgb(19, 97, 72) },
+                { "DataGridHeaderFEColor", Color.WhiteSmoke },
+                { "DynamicThemeActiveBtnBGColor", Color.WhiteSmoke }
+            };
+            // Method to get color for the current theme
+            public static Color ColorMode(int theme, string key){
+                if (theme == 0){
+                    return DarkTheme.ContainsKey(key) ? DarkTheme[key] : Color.Transparent;
+                }else if (theme == 1){
+                    return LightTheme.ContainsKey(key) ? LightTheme[key] : Color.Transparent;
+                }
+                return Color.Transparent;
             }
         }
         // SAVE PATHS
@@ -146,71 +202,6 @@ namespace Astel{
                 hash.Append(be.ToString("X2").ToLower());
             }
             return hash.ToString();
-        }
-        // TS THEME ENGINE
-        // ======================================================================================================
-        public class TS_ThemeEngine{
-            // Light Theme Colors
-            public static readonly Dictionary<string, Color> LightTheme = new Dictionary<string, Color>{
-                // HEADER MENU COLOR MODE
-                { "HeaderBGColor", Color.FromArgb(222, 222, 222) },
-                { "HeaderFEColor", Color.FromArgb(31, 31, 31) },
-
-                // HEADER AND TOOLTIP COLOR MODE
-                { "HeaderFEColor2", Color.FromArgb(32, 32, 32) },
-                { "HeaderBGColor2", Color.FromArgb(235, 235, 235) },
-
-                // CONTENT BG COLOR MODE
-                { "PageContainerBGColor", Color.WhiteSmoke },
-
-                // UI COLOR MODES
-                { "ContentLabelLeftColor", Color.FromArgb(32, 32, 32) },
-                { "ContentLabelRightColor", Color.FromArgb(14, 76, 56) },
-                { "TextboxBGColor", Color.White },
-                { "TextboxFEColor", Color.FromArgb(32, 32, 32) },
-                { "DataGridBGColor", Color.White },
-                { "DataGridFEColor", Color.FromArgb(32, 32, 32) },
-                { "DataGridGridColor", Color.FromArgb(217, 217, 217) },
-                { "DataGridAlternatingColor", Color.FromArgb(235, 235, 235) },
-                { "DataGridHeaderBGColor", Color.FromArgb(14, 76, 56) },
-                { "DataGridHeaderFEColor", Color.WhiteSmoke },
-                { "DynamicThemeActiveBtnBGColor", Color.WhiteSmoke }
-            };
-            // Dark Theme Colors
-            public static readonly Dictionary<string, Color> DarkTheme = new Dictionary<string, Color>{
-                // HEADER MENU COLOR MODE
-                { "HeaderBGColor", Color.FromArgb(31, 31, 31) },
-                { "HeaderFEColor", Color.FromArgb(222, 222, 222) },
-
-                // HEADER AND TOOLTIP COLOR MODE
-                { "HeaderFEColor2", Color.WhiteSmoke },
-                { "HeaderBGColor2", Color.FromArgb(24, 24, 24) },
-
-                // CONTENT BG COLOR MODE
-                { "PageContainerBGColor", Color.FromArgb(31, 31, 31) },
-
-                // UI COLOR MODES
-                { "ContentLabelLeftColor", Color.WhiteSmoke },
-                { "ContentLabelRightColor", Color.FromArgb(19, 97, 72) },
-                { "TextboxBGColor", Color.FromArgb(24, 24, 24) },
-                { "TextboxFEColor", Color.WhiteSmoke },
-                { "DataGridBGColor", Color.FromArgb(24, 24, 24) },
-                { "DataGridFEColor", Color.WhiteSmoke },
-                { "DataGridGridColor", Color.FromArgb(50, 50, 50) },
-                { "DataGridAlternatingColor", Color.FromArgb(31, 31, 31) },
-                { "DataGridHeaderBGColor", Color.FromArgb(19, 97, 72) },
-                { "DataGridHeaderFEColor", Color.WhiteSmoke },
-                { "DynamicThemeActiveBtnBGColor", Color.WhiteSmoke }
-            };
-            // Method to get color for the current theme
-            public static Color ColorMode(int theme, string key){
-                if (theme == 0){
-                    return DarkTheme.ContainsKey(key) ? DarkTheme[key] : Color.Transparent;
-                }else if (theme == 1){
-                    return LightTheme.ContainsKey(key) ? LightTheme[key] : Color.Transparent;
-                }
-                return Color.Transparent;
-            }
         }
         // TITLE BAR SETTINGS DWM API
         // ======================================================================================================

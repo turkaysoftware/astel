@@ -38,15 +38,20 @@ namespace Astel{
                 About_WebsiteBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
                 About_WebsiteBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
                 //
-                About_GitHubBtn.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "DynamicThemeActiveBtnBGColor");
-                About_GitHubBtn.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
-                About_GitHubBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
-                About_GitHubBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
-                //
                 About_XBtn.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "DynamicThemeActiveBtnBGColor");
                 About_XBtn.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
                 About_XBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
                 About_XBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
+                //
+                About_InstagramBtn.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "DynamicThemeActiveBtnBGColor");
+                About_InstagramBtn.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
+                About_InstagramBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
+                About_InstagramBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
+                //
+                About_GitHubBtn.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "DynamicThemeActiveBtnBGColor");
+                About_GitHubBtn.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
+                About_GitHubBtn.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
+                About_GitHubBtn.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelRightColor");
                 // ======================================================================================================
                 TSGetLangs software_lang = new TSGetLangs(Astel.lang_path);
                 TS_VersionEngine glow_version = new TS_VersionEngine();
@@ -55,10 +60,10 @@ namespace Astel{
                 About_L1.Text = glow_version.TS_SofwareVersion(0, Astel.ts_version_mode);
                 About_L2.Text = string.Format(Encoding.UTF8.GetString(Encoding.Default.GetBytes(software_lang.TSReadLangs("SoftwareAbout", "sa_copyright").Trim())), "\u00a9", DateTime.Now.Year, Application.CompanyName);
                 About_WebsiteBtn.Text = Encoding.UTF8.GetString(Encoding.Default.GetBytes(software_lang.TSReadLangs("SoftwareAbout", "sa_website_page").Trim()));
-                About_GitHubBtn.Text = Encoding.UTF8.GetString(Encoding.Default.GetBytes(software_lang.TSReadLangs("SoftwareAbout", "sa_github_page").Trim()));
                 About_XBtn.Text = Encoding.UTF8.GetString(Encoding.Default.GetBytes(software_lang.TSReadLangs("SoftwareAbout", "sa_twitter_page").Trim()));
-            }
-            catch (Exception) { }
+                About_InstagramBtn.Text = Encoding.UTF8.GetString(Encoding.Default.GetBytes(software_lang.TSReadLangs("SoftwareAbout", "sa_instagram_page").Trim()));
+                About_GitHubBtn.Text = Encoding.UTF8.GetString(Encoding.Default.GetBytes(software_lang.TSReadLangs("SoftwareAbout", "sa_github_page").Trim()));
+            }catch (Exception){ }
         }
         // WEBSITE LINK
         // ======================================================================================================
@@ -74,11 +79,18 @@ namespace Astel{
                 Process.Start(TS_LinkSystem.twitter_link);
             }catch (Exception){ }
         }
+        // INSTAGRAM LINK
+        // ======================================================================================================
+        private void About_InstagramBtn_Click(object sender, EventArgs e){
+            try{
+                Process.Start(TS_LinkSystem.instagram_link);
+            }catch (Exception){ }
+        }
         // GITHUB LINK
         // ======================================================================================================
         private void About_GitHubBtn_Click(object sender, EventArgs e){
             try{
-                Process.Start(TS_LinkSystem.github_link + "/astel");
+                Process.Start(TS_LinkSystem.github_link);
             }catch (Exception){ }
         }
     }

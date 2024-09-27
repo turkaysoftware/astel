@@ -34,23 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Astel));
-            this.HeaderMenu = new System.Windows.Forms.MenuStrip();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lightThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.turkishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.initialViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.windowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkforUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.passwordGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel_Main = new System.Windows.Forms.Panel();
             this.Panel_Footer = new System.Windows.Forms.Panel();
             this.BtnCopyPassword = new System.Windows.Forms.Button();
@@ -69,158 +52,28 @@
             this.DeleteBtn = new System.Windows.Forms.Button();
             this.DataMainTable = new System.Windows.Forms.DataGridView();
             this.MainToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.HeaderMenu.SuspendLayout();
+            this.HeaderMenu = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lightThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turkishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.initialViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setPasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkforUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.passwordGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel_Main.SuspendLayout();
             this.Panel_Footer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataMainTable)).BeginInit();
+            this.HeaderMenu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // HeaderMenu
-            // 
-            this.HeaderMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem,
-            this.passwordGeneratorToolStripMenuItem,
-            this.aboutToolStripMenuItem});
-            this.HeaderMenu.Location = new System.Drawing.Point(0, 0);
-            this.HeaderMenu.Name = "HeaderMenu";
-            this.HeaderMenu.Size = new System.Drawing.Size(1008, 24);
-            this.HeaderMenu.TabIndex = 0;
-            this.HeaderMenu.Text = "menuStrip1";
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.themeToolStripMenuItem,
-            this.languageToolStripMenuItem,
-            this.initialViewToolStripMenuItem,
-            this.loginSettingsToolStripMenuItem,
-            this.checkforUpdatesToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // themeToolStripMenuItem
-            // 
-            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lightThemeToolStripMenuItem,
-            this.darkThemeToolStripMenuItem});
-            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.themeToolStripMenuItem.Text = "Theme";
-            // 
-            // lightThemeToolStripMenuItem
-            // 
-            this.lightThemeToolStripMenuItem.Name = "lightThemeToolStripMenuItem";
-            this.lightThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.lightThemeToolStripMenuItem.Text = "Light Theme";
-            this.lightThemeToolStripMenuItem.Click += new System.EventHandler(this.lightThemeToolStripMenuItem_Click);
-            // 
-            // darkThemeToolStripMenuItem
-            // 
-            this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
-            this.darkThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.darkThemeToolStripMenuItem.Text = "Dark Theme";
-            this.darkThemeToolStripMenuItem.Click += new System.EventHandler(this.darkThemeToolStripMenuItem_Click);
-            // 
-            // languageToolStripMenuItem
-            // 
-            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.englishToolStripMenuItem,
-            this.turkishToolStripMenuItem});
-            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.languageToolStripMenuItem.Text = "Language";
-            // 
-            // englishToolStripMenuItem
-            // 
-            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.englishToolStripMenuItem.Text = "English";
-            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
-            // 
-            // turkishToolStripMenuItem
-            // 
-            this.turkishToolStripMenuItem.Name = "turkishToolStripMenuItem";
-            this.turkishToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.turkishToolStripMenuItem.Text = "Turkish";
-            this.turkishToolStripMenuItem.Click += new System.EventHandler(this.turkishToolStripMenuItem_Click);
-            // 
-            // initialViewToolStripMenuItem
-            // 
-            this.initialViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.windowedToolStripMenuItem,
-            this.fullScreenToolStripMenuItem});
-            this.initialViewToolStripMenuItem.Name = "initialViewToolStripMenuItem";
-            this.initialViewToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.initialViewToolStripMenuItem.Text = "Initial Mode";
-            // 
-            // windowedToolStripMenuItem
-            // 
-            this.windowedToolStripMenuItem.Name = "windowedToolStripMenuItem";
-            this.windowedToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.windowedToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.windowedToolStripMenuItem.Text = "Windowed";
-            this.windowedToolStripMenuItem.Click += new System.EventHandler(this.windowedToolStripMenuItem_Click);
-            // 
-            // fullScreenToolStripMenuItem
-            // 
-            this.fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
-            this.fullScreenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.fullScreenToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.fullScreenToolStripMenuItem.Text = "Full Screen";
-            this.fullScreenToolStripMenuItem.Click += new System.EventHandler(this.fullScreenToolStripMenuItem_Click);
-            // 
-            // loginSettingsToolStripMenuItem
-            // 
-            this.loginSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setPasswordToolStripMenuItem,
-            this.changePasswordToolStripMenuItem});
-            this.loginSettingsToolStripMenuItem.Name = "loginSettingsToolStripMenuItem";
-            this.loginSettingsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.loginSettingsToolStripMenuItem.Text = "Login Settings";
-            // 
-            // setPasswordToolStripMenuItem
-            // 
-            this.setPasswordToolStripMenuItem.Name = "setPasswordToolStripMenuItem";
-            this.setPasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.setPasswordToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.setPasswordToolStripMenuItem.Text = "Set Password";
-            this.setPasswordToolStripMenuItem.Click += new System.EventHandler(this.setPasswordToolStripMenuItem_Click);
-            // 
-            // changePasswordToolStripMenuItem
-            // 
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
-            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
-            // 
-            // checkforUpdatesToolStripMenuItem
-            // 
-            this.checkforUpdatesToolStripMenuItem.Name = "checkforUpdatesToolStripMenuItem";
-            this.checkforUpdatesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.checkforUpdatesToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.checkforUpdatesToolStripMenuItem.Text = "Check for Updates";
-            this.checkforUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkforUpdatesToolStripMenuItem_Click);
-            // 
-            // passwordGeneratorToolStripMenuItem
-            // 
-            this.passwordGeneratorToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.passwordGeneratorToolStripMenuItem.Name = "passwordGeneratorToolStripMenuItem";
-            this.passwordGeneratorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
-            this.passwordGeneratorToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
-            this.passwordGeneratorToolStripMenuItem.Text = "Password Generator";
-            this.passwordGeneratorToolStripMenuItem.Click += new System.EventHandler(this.passwordGeneratorToolStripMenuItem_Click);
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Panel_Main
             // 
@@ -396,49 +249,49 @@
             // 
             // AddBtn
             // 
-            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AddBtn.BackColor = System.Drawing.Color.DarkGray;
             this.AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AddBtn.FlatAppearance.BorderSize = 0;
             this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.AddBtn.Location = new System.Drawing.Point(791, 58);
+            this.AddBtn.Location = new System.Drawing.Point(813, 32);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Size = new System.Drawing.Size(197, 35);
+            this.AddBtn.Size = new System.Drawing.Size(175, 40);
             this.AddBtn.TabIndex = 11;
             this.AddBtn.Text = "EKLE";
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.AddBtn.UseVisualStyleBackColor = false;
             this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.UpdateBtn.BackColor = System.Drawing.Color.DarkGray;
             this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UpdateBtn.FlatAppearance.BorderSize = 0;
             this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.UpdateBtn.Location = new System.Drawing.Point(791, 99);
+            this.UpdateBtn.Location = new System.Drawing.Point(813, 83);
             this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Size = new System.Drawing.Size(197, 35);
+            this.UpdateBtn.Size = new System.Drawing.Size(175, 40);
             this.UpdateBtn.TabIndex = 12;
             this.UpdateBtn.Text = "GÜNCELLE";
+            this.UpdateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.UpdateBtn.UseVisualStyleBackColor = false;
             this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
             // DeleteBtn
             // 
-            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.DeleteBtn.BackColor = System.Drawing.Color.DarkGray;
             this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DeleteBtn.FlatAppearance.BorderSize = 0;
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.DeleteBtn.Location = new System.Drawing.Point(791, 140);
+            this.DeleteBtn.Location = new System.Drawing.Point(813, 135);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(197, 35);
+            this.DeleteBtn.Size = new System.Drawing.Size(175, 40);
             this.DeleteBtn.TabIndex = 13;
             this.DeleteBtn.Text = "SİL";
+            this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.DeleteBtn.UseVisualStyleBackColor = false;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
@@ -492,12 +345,161 @@
             this.DataMainTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataMainTable.Size = new System.Drawing.Size(988, 557);
             this.DataMainTable.TabIndex = 0;
-            this.DataMainTable.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataMainTable_CellDoubleClick);
+            this.DataMainTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataMainTable_CellClick);
             // 
             // MainToolTip
             // 
             this.MainToolTip.OwnerDraw = true;
             this.MainToolTip.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.MainToolTip_Draw);
+            // 
+            // HeaderMenu
+            // 
+            this.HeaderMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem,
+            this.passwordGeneratorToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.HeaderMenu.Location = new System.Drawing.Point(0, 0);
+            this.HeaderMenu.Name = "HeaderMenu";
+            this.HeaderMenu.Size = new System.Drawing.Size(1008, 24);
+            this.HeaderMenu.TabIndex = 0;
+            this.HeaderMenu.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.themeToolStripMenuItem,
+            this.languageToolStripMenuItem,
+            this.initialViewToolStripMenuItem,
+            this.loginSettingsToolStripMenuItem,
+            this.checkforUpdatesToolStripMenuItem});
+            this.settingsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // themeToolStripMenuItem
+            // 
+            this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lightThemeToolStripMenuItem,
+            this.darkThemeToolStripMenuItem});
+            this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.themeToolStripMenuItem.Text = "Theme";
+            // 
+            // lightThemeToolStripMenuItem
+            // 
+            this.lightThemeToolStripMenuItem.Name = "lightThemeToolStripMenuItem";
+            this.lightThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.lightThemeToolStripMenuItem.Text = "Light Theme";
+            this.lightThemeToolStripMenuItem.Click += new System.EventHandler(this.lightThemeToolStripMenuItem_Click);
+            // 
+            // darkThemeToolStripMenuItem
+            // 
+            this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
+            this.darkThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
+            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.darkThemeToolStripMenuItem.Text = "Dark Theme";
+            this.darkThemeToolStripMenuItem.Click += new System.EventHandler(this.darkThemeToolStripMenuItem_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.englishToolStripMenuItem,
+            this.turkishToolStripMenuItem});
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.languageToolStripMenuItem.Text = "Language";
+            // 
+            // englishToolStripMenuItem
+            // 
+            this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.englishToolStripMenuItem.Text = "English";
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            // 
+            // turkishToolStripMenuItem
+            // 
+            this.turkishToolStripMenuItem.Name = "turkishToolStripMenuItem";
+            this.turkishToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.turkishToolStripMenuItem.Text = "Turkish";
+            this.turkishToolStripMenuItem.Click += new System.EventHandler(this.turkishToolStripMenuItem_Click);
+            // 
+            // initialViewToolStripMenuItem
+            // 
+            this.initialViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.windowedToolStripMenuItem,
+            this.fullScreenToolStripMenuItem});
+            this.initialViewToolStripMenuItem.Name = "initialViewToolStripMenuItem";
+            this.initialViewToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.initialViewToolStripMenuItem.Text = "Initial";
+            // 
+            // windowedToolStripMenuItem
+            // 
+            this.windowedToolStripMenuItem.Name = "windowedToolStripMenuItem";
+            this.windowedToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.windowedToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.windowedToolStripMenuItem.Text = "Windowed";
+            this.windowedToolStripMenuItem.Click += new System.EventHandler(this.windowedToolStripMenuItem_Click);
+            // 
+            // fullScreenToolStripMenuItem
+            // 
+            this.fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
+            this.fullScreenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
+            this.fullScreenToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.fullScreenToolStripMenuItem.Text = "Full Screen";
+            this.fullScreenToolStripMenuItem.Click += new System.EventHandler(this.fullScreenToolStripMenuItem_Click);
+            // 
+            // loginSettingsToolStripMenuItem
+            // 
+            this.loginSettingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setPasswordToolStripMenuItem,
+            this.changePasswordToolStripMenuItem});
+            this.loginSettingsToolStripMenuItem.Name = "loginSettingsToolStripMenuItem";
+            this.loginSettingsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.loginSettingsToolStripMenuItem.Text = "Login Settings";
+            // 
+            // setPasswordToolStripMenuItem
+            // 
+            this.setPasswordToolStripMenuItem.Name = "setPasswordToolStripMenuItem";
+            this.setPasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.setPasswordToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.setPasswordToolStripMenuItem.Text = "Set Password";
+            this.setPasswordToolStripMenuItem.Click += new System.EventHandler(this.setPasswordToolStripMenuItem_Click);
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
+            // checkforUpdatesToolStripMenuItem
+            // 
+            this.checkforUpdatesToolStripMenuItem.Name = "checkforUpdatesToolStripMenuItem";
+            this.checkforUpdatesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.checkforUpdatesToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.checkforUpdatesToolStripMenuItem.Text = "Check Update";
+            this.checkforUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkforUpdatesToolStripMenuItem_Click);
+            // 
+            // passwordGeneratorToolStripMenuItem
+            // 
+            this.passwordGeneratorToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.passwordGeneratorToolStripMenuItem.Name = "passwordGeneratorToolStripMenuItem";
+            this.passwordGeneratorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.passwordGeneratorToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.passwordGeneratorToolStripMenuItem.Text = "Password Generator";
+            this.passwordGeneratorToolStripMenuItem.Click += new System.EventHandler(this.passwordGeneratorToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F12;
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // Astel
             // 
@@ -508,42 +510,25 @@
             this.Controls.Add(this.HeaderMenu);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1000, 630);
+            this.MainMenuStrip = this.HeaderMenu;
+            this.MinimumSize = new System.Drawing.Size(1024, 640);
             this.Name = "Astel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Astel";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Astel_FormClosing);
             this.Load += new System.EventHandler(this.Astel_Load);
-            this.HeaderMenu.ResumeLayout(false);
-            this.HeaderMenu.PerformLayout();
             this.Panel_Main.ResumeLayout(false);
             this.Panel_Footer.ResumeLayout(false);
             this.Panel_Footer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataMainTable)).EndInit();
+            this.HeaderMenu.ResumeLayout(false);
+            this.HeaderMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip HeaderMenu;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem themeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lightThemeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem darkThemeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem turkishToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem initialViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem windowedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fullScreenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loginSettingsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setPasswordToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checkforUpdatesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem passwordGeneratorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.Panel Panel_Main;
         private System.Windows.Forms.Panel Panel_Footer;
         private System.Windows.Forms.Button BtnCopyPassword;
@@ -562,6 +547,23 @@
         private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.DataGridView DataMainTable;
         private System.Windows.Forms.ToolTip MainToolTip;
+        private System.Windows.Forms.MenuStrip HeaderMenu;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem themeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lightThemeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem darkThemeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem englishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem turkishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem initialViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginSettingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setPasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkforUpdatesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem passwordGeneratorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem windowedToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fullScreenToolStripMenuItem;
     }
 }
 
