@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6B7DEF9-BA5C-4DCA-9163-CD1768523145}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Astel</RootNamespace>
+    <AssemblyName>Astel</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>24.11.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AstelLogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Astel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Astel.Designer.cs">
+      <DependentUpon>Astel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AstelAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AstelAbout.Designer.cs">
+      <DependentUpon>AstelAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="astel_modules\AstelChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="astel_modules\AstelChangePassword.Designer.cs">
+      <DependentUpon>AstelChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="astel_modules\AstelLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="astel_modules\AstelLogin.Designer.cs">
+      <DependentUpon>AstelLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="astel_modules\AstelPasswordGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="astel_modules\AstelPasswordGenerator.Designer.cs">
+      <DependentUpon>AstelPasswordGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="astel_modules\AstelSignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="astel_modules\AstelSignIn.Designer.cs">
+      <DependentUpon>AstelSignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TSModules.cs" />
+    <Compile Include="TSPreloader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TSPreloader.Designer.cs">
+      <DependentUpon>TSPreloader.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Astel.resx">
+      <DependentUpon>Astel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AstelAbout.resx">
+      <DependentUpon>AstelAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="astel_modules\AstelChangePassword.resx">
+      <DependentUpon>AstelChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="astel_modules\AstelLogin.resx">
+      <DependentUpon>AstelLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="astel_modules\AstelPasswordGenerator.resx">
+      <DependentUpon>AstelPasswordGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="astel_modules\AstelSignIn.resx">
+      <DependentUpon>AstelSignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="TSPreloader.resx">
+      <DependentUpon>TSPreloader.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AstelLogo.ico" />
+    <None Include="astel_images\ts_preloader\ts_preloader.jpg" />
+    <None Include="astel_images\astel_interface\middle_icons\mid_copy_all_theme.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_update_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_theme_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_settings_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_set_password_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_pass_gen_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_login_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_language_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_initial_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_change_password_light.png" />
+    <None Include="astel_images\astel_interface\light_theme\header_about_light.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_update_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_theme_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_settings_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_set_password_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_pass_gen_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_login_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_language_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_initial_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_change_password_dark.png" />
+    <None Include="astel_images\astel_interface\dark_theme\header_about_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8.1 %28x86 ve x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 </ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
