@@ -16,7 +16,23 @@ Download: [Astel Latest Version](https://github.com/turkaysoftware/astel/release
 
 # How to use Astel?
 
-**Extract the entire contents of the Astel ZIP file** you downloaded from the **[Release](https://github.com/turkaysoftware/astel/releases/latest)** section into a folder. Just run *Astel_x64.exe* if you have an **x64 processor** or *Astel_arm64.exe* if you have an **ARM processor**!
+After downloading the Astel application, you will find two options: **Astel_x64.exe** and **Astel_arm64.exe**. Which file to choose depends on your computer’s processor architecture. Here’s a guide to help you decide which version is right for you:
+
+#### 1. Astel_x64.exe
+- **Astel_x64.exe** is designed for computers with an x64 (64-bit) processor architecture.
+- If you’re using a standard Windows PC or laptop, you likely need the x64 version.
+- Most devices with Intel or AMD processors use the x64 architecture.
+
+#### 2. Astel_arm64.exe
+- **Astel_arm64.exe** is specifically developed for devices with an ARM64 architecture.
+- It’s suitable for Windows devices that use **ARM processors** (such as some Surface models).
+- ARM architecture is commonly found in devices that prioritize lower power consumption and portability.
+
+#### Usage Instructions
+1. **After downloading the ZIP file, make sure to extract all files from the ZIP**. The Astel application is a portable software, so it doesn’t require installation, but all files must be in the same folder for it to run correctly.
+2. Once extracted, run the appropriate file for your device (**Astel_x64.exe** or **Astel_arm64.exe**) to start using the application immediately.
+
+With these instructions, you can download and use the correct version of Astel for your device. If you need further assistance, please feel free to reach out!
 
 # Supported Languages
 
