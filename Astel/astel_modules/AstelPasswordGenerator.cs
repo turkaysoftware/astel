@@ -212,7 +212,7 @@ namespace Astel.astel_modules{
                 // Show generated password
                 PassResultLabel.Text = password;
             }catch (Exception ex){
-                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, ex.Message);
             }
         }
         // PASSWORD GENERATOR ENGINE START
@@ -227,7 +227,7 @@ namespace Astel.astel_modules{
                 if (!string.IsNullOrEmpty(PassResultLabel.Text.Trim())){
                     Clipboard.SetText(PassResultLabel.Text.Trim());
                     TSGetLangs software_lang = new TSGetLangs(Astel.lang_path);
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelPasswordGenerator", "apg_copy_password")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, TS_String_Encoder(software_lang.TSReadLangs("AstelPasswordGenerator", "apg_copy_password")));
                 }
             }catch (Exception){ }
         }

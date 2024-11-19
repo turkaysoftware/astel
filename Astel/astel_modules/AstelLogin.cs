@@ -101,10 +101,10 @@ namespace Astel.astel_modules{
                         astel.Show();
                         Hide();
                     }else{
-                        MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelLogin", "al_password_failed")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelLogin", "al_password_failed")));
                     }
                 }else{
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelLogin", "al_password_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelLogin", "al_password_info")));
                 }
             }catch (Exception){ }
         }
@@ -117,5 +117,8 @@ namespace Astel.astel_modules{
                 TxtPassword.UseSystemPasswordChar = true;
             }
         }
+        // EXIT
+        // ======================================================================================================
+        private void AstelLogin_FormClosing(object sender, FormClosingEventArgs e){ Application.Exit(); }
     }
 }

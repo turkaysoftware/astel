@@ -12,7 +12,7 @@ namespace Astel{
         // LINK SYSTEM
         // ======================================================================================================
         public class TS_LinkSystem{
-            public string
+            public static string
             website_link        = "https://www.turkaysoftware.com",
             twitter_x_link      = "https://x.com/turkaysoftware",
             instagram_link      = "https://www.instagram.com/erayturkayy/",
@@ -24,7 +24,7 @@ namespace Astel{
         // VERSIONS
         // ======================================================================================================
         public class TS_VersionEngine{
-            public string TS_SofwareVersion(int v_type, int v_mode){
+            public static string TS_SofwareVersion(int v_type, int v_mode){
                 string version_mode = "";
                 string versionSubstring = v_mode == 0 ? Application.ProductVersion.Substring(0, 5) : Application.ProductVersion.Substring(0, 7);
                 switch (v_type){
@@ -43,6 +43,37 @@ namespace Astel{
                 return version_mode;
             }
         }
+        // TS MESSAGEBOX ENGINE
+        // ======================================================================================================
+        public static class TS_MessageBoxEngine{
+            private static readonly Dictionary<int, KeyValuePair<MessageBoxButtons, MessageBoxIcon>> TSMessageBoxConfig = new Dictionary<int, KeyValuePair<MessageBoxButtons, MessageBoxIcon>>(){
+                { 1, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.OK, MessageBoxIcon.Information) },       // Ok ve Bilgi
+                { 2, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.OK, MessageBoxIcon.Warning) },           // Ok ve Uyarı
+                { 3, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.OK, MessageBoxIcon.Error) },             // Ok ve Hata
+                { 4, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.YesNo, MessageBoxIcon.Question) },       // Yes/No ve Soru
+                { 5, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.YesNo, MessageBoxIcon.Information) },    // Yes/No ve Bilgi
+                { 6, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.YesNo, MessageBoxIcon.Warning) },        // Yes/No ve Uyarı
+                { 7, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.YesNo, MessageBoxIcon.Error) },          // Yes/No ve Hata
+                { 8, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.RetryCancel, MessageBoxIcon.Error) },    // Retry/Cancel ve Hata
+                { 9, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) }  // Yes/No/Cancel ve Soru
+            };
+            public static DialogResult TS_MessageBox(Form m_form, int m_mode, string m_message, string m_title = ""){
+                m_form.BringToFront();
+                //
+                string m_box_title = string.IsNullOrEmpty(m_title) ? Application.ProductName : m_title;
+                //
+                MessageBoxButtons m_button = MessageBoxButtons.OK;
+                MessageBoxIcon m_icon = MessageBoxIcon.Information;
+                //
+                if (TSMessageBoxConfig.ContainsKey(m_mode)){
+                    var m_serialize = TSMessageBoxConfig[m_mode];
+                    m_button = m_serialize.Key;
+                    m_icon = m_serialize.Value;
+                }
+                //
+                return MessageBox.Show(m_form, m_message, m_box_title, m_button, m_icon);
+            }
+        }
         // TS SOFTWARE COPYRIGHT DATE
         // ======================================================================================================
         public class TS_SoftwareCopyrightDate{
@@ -57,17 +88,17 @@ namespace Astel{
         // ======================================================================================================
         public class TSSettingsSave{
             [DllImport("kernel32.dll")]
-            private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
+            private static extern int WritePrivateProfileString(string section, string key, string val, string filePath);
             [DllImport("kernel32.dll")]
-            private static extern long GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
+            private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
             private readonly string _settingFilePath;
-            public TSSettingsSave(string filePath) { _settingFilePath = filePath; }
+            public TSSettingsSave(string filePath){ _settingFilePath = filePath; }
             public string TSReadSettings(string episode, string settingName){
-                StringBuilder stringBuilder = new StringBuilder(2048);
-                GetPrivateProfileString(episode, settingName, string.Empty, stringBuilder, 2047, _settingFilePath);
+                StringBuilder stringBuilder = new StringBuilder(4096);
+                GetPrivateProfileString(episode, settingName, string.Empty, stringBuilder, 4096, _settingFilePath);
                 return stringBuilder.ToString();
             }
-            public long TSWriteSettings(string episode, string settingName, string value){
+            public int TSWriteSettings(string episode, string settingName, string value){
                 return WritePrivateProfileString(episode, settingName, value, _settingFilePath);
             }
         }
@@ -80,12 +111,12 @@ namespace Astel{
         // ======================================================================================================
         public class TSGetLangs{
             [DllImport("kernel32.dll")]
-            private static extern long GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
+            private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
             private readonly string _readFilePath;
-            public TSGetLangs(string filePath) { _readFilePath = filePath; }
+            public TSGetLangs(string filePath){ _readFilePath = filePath; }
             public string TSReadLangs(string episode, string settingName){
-                StringBuilder stringBuilder = new StringBuilder(2048);
-                GetPrivateProfileString(episode, settingName, string.Empty, stringBuilder, 2047, _readFilePath);
+                StringBuilder stringBuilder = new StringBuilder(4096);
+                GetPrivateProfileString(episode, settingName, string.Empty, stringBuilder, 4096, _readFilePath);
                 return stringBuilder.ToString();
             }
         }
@@ -93,6 +124,19 @@ namespace Astel{
         // ======================================================================================================
         public static string TS_String_Encoder(string get_text){
             return Encoding.UTF8.GetString(Encoding.Default.GetBytes(get_text)).Trim();
+        }
+        // TURKISH LETTER CONVERTER
+        // ======================================================================================================
+        public static string TS_TR_LetterConverter(string called_text){
+            if (string.IsNullOrEmpty(called_text)) { return called_text; }
+            StringBuilder str_con = new StringBuilder(called_text);
+            str_con.Replace('Ç', 'C').Replace('ç', 'c');
+            str_con.Replace('Ğ', 'G').Replace('ğ', 'g');
+            str_con.Replace('İ', 'I').Replace('ı', 'i');
+            str_con.Replace('Ö', 'O').Replace('ö', 'o');
+            str_con.Replace('Ş', 'S').Replace('ş', 's');
+            str_con.Replace('Ü', 'U').Replace('ü', 'u');
+            return str_con.ToString().Trim();
         }
         // TS THEME ENGINE
         // ======================================================================================================

@@ -74,25 +74,25 @@ namespace Astel.astel_modules{
                 string password_1 = TxtPassword.Text.Trim();
                 string password_2 = TxtPasswordRepeat.Text.Trim();
                 if (string.IsNullOrEmpty(password_1)){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_info")));
                     return;
                 }
                 if (string.IsNullOrEmpty(password_2)){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_repeat_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_repeat_info")));
                     return;
                 }
                 if (password_1.Length < 6 || password_1.Length > 32){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_req_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_req_info")));
                     return;
                 }
                 if (password_1 == password_2){
                     TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
                     software_setting_save.TSWriteSettings(ts_settings_container, "SessionMode", "1");
                     software_setting_save.TSWriteSettings(ts_settings_container, "Password", TSHashPassword(password_1, ts_hash_salting));
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_set_success")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_set_success")), "\n"));
                     Application.Restart();
                 }else{
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_set_failed")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelSignIn", "as_password_set_failed")), "\n"));
                 }
             }catch (Exception){ }
         }

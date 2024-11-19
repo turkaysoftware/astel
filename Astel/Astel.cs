@@ -23,10 +23,6 @@ namespace Astel{
         // ======================================================================================================
         public static string lang, lang_path;
         public static int theme, initial_status;
-        // SOFTWARE VERSION - MEDIA LINK SYSTEM
-        // ======================================================================================================
-        static TS_VersionEngine TS_SoftwareVersion = new TS_VersionEngine();
-        static TS_LinkSystem TS_LinkSystem = new TS_LinkSystem();
         // UI COLORS
         // ======================================================================================================
         static List<Color> header_colors = new List<Color>() { Color.Transparent, Color.Transparent };
@@ -126,9 +122,10 @@ namespace Astel{
                             string astel_set_password_name = "astel_set_password";
                             astel_set_password.Name = astel_set_password_name;
                             if (Application.OpenForms[astel_set_password_name] == null){
-                                DialogResult query_secure_login = MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_secure_login_info")), Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                DialogResult query_secure_login = MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_secure_login_info")), Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                                 if (query_secure_login == DialogResult.Yes){
                                     astel_set_password.ShowDialog();
+                                    Application.OpenForms[astel_set_password_name].Activate();
                                 }
                             }
                         }catch (Exception){ }
@@ -142,8 +139,8 @@ namespace Astel{
         // LOAD
         // ======================================================================================================
         private void Astel_Load(object sender, EventArgs e){
-            Text = TS_SoftwareVersion.TS_SofwareVersion(0, Program.ts_version_mode);
-            HeaderMenu.Cursor = Cursors.Hand; 
+            Text = TS_VersionEngine.TS_SofwareVersion(0, Program.ts_version_mode);
+            HeaderMenu.Cursor = Cursors.Hand;
             AstelLoadXMLData();
             RunSoftwareEngine();
             //
@@ -203,15 +200,15 @@ namespace Astel{
             try{
                 string in_user = TxtUserName.Text.Trim(), in_email = TxtEmail.Text.Trim(), in_password = TxtPassword.Text.Trim(), in_note = TxtNote.Text.Trim();
                 if (string.IsNullOrEmpty(in_user)){
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_username_info")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 4, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_username_info")), "\n"));
                     return;
                 }
                 if (string.IsNullOrEmpty(in_email)){
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_email_info")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 4, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_email_info")), "\n"));
                     return;
                 }
                 if (string.IsNullOrEmpty(in_password)){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_password_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 4, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_password_info")));
                     return;
                 }
                 //
@@ -230,9 +227,9 @@ namespace Astel{
                 AstelLoadXMLData();
                 nodeClearInput();
                 //
-                MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_success")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                TS_MessageBoxEngine.TS_MessageBox(this, 1, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_success")));
             }catch (Exception){
-                MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_failed")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_add_failed")), "\n"));
             }
         }
         // UPDATE DATA
@@ -241,9 +238,10 @@ namespace Astel{
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             try{
                 if (DataMainTable.SelectedRows.Count == 0){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_update_select_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }else{
-                    DialogResult checkUpdateQuery = MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_update_question_info")), Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_update_select_info")));
+                }
+                else{
+                    DialogResult checkUpdateQuery = TS_MessageBoxEngine.TS_MessageBox(this, 4, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_update_question_info")));
                     if (checkUpdateQuery == DialogResult.Yes){
                         var ts_xDoc = XDocument.Load(xmlFilePath);
                         var ts_xml_root = ts_xDoc.Element("Datas");
@@ -261,11 +259,11 @@ namespace Astel{
                         AstelLoadXMLData();
                         nodeClearInput();
                         //
-                        MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_update_success")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        TS_MessageBoxEngine.TS_MessageBox(this, 1, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_update_success")));
                     }
                 }
             }catch (Exception){
-                MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_update_failed")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_update_failed")), "\n"));
             }
         }
         // DELETE DATA
@@ -274,9 +272,9 @@ namespace Astel{
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             try{
                 if (DataMainTable.SelectedRows.Count == 0){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_info")));
                 }else{
-                    DialogResult checkUpdateQuery = MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_question_info")), Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult checkUpdateQuery = TS_MessageBoxEngine.TS_MessageBox(this, 4, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_question_info")));
                     if (checkUpdateQuery == DialogResult.Yes){
                         var ts_xDoc = XDocument.Load(xmlFilePath);
                         var ts_xml_root = ts_xDoc.Element("Datas");
@@ -290,11 +288,11 @@ namespace Astel{
                         AstelLoadXMLData();
                         nodeClearInput();
                         //
-                        MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_success")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        TS_MessageBoxEngine.TS_MessageBox(this, 1, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_success")));
                     }
                 }
             }catch (Exception){
-                MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_failed")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_failed")), "\n"));
             }
         }
         // COPY DATA
@@ -304,7 +302,7 @@ namespace Astel{
                 if (!string.IsNullOrEmpty(TxtUserName.Text.Trim())){
                     Clipboard.SetText(TxtUserName.Text.Trim());
                     TSGetLangs software_lang = new TSGetLangs(lang_path);
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_copy_user")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_copy_user")));
                 }
             }catch (Exception){ }
         }
@@ -313,7 +311,7 @@ namespace Astel{
                 if (!string.IsNullOrEmpty(TxtEmail.Text.Trim())){
                     Clipboard.SetText(TxtEmail.Text.Trim());
                     TSGetLangs software_lang = new TSGetLangs(lang_path);
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_copy_email")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_copy_email")));
                 }
             }catch (Exception){ }
         }
@@ -322,7 +320,7 @@ namespace Astel{
                 if (!string.IsNullOrEmpty(TxtPassword.Text.Trim())){
                     Clipboard.SetText(TxtPassword.Text.Trim());
                     TSGetLangs software_lang = new TSGetLangs(lang_path);
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_copy_password")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_copy_password")));
                 }
             }catch (Exception){ }
         }
@@ -339,7 +337,7 @@ namespace Astel{
                 }
             }catch (Exception){
                 TSGetLangs software_lang = new TSGetLangs(lang_path);
-                MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_failed")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelHome", "ah_delete_failed")), "\n"));
             }
         }
         // CLEAR INPUT
@@ -534,7 +532,7 @@ namespace Astel{
             }catch (Exception){ }
             // LANG CHANGE NOTIFICATION
             TSGetLangs software_lang = new TSGetLangs(lang_path);
-            DialogResult lang_change_message = MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("LangChange", "lang_change_notification")), "\n\n", "\n\n"), Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult lang_change_message = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(TS_String_Encoder(software_lang.TSReadLangs("LangChange", "lang_change_notification")), "\n\n", "\n\n"));
             if (lang_change_message == DialogResult.Yes) { Application.Restart(); }
         }
         private void lang_engine(string lang_type, string lang_code){
@@ -597,8 +595,7 @@ namespace Astel{
                 AstelSignIn software_set_password = new AstelSignIn();
                 string software_set_passowrd_name = "astel_set_password";
                 software_set_password.Name = software_set_passowrd_name;
-                if (Application.OpenForms[software_set_passowrd_name] != null)
-                {
+                if (Application.OpenForms[software_set_passowrd_name] != null){
                     software_set_password = (AstelSignIn)Application.OpenForms[software_set_passowrd_name];
                     software_set_password.login_system_preloader();
                 }
@@ -669,24 +666,26 @@ namespace Astel{
             software_update_check(1);
         }
         public bool IsNetworkCheck(){
-            Ping ping = new Ping();
+            Ping check_ping = new Ping();
             try{
-                PingReply reply = ping.Send("www.google.com");
-                if (reply.Status == IPStatus.Success){
+                PingReply check_ping_reply = check_ping.Send("www.google.com");
+                if (check_ping_reply.Status == IPStatus.Success){
                     return true;
                 }
             }catch (PingException){ }
             return false;
         }
         public void software_update_check(int _check_update_ui){
-            if (!IsNetworkCheck()){
-                return;
-            }
-            using (WebClient webClient = new WebClient()){
-                try{
-                    TSGetLangs software_lang = new TSGetLangs(lang_path);
-                    //
-                    string client_version = TS_SoftwareVersion.TS_SofwareVersion(2, Program.ts_version_mode).Trim();
+            try{
+                TSGetLangs software_lang = new TSGetLangs(lang_path);
+                if (!IsNetworkCheck()){
+                    if (_check_update_ui == 1){
+                        TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_not_connection")), "\n\n"), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
+                    }
+                    return;
+                }
+                using (WebClient webClient = new WebClient()){
+                    string client_version = TS_VersionEngine.TS_SofwareVersion(2, Program.ts_version_mode).Trim();
                     int client_num_version = Convert.ToInt32(client_version.Replace(".", string.Empty));
                     //
                     string[] version_content = webClient.DownloadString(TS_LinkSystem.github_link_lt).Split('=');
@@ -695,16 +694,21 @@ namespace Astel{
                     //
                     if (client_num_version < last_num_version){
                         // Update available
-                        string message = string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_message")), Application.ProductName, "\n\n", client_version, "\n", last_version, "\n\n");
-                        DialogResult info_update = MessageBox.Show(message, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName), MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        DialogResult info_update = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_available")), Application.ProductName, "\n\n", client_version, "\n", last_version, "\n\n"), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
                         if (info_update == DialogResult.Yes){
-                            Process.Start(TS_LinkSystem.github_link_lr);
+                            Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link_lr){ UseShellExecute = true });
                         }
                     }else if (_check_update_ui == 1 && client_num_version == last_num_version){
                         // No update available
-                        MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_no_update")), Application.ProductName, "\n", client_version), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_not_available")), Application.ProductName, "\n", client_version), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
+                    }else if (_check_update_ui == 1 && client_num_version > last_num_version){
+                        // Access before public use
+                        TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_newer")), "\n\n", string.Format("v{0}", client_version)), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
                     }
-                }catch (WebException){ }
+                }
+            }catch (Exception ex){
+                TSGetLangs software_lang = new TSGetLangs(lang_path);
+                TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_error")), "\n\n", ex.Message), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
             }
         }
         // SET PASSWORD
@@ -722,7 +726,7 @@ namespace Astel{
                         Application.OpenForms[astel_set_password_name].WindowState = FormWindowState.Normal;
                     }
                     Application.OpenForms[astel_set_password_name].Activate();
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), TS_String_Encoder(software_lang.TSReadLangs("HeaderLogin", "hl_set_password"))), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), TS_String_Encoder(software_lang.TSReadLangs("HeaderLogin", "hl_set_password"))));
                 }
             }catch (Exception){ }
         }
@@ -740,8 +744,8 @@ namespace Astel{
                     if (Application.OpenForms[astel_change_password_name].WindowState == FormWindowState.Minimized){
                         Application.OpenForms[astel_change_password_name].WindowState = FormWindowState.Normal;
                     }
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), TS_String_Encoder(software_lang.TSReadLangs("HeaderLogin", "hl_change_password"))));
                     Application.OpenForms[astel_change_password_name].Activate();
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderLogin", "hl_change_password")), TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_about"))), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }catch (Exception){ }
         }
@@ -759,8 +763,8 @@ namespace Astel{
                     if (Application.OpenForms[astel_password_generator_name].WindowState == FormWindowState.Minimized){
                         Application.OpenForms[astel_password_generator_name].WindowState = FormWindowState.Normal;
                     }
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_pass_gen"))));
                     Application.OpenForms[astel_password_generator_name].Activate();
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderLogin", "hl_change_password")), TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_about"))), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }catch (Exception){ }
         }
@@ -778,8 +782,8 @@ namespace Astel{
                     if (Application.OpenForms[astel_about_name].WindowState == FormWindowState.Minimized){
                         Application.OpenForms[astel_about_name].WindowState = FormWindowState.Normal;
                     }
+                    TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_about"))));
                     Application.OpenForms[astel_about_name].Activate();
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_about"))), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }catch (Exception){ }
         }

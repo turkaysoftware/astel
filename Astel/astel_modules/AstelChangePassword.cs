@@ -77,19 +77,19 @@ namespace Astel.astel_modules{
                 string password_new = TxtNewPassword.Text.Trim();
                 string password_new_repeat = TxtNewPasswordRepeat.Text.Trim();
                 if (string.IsNullOrEmpty(password_current)){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_info")));
                     return;
                 }
                 if (string.IsNullOrEmpty(password_new)){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_info")));
                     return;
                 }
                 if (string.IsNullOrEmpty(password_new_repeat)){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_repeat_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_repeat_info")));
                     return;
                 }
                 if (password_new.Length < 6 || password_new.Length > 32){
-                    MessageBox.Show(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_pass_req_info")), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_pass_req_info")));
                     return;
                 }
                 //
@@ -101,12 +101,13 @@ namespace Astel.astel_modules{
                     if (password_new == password_new_repeat){
                         TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
                         software_setting_save.TSWriteSettings(ts_settings_container, "Password", TSHashPassword(password_new, ts_hash_salting));
-                        MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_pass_change_success")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }else{
-                        MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_compare_info")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_pass_change_success")), "\n"));
+                    }
+                    else{
+                        TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_compare_info")), "\n"));
                     }
                 }else{
-                    MessageBox.Show(string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_fail_info")), "\n"), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_fail_info")), "\n"));
                 }
             }catch (Exception){ }
         }

@@ -137,6 +137,7 @@
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AstelLogin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AstelLogin_FormClosing);
             this.Load += new System.EventHandler(this.AstelLogin_Load);
             this.Panel_BG.ResumeLayout(false);
             this.Panel_BG.PerformLayout();
