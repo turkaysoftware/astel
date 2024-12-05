@@ -1,5 +1,7 @@
 # Astel - Password Management Software
 
+>_**Note:** We are releasing the final Astel update of 2024. Thank you for your continued support, and we are excited to announce that new versions will be available starting from the second quarter of 2025._
+
 **Astel** is a **password management software** developed by **Eray Türkay**.  **None of your personal information is transferred to any other medium other than your computer**. Therefore it is completely secure. 
 
 Programmed with C# and .NET Framework only. No external libraries, no dependencies.
