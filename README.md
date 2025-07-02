@@ -1,7 +1,5 @@
 # Astel - Password Management Software
 
->_**Note:** We are releasing the final Astel update of 2024. Thank you for your continued support, and we are excited to announce that new versions will be available starting from the second quarter of 2025._
-
 **Astel** is a **password management software** developed by **Eray Türkay**.  **None of your personal information is transferred to any other medium other than your computer**. Therefore it is completely secure. 
 
 Programmed with C# and .NET Framework only. No external libraries, no dependencies.
@@ -63,3 +61,21 @@ With these instructions, you can download and use the correct version of Astel f
 | OS: | Windows 10 x64 | Windows 10 22H2 x64|
 | RAM: | 25 MB Free RAM | 50 MB Free RAM |
 | .NET: | .NET Framework 4.8.1 | .NET Framework 4.8.1 |
+
+# Shortcut Key Layouts
+
+| Main Features | Key |
+| -- | :--: |
+| **Theme:** Light | F1 |
+| **Theme:** Dark | F2 |
+| **Start:** Windowed | F3 |
+| **Start:** Full Screen | F4 |
+| **Login Settings:** Set Password | CTRL + Q |
+| **Login Settings:** Change Password | CTRL + W |
+| **Password Generator** | CTRL + R |
+
+| Extras | Key |
+| -- | :--: |
+| **Check Update** | F11 |
+| **About** | F12 |
+| **TS Wizard** | CTRL + Shift + S |
