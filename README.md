@@ -6,7 +6,7 @@ Every little bit helps—it keeps me motivated and gives me more time to improve
 
 👉 [Buy Me a Coffee - @turkaysoftware](https://buymeacoffee.com/turkaysoftware)
 
-![Buy Me a Coffee - @turkaysoftware](https://github.com/user-attachments/assets/49bd55a0-254c-4848-9b43-2c243b018150)
+![Buy Me a Coffee - @turkaysoftware](https://github.com/user-attachments/assets/e2b6d354-d5a4-4ff3-9648-88510a59818c)
 
 **Astel** is a **password management software** developed by **Eray Türkay**.  **None of your personal information is transferred to any other medium other than your computer**. Therefore it is completely secure. 
 
