@@ -14,9 +14,9 @@ Programmed with C# and .NET Framework only. No external libraries, no dependenci
 
 [Click here](https://www.turkaysoftware.com/astel) for full specifications.
 
-![Astel UI Dark](https://github.com/user-attachments/assets/84637510-55d1-4f89-9163-ff68fa92b4c4)
+![Astel UI - Dark](https://github.com/user-attachments/assets/d1304865-2c07-4c64-9d32-8d00fd69dee8)
 
-![Astel UI Light](https://github.com/user-attachments/assets/3ef82f8a-3751-4732-bca2-eaa170694521)
+![Astel UI - Light](https://github.com/user-attachments/assets/4278a718-ee84-4ac0-944d-c64c202529eb)
 
 # Download Astel
 
