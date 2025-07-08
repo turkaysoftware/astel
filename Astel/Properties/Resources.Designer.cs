@@ -83,6 +83,26 @@ namespace Astel.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap header_bmac_dark {
+            get {
+                object obj = ResourceManager.GetObject("header_bmac_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap header_bmac_light {
+            get {
+                object obj = ResourceManager.GetObject("header_bmac_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap header_change_password_dark {
             get {
                 object obj = ResourceManager.GetObject("header_change_password_dark", resourceCulture);
@@ -236,6 +256,26 @@ namespace Astel.Properties {
         internal static System.Drawing.Bitmap header_theme_light {
             get {
                 object obj = ResourceManager.GetObject("header_theme_light", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap header_tswizard_dark {
+            get {
+                object obj = ResourceManager.GetObject("header_tswizard_dark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Bitmap header_tswizard_light {
+            get {
+                object obj = ResourceManager.GetObject("header_tswizard_light", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -30,6 +30,6 @@ using System.Runtime.InteropServices;
 //      Yapı Numarası
 //      Düzeltme
 //
-[assembly: AssemblyVersion("24.12.0.0")]
-[assembly: AssemblyFileVersion("24.12.0.0")]
+[assembly: AssemblyVersion("25.07.0.0")]
+[assembly: AssemblyFileVersion("25.07.0.0")]
 [assembly: NeutralResourcesLanguage("tr-TR")]

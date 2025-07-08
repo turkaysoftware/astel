@@ -124,6 +124,12 @@
   <data name="header_about_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_interface\light_theme\header_about_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="header_bmac_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_interface\dark_theme\header_bmac_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header_bmac_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_interface\light_theme\header_bmac_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="header_change_password_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_interface\dark_theme\header_change_password_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +177,12 @@
   </data>
   <data name="header_theme_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_interface\light_theme\header_theme_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header_tswizard_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_interface\dark_theme\header_tswizard_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="header_tswizard_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_interface\light_theme\header_tswizard_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="header_update_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_interface\dark_theme\header_update_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

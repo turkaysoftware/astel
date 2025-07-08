@@ -1,20 +1,30 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Data;
-using System.Linq;
-using System.Drawing;
-using System.Xml.Linq;
-using System.Threading;
-using System.Reflection;
-using System.Diagnostics;
-using System.Windows.Forms;
-using System.Threading.Tasks;
+﻿// ======================================================================================================
+// Astel - Password Management Software
+// © Copyright 2024-2025, Eray Türkay.
+// Project Type: Open Source
+// License: MIT License
+// Website: https://www.turkaysoftware.com/astel
+// GitHub: https://github.com/turkaysoftware/astel
+// ======================================================================================================
+
+using System;
 using System.Collections.Generic;
-using System.Net.NetworkInformation;
-//
-using static Astel.TSModules;
+using System.Data;
+using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml.Linq;
+// TS MODULES
 using Astel.astel_modules;
+using static Astel.TSModules;
 
 namespace Astel{
     public partial class Astel : Form{
@@ -23,14 +33,27 @@ namespace Astel{
         // ======================================================================================================
         public static string lang, lang_path;
         public static int theme, initial_status;
+        // LOCAL VARIABLES
+        // ======================================================================================================
+        string ts_wizard_name = "TS Wizard";
         // UI COLORS
         // ======================================================================================================
-        static List<Color> header_colors = new List<Color>() { Color.Transparent, Color.Transparent };
+        static List<Color> header_colors = new List<Color>() { Color.Transparent, Color.Transparent, Color.Transparent };
         // HEADER SETTINGS
         // ======================================================================================================
         private class HeaderMenuColors : ToolStripProfessionalRenderer{
             public HeaderMenuColors() : base(new HeaderColors()){ }
             protected override void OnRenderArrow(ToolStripArrowRenderEventArgs e){ e.ArrowColor = header_colors[1]; base.OnRenderArrow(e); }
+            protected override void OnRenderItemCheck(ToolStripItemImageRenderEventArgs e){
+                // e.Graphics.FillRectangle(new SolidBrush(header_colors[0]), e.ImageRectangle); // BG Color Check
+                using (Pen anti_alias_pen = new Pen(header_colors[2], 3)){
+                    Point p1 = new Point(e.ImageRectangle.Left + 3, e.ImageRectangle.Top + e.ImageRectangle.Height / 2);
+                    Point p2 = new Point(e.ImageRectangle.Left + 7, e.ImageRectangle.Bottom - 4);
+                    Point p3 = new Point(e.ImageRectangle.Right - 2, e.ImageRectangle.Top + 3);
+                    e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                    e.Graphics.DrawLines(anti_alias_pen, new Point[] { p1, p2, p3 });
+                }
+            }
         }
         private class HeaderColors : ProfessionalColorTable{
             public override Color MenuItemSelected => header_colors[0];
@@ -149,8 +172,15 @@ namespace Astel{
         }
         // CREATE XML FILE
         // ======================================================================================================
-        private string xmlFilePath = string.Format("{0}Data.xml", Application.ProductName);
+        private string xmlFilePath = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+            Application.CompanyName.Replace(" ", "").Replace("ü", "u"),
+            $"{Application.ProductName}Data.xml"
+        );
         private void CreateEmptyXmlFile(){
+            if (!Directory.Exists(Path.GetDirectoryName(xmlFilePath))){
+                Directory.CreateDirectory(Path.GetDirectoryName(xmlFilePath));
+            }
             var ts_xDoc = new XDocument(new XElement("Datas"));
             ts_xDoc.Save(xmlFilePath);
         }
@@ -389,6 +419,8 @@ namespace Astel{
                     changePasswordToolStripMenuItem.Image = Properties.Resources.header_change_password_light;
                     checkforUpdatesToolStripMenuItem.Image = Properties.Resources.header_update_light;
                     passwordGeneratorToolStripMenuItem.Image = Properties.Resources.header_pass_gen_light;
+                    tSWizardToolStripMenuItem.Image = Properties.Resources.header_tswizard_light;
+                    bmacToolStripMenuItem.Image = Properties.Resources.header_bmac_light;
                     aboutToolStripMenuItem.Image = Properties.Resources.header_about_light;
                 }else if (theme == 0){
                     settingsToolStripMenuItem.Image = Properties.Resources.header_settings_dark;
@@ -400,6 +432,8 @@ namespace Astel{
                     changePasswordToolStripMenuItem.Image = Properties.Resources.header_change_password_dark;
                     checkforUpdatesToolStripMenuItem.Image = Properties.Resources.header_update_dark;
                     passwordGeneratorToolStripMenuItem.Image = Properties.Resources.header_pass_gen_dark;
+                    tSWizardToolStripMenuItem.Image = Properties.Resources.header_tswizard_dark;
+                    bmacToolStripMenuItem.Image = Properties.Resources.header_bmac_dark;
                     aboutToolStripMenuItem.Image = Properties.Resources.header_about_dark;
                 }
                 //
@@ -409,6 +443,7 @@ namespace Astel{
                 //
                 header_colors[0] = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor");
                 header_colors[1] = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
+                header_colors[2] = TS_ThemeEngine.ColorMode(theme, "ContentLabelRightColor");
                 HeaderMenu.Renderer = new HeaderMenuColors();
                 // HEADER MENU
                 HeaderMenu.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor2");
@@ -453,6 +488,12 @@ namespace Astel{
                 // PASSWORD GEN
                 passwordGeneratorToolStripMenuItem.BackColor = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor2");
                 passwordGeneratorToolStripMenuItem.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor2");
+                // TS WIZARD
+                tSWizardToolStripMenuItem.BackColor = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor2");
+                tSWizardToolStripMenuItem.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor2");
+                // BMAC
+                bmacToolStripMenuItem.BackColor = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor2");
+                bmacToolStripMenuItem.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor2");
                 // ABOUT
                 aboutToolStripMenuItem.BackColor = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor2");
                 aboutToolStripMenuItem.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor2");
@@ -563,6 +604,10 @@ namespace Astel{
                 checkforUpdatesToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_update"));
                 // PASS GEN
                 passwordGeneratorToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_pass_gen"));
+                // TS WIZARD
+                tSWizardToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_ts_wizard"));
+                // BMAC
+                bmacToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_bmac"));
                 // ABOUT
                 aboutToolStripMenuItem.Text = TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_about"));
                 // HOME
@@ -660,20 +705,41 @@ namespace Astel{
                 software_setting_save.TSWriteSettings(ts_settings_container, "InitialStatus", get_inital_value);
             }catch (Exception){ }
         }
+        // SOFTWARE OPERATION CONTROLLER MODULE
+        // ======================================================================================================
+        private static bool software_operation_controller(string __target_software_path){
+            var exeFiles = Directory.GetFiles(__target_software_path, "*.exe");
+            var runned_process = Process.GetProcesses();
+            foreach (var exe_path in exeFiles){
+                string exe_name = Path.GetFileNameWithoutExtension(exe_path);
+                if (runned_process.Any(p => {
+                    try{
+                        return string.Equals(p.ProcessName, exe_name, StringComparison.OrdinalIgnoreCase);
+                    }catch{
+                        return false;
+                    }
+                })){
+                    return true;
+                }
+            }
+            return false;
+        }
+        // TS WIZARD STARTER MODE
+        // ======================================================================================================
+        private string[] ts_wizard_starter_mode(){
+            string[] ts_wizard_exe_files = { "TSWizard_arm64.exe", "TSWizard_x64.exe", "TSWizard.exe" };
+            if (RuntimeInformation.OSArchitecture == Architecture.Arm64){
+                return new[] { ts_wizard_exe_files[0], ts_wizard_exe_files[1], ts_wizard_exe_files[2] }; // arm64 > x64 > default
+            }else if (Environment.Is64BitOperatingSystem){
+                return new[] { ts_wizard_exe_files[1], ts_wizard_exe_files[0], ts_wizard_exe_files[2] }; // x64 > arm64 > default
+            }else{
+                return new[] { ts_wizard_exe_files[2], ts_wizard_exe_files[1], ts_wizard_exe_files[0] }; // default > x64 > arm64
+            }
+        }
         // UPDATE CHECK ENGINE
         // ======================================================================================================
         private void checkforUpdatesToolStripMenuItem_Click(object sender, EventArgs e){
             software_update_check(1);
-        }
-        public bool IsNetworkCheck(){
-            Ping check_ping = new Ping();
-            try{
-                PingReply check_ping_reply = check_ping.Send("www.google.com");
-                if (check_ping_reply.Status == IPStatus.Success){
-                    return true;
-                }
-            }catch (PingException){ }
-            return false;
         }
         public void software_update_check(int _check_update_ui){
             try{
@@ -693,11 +759,28 @@ namespace Astel{
                     int last_num_version = Convert.ToInt32(last_version.Replace(".", string.Empty));
                     //
                     if (client_num_version < last_num_version){
-                        // Update available
-                        DialogResult info_update = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_available")), Application.ProductName, "\n\n", client_version, "\n", last_version, "\n\n"), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
-                        if (info_update == DialogResult.Yes){
-                            Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link_lr){ UseShellExecute = true });
-                        }
+                        try{
+                            string baseDir = Path.Combine(Directory.GetParent(Directory.GetParent(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)).FullName).FullName);
+                            string ts_wizard_path = ts_wizard_starter_mode().Select(name => Path.Combine(baseDir, name)).FirstOrDefault(File.Exists);
+                            //
+                            if (ts_wizard_path != null){
+                                if (!software_operation_controller(Path.GetDirectoryName(ts_wizard_path))){
+                                    // Update available
+                                    DialogResult info_update = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_available_ts_wizard")), Application.ProductName, "\n\n", client_version, "\n", last_version, "\n\n", ts_wizard_name), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
+                                    if (info_update == DialogResult.Yes){
+                                        Process.Start(new ProcessStartInfo { FileName = ts_wizard_path, WorkingDirectory = Path.GetDirectoryName(ts_wizard_path) });
+                                    }
+                                }else{
+                                    TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), ts_wizard_name));
+                                }
+                            }else{
+                                // Update available
+                                DialogResult info_update = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_available")), Application.ProductName, "\n\n", client_version, "\n", last_version, "\n\n"), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
+                                if (info_update == DialogResult.Yes){
+                                    Process.Start(new ProcessStartInfo(TS_LinkSystem.github_link_lr) { UseShellExecute = true });
+                                }
+                            }
+                        }catch (Exception){ }
                     }else if (_check_update_ui == 1 && client_num_version == last_num_version){
                         // No update available
                         TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_not_available")), Application.ProductName, "\n", client_version), string.Format(TS_String_Encoder(software_lang.TSReadLangs("SoftwareUpdate", "su_title")), Application.ProductName));
@@ -765,6 +848,36 @@ namespace Astel{
                     }
                     TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_pass_gen"))));
                     Application.OpenForms[astel_password_generator_name].Activate();
+                }
+            }catch (Exception){ }
+        }
+        // BUY ME A COFFEE LINK
+        // ======================================================================================================
+        private void bmacToolStripMenuItem_Click(object sender, EventArgs e){
+            try{
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_bmac) { UseShellExecute = true });
+            }catch (Exception) { }
+        }
+        // TS WIZARD
+        // ======================================================================================================
+        private void tSWizardToolStripMenuItem_Click(object sender, EventArgs e){
+            try{
+                string baseDir = Path.Combine(Directory.GetParent(Directory.GetParent(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)).FullName).FullName);
+                string ts_wizard_path = ts_wizard_starter_mode().Select(name => Path.Combine(baseDir, name)).FirstOrDefault(File.Exists);
+                //
+                TSGetLangs software_lang = new TSGetLangs(lang_path);
+                //
+                if (ts_wizard_path != null){
+                    if (!software_operation_controller(Path.GetDirectoryName(ts_wizard_path))){
+                        Process.Start(new ProcessStartInfo { FileName = ts_wizard_path, WorkingDirectory = Path.GetDirectoryName(ts_wizard_path) });
+                    }else{
+                        TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification")), ts_wizard_name));
+                    }
+                }else{
+                    DialogResult ts_wizard_query = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(TS_String_Encoder(software_lang.TSReadLangs("TSWizard", "tsw_content")), TS_String_Encoder(software_lang.TSReadLangs("HeaderMenu", "header_menu_ts_wizard")), Application.CompanyName, "\n\n", Application.ProductName, Application.CompanyName, "\n\n"), string.Format(TS_String_Encoder(software_lang.TSReadLangs("TSWizard", "tsw_title")), Application.ProductName));
+                    if (ts_wizard_query == DialogResult.Yes){
+                        Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_wizard) { UseShellExecute = true });
+                    }
                 }
             }catch (Exception){ }
         }
