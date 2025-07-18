@@ -77,9 +77,9 @@ With these instructions, you can download and use the correct version of Astel f
 | **Theme:** Light | F1 |
 | **Theme:** Dark | F2 |
 | **Start:** Windowed | F3 |
-| **Start:** Full Screen | F4 |
-| **Login Settings:** Set Password | CTRL + Q |
-| **Login Settings:** Change Password | CTRL + W |
+| **Export Data** | F4 |
+| **Import Data**  | F5 |
+| **Change Password** | F6 |
 | **Password Generator** | CTRL + R |
 
 | Extras | Key |
