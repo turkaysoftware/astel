@@ -77,9 +77,13 @@ With these instructions, you can download and use the correct version of Astel f
 | **Theme:** Light | F1 |
 | **Theme:** Dark | F2 |
 | **Start:** Windowed | F3 |
-| **Export Data** | F4 |
-| **Import Data**  | F5 |
-| **Change Password** | F6 |
+| **Start:** Full Screen | F4 |
+| **Data Transfer:** Export Data | F5 |
+| **Data Transfer:** Import Data  | F6 |
+| **Automatic Backup:** Backup On | F7 |
+| **Automatic Backup:** Backup Off | F8 |
+| **Automatic Backup:** Open Backup Folder | F9 |
+| **Change Password** | F10 |
 | **Password Generator** | CTRL + R |
 
 | Extras | Key |
