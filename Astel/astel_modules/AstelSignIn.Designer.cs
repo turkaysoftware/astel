@@ -79,11 +79,14 @@
             this.BtnSignIn.FlatAppearance.BorderSize = 0;
             this.BtnSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSignIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnSignIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSignIn.Location = new System.Drawing.Point(10, 250);
             this.BtnSignIn.Name = "BtnSignIn";
             this.BtnSignIn.Size = new System.Drawing.Size(283, 35);
             this.BtnSignIn.TabIndex = 6;
             this.BtnSignIn.Text = "KAYDET";
+            this.BtnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnSignIn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnSignIn.UseVisualStyleBackColor = false;
             this.BtnSignIn.Click += new System.EventHandler(this.BtnSignIn_Click);
             // 
@@ -106,6 +109,7 @@
             this.TxtPasswordRepeat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.TxtPasswordRepeat.Location = new System.Drawing.Point(10, 156);
             this.TxtPasswordRepeat.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
+            this.TxtPasswordRepeat.MaxLength = 32;
             this.TxtPasswordRepeat.Name = "TxtPasswordRepeat";
             this.TxtPasswordRepeat.Size = new System.Drawing.Size(283, 25);
             this.TxtPasswordRepeat.TabIndex = 4;
@@ -129,6 +133,7 @@
             this.TxtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.TxtPassword.Location = new System.Drawing.Point(10, 97);
             this.TxtPassword.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
+            this.TxtPassword.MaxLength = 32;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(283, 25);
             this.TxtPassword.TabIndex = 2;
@@ -164,6 +169,7 @@
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AstelSignIn";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AstelSignIn_FormClosing);
             this.Load += new System.EventHandler(this.AstelSignIn_Load);
             this.Panel_BG.ResumeLayout(false);
             this.Panel_BG.PerformLayout();

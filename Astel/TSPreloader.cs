@@ -21,6 +21,7 @@ using System.Collections.Generic;
 // TS Modules
 using Astel.astel_modules;
 using static Astel.TSModules;
+using static Astel.TSSecureModule;
 
 namespace Astel{
     public partial class TSPreloader : Form{
@@ -51,7 +52,7 @@ namespace Astel{
             LabelVersion.Text = TS_VersionEngine.TS_SofwareVersion(1, Program.ts_version_mode);
             LabelCopyright.Text = TS_SoftwareCopyrightDate.ts_scd_preloader;
             //
-            ImageWelcome.BackgroundImage = Properties.Resources.ts_preloader;
+            ImageWelcome.BackgroundImage = Properties.Resources.ts_preloader_release;
             ImageWelcome.BackgroundImageLayout = ImageLayout.Zoom;
             //
             software_preloader();
@@ -106,8 +107,19 @@ namespace Astel{
                         software_settings_save.TSWriteSettings(ts_settings_container, "LanguageStatus", languageSetting);
                         // SET STARTUP MODE
                         software_settings_save.TSWriteSettings(ts_settings_container, "InitialStatus", "0");
-                        // SET SESSION MODE
-                        software_settings_save.TSWriteSettings(ts_settings_container, "SessionMode", "0");
+                        // SET AUTO BACKUP MODE
+                        software_settings_save.TSWriteSettings(ts_settings_container, "AutoBackupStatus", "1");
+                    }catch (Exception ex){
+                        // SET ERROR LOG
+                        LogError(ex);
+                    }
+                }
+                // CHECK SESSION FILE
+                if (!File.Exists(ts_session_file)){
+                    try{
+                        Directory.CreateDirectory(ts_session_root_path);
+                        TSSettingsSave session_settings_save = new TSSettingsSave(ts_session_file);
+                        session_settings_save.TSWriteSettings(ts_session_container, "SessionMode", "0");
                     }catch (Exception ex){
                         // SET ERROR LOG
                         LogError(ex);
@@ -242,21 +254,21 @@ namespace Astel{
             await Task.Run(() => {
                 Invoke(new Action(() => {
                     // DYNAMIC STARTUP
-                    TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
-                    string session_mode = software_read_settings.TSReadSettings(ts_settings_container, "SessionMode");
+                    TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
+                    string session_mode = software_read_settings.TSReadSettings(ts_session_container, "SessionMode");
                     //
-                    Astel astel = new Astel();
+                    AstelSignIn astelSignIn = new AstelSignIn();
                     AstelLogin astelLogin = new AstelLogin();
                     //
                     switch (session_mode){
                         case "0":
-                            astel.Show();
+                            astelSignIn.Show();
                             break;
                         case "1":
                             astelLogin.Show();
                             break;
                         default:
-                            astel.Show();
+                            astelSignIn.Show();
                             break;
                     }
                     //

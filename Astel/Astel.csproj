@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>25.07.0.%2a</ApplicationVersion>
+    <ApplicationVersion>25.08.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -90,6 +90,7 @@
   <PropertyGroup>
     <ApplicationIcon>AstelLogo.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -152,6 +153,7 @@
     <Compile Include="TSPreloader.Designer.cs">
       <DependentUpon>TSPreloader.cs</DependentUpon>
     </Compile>
+    <Compile Include="TSSecureModule.cs" />
     <EmbeddedResource Include="Astel.resx">
       <DependentUpon>Astel.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,35 +200,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AstelLogo.ico" />
-    <None Include="astel_images\astel_interface\dark_theme\header_bmac_dark.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_bmac_light.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_tswizard_dark.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_tswizard_light.png" />
-    <None Include="astel_images\ts_preloader\ts_preloader.jpg" />
-    <None Include="astel_images\astel_interface\middle_icons\mid_copy_all_theme.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_update_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_theme_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_settings_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_set_password_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_pass_gen_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_login_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_language_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_initial_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_change_password_light.png" />
-    <None Include="astel_images\astel_interface\light_theme\header_about_light.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_update_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_theme_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_settings_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_set_password_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_pass_gen_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_login_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_language_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_initial_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_change_password_dark.png" />
-    <None Include="astel_images\astel_interface\dark_theme\header_about_dark.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8.1">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.8.1 %28x86 ve x64%29</ProductName>
@@ -237,6 +210,63 @@
       <ProductName>.NET Framework 3.5 SP1 </ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AstelLogo.ico" />
+    <None Include="astel_images\astel_ui\theme_light\tm_update_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_ts_wizard_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_theme_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_startup_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_settings_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_password_generator_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_language_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_data_transfer_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_data_import_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_data_export_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_change_password_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_bmac_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_auto_backup_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_about_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_youtube_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_x_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_website_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_update_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_login_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_instagram_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_github_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_generate_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_delete_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_copy_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_confirm_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\ct_add_light.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_update_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_ts_wizard_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_theme_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_startup_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_settings_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_password_generator_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_language_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_data_transfer_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_data_import_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_data_export_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_change_password_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_bmac_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_auto_backup_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_about_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_youtube_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_x_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_website_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_update_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_login_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_instagram_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_github_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_generate_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_delete_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_copy_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_confirm_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_add_dark.png" />
+    <None Include="astel_images\ts_preloader\ts_preloader_release.jpg" />
+    <None Include="astel_images\astel_ui\ts_material\ts_close.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -86,6 +86,7 @@
             this.TxtPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.TxtPassword.Location = new System.Drawing.Point(10, 97);
             this.TxtPassword.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
+            this.TxtPassword.MaxLength = 32;
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(283, 25);
             this.TxtPassword.TabIndex = 2;
@@ -98,11 +99,14 @@
             this.BtnLogin.FlatAppearance.BorderSize = 0;
             this.BtnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnLogin.Location = new System.Drawing.Point(10, 190);
             this.BtnLogin.Name = "BtnLogin";
             this.BtnLogin.Size = new System.Drawing.Size(283, 35);
             this.BtnLogin.TabIndex = 4;
             this.BtnLogin.Text = "KAYDET";
+            this.BtnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
             // 

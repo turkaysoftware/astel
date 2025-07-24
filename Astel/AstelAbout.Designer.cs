@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AstelAbout));
             this.PanelTxt = new System.Windows.Forms.Panel();
+            this.About_YouTube = new System.Windows.Forms.Button();
             this.AboutTable = new System.Windows.Forms.DataGridView();
             this.About_GitHubBtn = new System.Windows.Forms.Button();
             this.About_XBtn = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             // PanelTxt
             // 
             this.PanelTxt.BackColor = System.Drawing.Color.White;
+            this.PanelTxt.Controls.Add(this.About_YouTube);
             this.PanelTxt.Controls.Add(this.AboutTable);
             this.PanelTxt.Controls.Add(this.About_GitHubBtn);
             this.PanelTxt.Controls.Add(this.About_XBtn);
@@ -72,6 +74,28 @@
             this.PanelTxt.Padding = new System.Windows.Forms.Padding(15);
             this.PanelTxt.Size = new System.Drawing.Size(324, 450);
             this.PanelTxt.TabIndex = 0;
+            // 
+            // About_YouTube
+            // 
+            this.About_YouTube.BackColor = System.Drawing.Color.Green;
+            this.About_YouTube.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.About_YouTube.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.About_YouTube.FlatAppearance.BorderSize = 0;
+            this.About_YouTube.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.About_YouTube.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.About_YouTube.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.About_YouTube.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.About_YouTube.Location = new System.Drawing.Point(15, 204);
+            this.About_YouTube.Margin = new System.Windows.Forms.Padding(3, 1, 1, 25);
+            this.About_YouTube.Name = "About_YouTube";
+            this.About_YouTube.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.About_YouTube.Size = new System.Drawing.Size(294, 32);
+            this.About_YouTube.TabIndex = 7;
+            this.About_YouTube.Text = "Media / YouTube";
+            this.About_YouTube.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.About_YouTube.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.About_YouTube.UseVisualStyleBackColor = false;
+            this.About_YouTube.Click += new System.EventHandler(this.About_YouTube_Click);
             // 
             // AboutTable
             // 
@@ -105,7 +129,7 @@
             this.AboutTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.AboutTable.EnableHeadersVisualStyles = false;
             this.AboutTable.GridColor = System.Drawing.Color.Gray;
-            this.AboutTable.Location = new System.Drawing.Point(15, 230);
+            this.AboutTable.Location = new System.Drawing.Point(15, 252);
             this.AboutTable.MultiSelect = false;
             this.AboutTable.Name = "AboutTable";
             this.AboutTable.ReadOnly = true;
@@ -120,8 +144,8 @@
             this.AboutTable.RowHeadersVisible = false;
             this.AboutTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.AboutTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AboutTable.Size = new System.Drawing.Size(294, 152);
-            this.AboutTable.TabIndex = 7;
+            this.AboutTable.Size = new System.Drawing.Size(294, 130);
+            this.AboutTable.TabIndex = 8;
             this.AboutTable.SelectionChanged += new System.EventHandler(this.AboutTable_SelectionChanged);
             // 
             // About_GitHubBtn
@@ -133,13 +157,15 @@
             this.About_GitHubBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.About_GitHubBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.About_GitHubBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.About_GitHubBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.About_GitHubBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.About_GitHubBtn.Location = new System.Drawing.Point(163, 170);
             this.About_GitHubBtn.Margin = new System.Windows.Forms.Padding(1, 1, 3, 25);
             this.About_GitHubBtn.Name = "About_GitHubBtn";
+            this.About_GitHubBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.About_GitHubBtn.Size = new System.Drawing.Size(146, 32);
             this.About_GitHubBtn.TabIndex = 6;
             this.About_GitHubBtn.Text = "Media / GitHub";
+            this.About_GitHubBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.About_GitHubBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.About_GitHubBtn.UseVisualStyleBackColor = false;
             this.About_GitHubBtn.Click += new System.EventHandler(this.About_GitHubBtn_Click);
@@ -153,13 +179,15 @@
             this.About_XBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.About_XBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.About_XBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.About_XBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.About_XBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.About_XBtn.Location = new System.Drawing.Point(163, 136);
             this.About_XBtn.Margin = new System.Windows.Forms.Padding(1, 3, 3, 1);
             this.About_XBtn.Name = "About_XBtn";
+            this.About_XBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.About_XBtn.Size = new System.Drawing.Size(146, 32);
             this.About_XBtn.TabIndex = 4;
             this.About_XBtn.Text = "Media / X";
+            this.About_XBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.About_XBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.About_XBtn.UseVisualStyleBackColor = false;
             this.About_XBtn.Click += new System.EventHandler(this.About_XBtn_Click);
@@ -173,13 +201,15 @@
             this.About_InstagramBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.About_InstagramBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.About_InstagramBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.About_InstagramBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.About_InstagramBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.About_InstagramBtn.Location = new System.Drawing.Point(15, 170);
             this.About_InstagramBtn.Margin = new System.Windows.Forms.Padding(3, 1, 1, 25);
             this.About_InstagramBtn.Name = "About_InstagramBtn";
+            this.About_InstagramBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.About_InstagramBtn.Size = new System.Drawing.Size(146, 32);
             this.About_InstagramBtn.TabIndex = 5;
             this.About_InstagramBtn.Text = "Media / Instagram";
+            this.About_InstagramBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.About_InstagramBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.About_InstagramBtn.UseVisualStyleBackColor = false;
             this.About_InstagramBtn.Click += new System.EventHandler(this.About_InstagramBtn_Click);
@@ -193,13 +223,15 @@
             this.About_WebsiteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.About_WebsiteBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.About_WebsiteBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.About_WebsiteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.About_WebsiteBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.About_WebsiteBtn.Location = new System.Drawing.Point(15, 136);
             this.About_WebsiteBtn.Margin = new System.Windows.Forms.Padding(3, 3, 1, 1);
             this.About_WebsiteBtn.Name = "About_WebsiteBtn";
+            this.About_WebsiteBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.About_WebsiteBtn.Size = new System.Drawing.Size(146, 32);
             this.About_WebsiteBtn.TabIndex = 3;
             this.About_WebsiteBtn.Text = "Media / Web";
+            this.About_WebsiteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.About_WebsiteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.About_WebsiteBtn.UseVisualStyleBackColor = false;
             this.About_WebsiteBtn.Click += new System.EventHandler(this.About_WebsiteBtn_Click);
@@ -214,7 +246,7 @@
             this.LabelCopyright.Margin = new System.Windows.Forms.Padding(0, 25, 0, 0);
             this.LabelCopyright.Name = "LabelCopyright";
             this.LabelCopyright.Size = new System.Drawing.Size(294, 25);
-            this.LabelCopyright.TabIndex = 8;
+            this.LabelCopyright.TabIndex = 9;
             this.LabelCopyright.Text = "© Copyright Text.";
             this.LabelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -284,20 +316,17 @@
             // CloseAboutBtn
             // 
             this.CloseAboutBtn.BackColor = System.Drawing.Color.Green;
-            this.CloseAboutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.CloseAboutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CloseAboutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseAboutBtn.Dock = System.Windows.Forms.DockStyle.Right;
             this.CloseAboutBtn.FlatAppearance.BorderSize = 0;
             this.CloseAboutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CloseAboutBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CloseAboutBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.CloseAboutBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.CloseAboutBtn.Location = new System.Drawing.Point(380, 0);
-            this.CloseAboutBtn.Margin = new System.Windows.Forms.Padding(3, 3, 2, 2);
             this.CloseAboutBtn.Name = "CloseAboutBtn";
             this.CloseAboutBtn.Size = new System.Drawing.Size(30, 30);
             this.CloseAboutBtn.TabIndex = 0;
-            this.CloseAboutBtn.Text = "X";
             this.CloseAboutBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.CloseAboutBtn.UseVisualStyleBackColor = false;
             this.CloseAboutBtn.Click += new System.EventHandler(this.CloseAboutBtn_Click);
@@ -305,7 +334,7 @@
             // ImageAbout
             // 
             this.ImageAbout.BackColor = System.Drawing.Color.Transparent;
-            this.ImageAbout.BackgroundImage = global::Astel.Properties.Resources.ts_preloader;
+            this.ImageAbout.BackgroundImage = global::Astel.Properties.Resources.ts_preloader_release;
             this.ImageAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ImageAbout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ImageAbout.Location = new System.Drawing.Point(0, 0);
@@ -358,5 +387,6 @@
         private System.Windows.Forms.Panel PanelHeader;
         private System.Windows.Forms.Button CloseAboutBtn;
         private System.Windows.Forms.PictureBox ImageAbout;
+        private System.Windows.Forms.Button About_YouTube;
     }
 }

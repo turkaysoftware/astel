@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Net;
 using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 
@@ -13,17 +14,18 @@ namespace Astel{
         // LINK SYSTEM
         // ======================================================================================================
         public class TS_LinkSystem{
-            public static string
+            public const string
+            // Main Control Links
+            github_link_lv      = "https://raw.githubusercontent.com/turkaysoftware/astel/main/Astel/SoftwareVersion.txt",
+            github_link_lr      = "https://github.com/turkaysoftware/astel/releases/latest",
+            // Social Links
             website_link        = "https://www.turkaysoftware.com",
             twitter_x_link      = "https://x.com/turkaysoftware",
             instagram_link      = "https://www.instagram.com/erayturkayy/",
             github_link         = "https://github.com/turkaysoftware",
-            //
-            github_link_lt      = "https://raw.githubusercontent.com/turkaysoftware/astel/main/Astel/SoftwareVersion.txt",
-            github_link_lr      = "https://github.com/turkaysoftware/astel/releases/latest",
-            //
+            youtube_link        = "https://www.youtube.com/@turkaysoftware",
+            // Other Links
             ts_wizard           = "https://www.turkaysoftware.com/ts-wizard",
-            //
             ts_bmac             = "https://buymeacoffee.com/turkaysoftware";
         }
         // VERSIONS
@@ -63,7 +65,11 @@ namespace Astel{
                 { 9, new KeyValuePair<MessageBoxButtons, MessageBoxIcon>(MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) }  // Yes/No/Cancel ve Soru
             };
             public static DialogResult TS_MessageBox(Form m_form, int m_mode, string m_message, string m_title = ""){
-                m_form.BringToFront();
+                if (m_form.InvokeRequired){
+                    m_form.Invoke((Action)(() => BringFormToFront(m_form)));
+                }else{
+                    BringFormToFront(m_form);
+                }
                 //
                 string m_box_title = string.IsNullOrEmpty(m_title) ? Application.ProductName : m_title;
                 //
@@ -78,13 +84,19 @@ namespace Astel{
                 //
                 return MessageBox.Show(m_form, m_message, m_box_title, m_button, m_icon);
             }
+            private static void BringFormToFront(Form m_form){
+                if (m_form.WindowState == FormWindowState.Minimized)
+                    m_form.WindowState = FormWindowState.Normal;
+                m_form.BringToFront();
+                m_form.Activate();
+            }
         }
         // TS SOFTWARE COPYRIGHT DATE
         // ======================================================================================================
         public class TS_SoftwareCopyrightDate{
             public static string ts_scd_preloader = string.Format("\u00a9 {0}{1}, {2}.", DateTime.Now.Year == 2025 ? "2024-" : "", DateTime.Now.Year, Application.CompanyName);
         }
-        // SETTINGS SAVE PATHS
+        // SETTINGS SAVE PATHS & SESSION SAVE PATHS
         // ======================================================================================================
         public static string ts_df = Application.StartupPath;
         public static string ts_sf = ts_df + @"\" + Application.ProductName + "Settings.ini";
@@ -152,10 +164,11 @@ namespace Astel{
                 // TS PRELOADER
                 { "TSBT_BGColor", Color.FromArgb(236, 242, 248) },
                 { "TSBT_BGColor2", Color.White },
-                { "TSBT_AccentColor", Color.FromArgb(14, 76, 56) },
+                { "TSBT_AccentColor", Color.FromArgb(28, 122, 25) },
                 { "TSBT_LabelColor1", Color.FromArgb(51, 51, 51) },
                 { "TSBT_LabelColor2", Color.FromArgb(100, 100, 100) },
-                { "TSBT_CloseBG", Color.FromArgb(200, 255, 255, 255) },
+                { "TSBT_CloseBG", Color.FromArgb(25, 255, 255, 255) },
+                { "TSBT_CloseBGHover", Color.FromArgb(50, 255, 255, 255) },
                 // HEADER MENU COLOR MODE
                 { "HeaderBGColor", Color.White },
                 { "HeaderFEColor", Color.FromArgb(51, 51, 51) },
@@ -165,15 +178,15 @@ namespace Astel{
                 { "PageContainerBGColor", Color.FromArgb(236, 242, 248) },
                 { "PageContainerUIBGColor", Color.White },
                 { "ContentLabelLeftColor", Color.FromArgb(51, 51, 51) },
-                { "ContentLabelRightColor", Color.FromArgb(14, 76, 56) },
-                { "ContentLabelRightColorHover", Color.FromArgb(18, 94, 70) },
+                { "AccentMain", Color.FromArgb(28, 122, 25) },
+                { "AccentMainHover", Color.FromArgb(33, 136, 29) },
                 { "TextboxBGColor", Color.White },
                 { "TextboxFEColor", Color.FromArgb(51, 51, 51) },
                 { "DataGridBGColor", Color.White },
                 { "DataGridFEColor", Color.FromArgb(51, 51, 51) },
                 { "DataGridGridColor", Color.FromArgb(226, 226, 226) },
                 { "DataGridAlternatingColor", Color.FromArgb(236, 242, 248) },
-                { "DataGridHeaderBGColor", Color.FromArgb(14, 76, 56) },
+                { "DataGridHeaderBGColor", Color.FromArgb(28, 122, 25) },
                 { "DataGridHeaderFEColor", Color.WhiteSmoke },
                 { "DynamicThemeActiveBtnBGColor", Color.WhiteSmoke }
             };
@@ -183,10 +196,11 @@ namespace Astel{
                 // TS PRELOADER
                 { "TSBT_BGColor", Color.FromArgb(21, 23, 32) },
                 { "TSBT_BGColor2", Color.FromArgb(25, 31, 42) },
-                { "TSBT_AccentColor", Color.FromArgb(24, 133, 98) },
+                { "TSBT_AccentColor", Color.FromArgb(38, 187, 33) },
                 { "TSBT_LabelColor1", Color.WhiteSmoke },
                 { "TSBT_LabelColor2", Color.FromArgb(176, 184, 196) },
-                { "TSBT_CloseBG", Color.FromArgb(210, 25, 31, 42) },
+                { "TSBT_CloseBG", Color.FromArgb(75, 25, 31, 42) },
+                { "TSBT_CloseBGHover", Color.FromArgb(100, 25, 31, 42) },
                 // HEADER MENU COLOR MODE
                 { "HeaderBGColor", Color.FromArgb(25, 31, 42) },
                 { "HeaderFEColor", Color.WhiteSmoke },
@@ -196,17 +210,17 @@ namespace Astel{
                 { "PageContainerBGColor", Color.FromArgb(21, 23, 32) },
                 { "PageContainerUIBGColor", Color.FromArgb(25, 31, 42) },
                 { "ContentLabelLeftColor", Color.WhiteSmoke },
-                { "ContentLabelRightColor", Color.FromArgb(19, 97, 72) },
-                { "ContentLabelRightColorHover", Color.FromArgb(24, 116, 86) },
+                { "AccentMain", Color.FromArgb(38, 187, 33) },
+                { "AccentMainHover", Color.FromArgb(43, 206, 38) },
                 { "TextboxBGColor", Color.FromArgb(25, 31, 42) },
                 { "TextboxFEColor", Color.WhiteSmoke },
                 { "DataGridBGColor", Color.FromArgb(25, 31, 42) },
                 { "DataGridFEColor", Color.WhiteSmoke },
                 { "DataGridGridColor", Color.FromArgb(36, 45, 61) },
                 { "DataGridAlternatingColor", Color.FromArgb(21, 23, 32) },
-                { "DataGridHeaderBGColor", Color.FromArgb(19, 97, 72) },
-                { "DataGridHeaderFEColor", Color.WhiteSmoke },
-                { "DynamicThemeActiveBtnBGColor", Color.WhiteSmoke }
+                { "DataGridHeaderBGColor", Color.FromArgb(38, 187, 33) },
+                { "DataGridHeaderFEColor", Color.FromArgb(21, 23, 32) },
+                { "DynamicThemeActiveBtnBGColor", Color.FromArgb(21, 23, 32) }
             };
             // THEME SWITCHER
             // ====================================
@@ -219,69 +233,55 @@ namespace Astel{
                 return Color.Transparent;
             }
         }
-        // TS AES256 ALGORITHM
+        // DPI SENSITIVE DYNAMIC IMAGE RENDERER
         // ======================================================================================================
-        public class TS_AES_Encryption{
-            // 32 byte (256-bit) Key
-            private static readonly string AESKey = "4f5a2e8d8c9f0b1a7d3e7b5a9f1c3d4e5b6a7f9c0b1a2c3d4e5f6a7b8c9d0e1f";
-            // 16 byte (128-bit) IV
-            private static readonly string AESIV = "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d";
-            private static byte[] TSHexStringToByteArray(string get_hex){
-                int hex_length = get_hex.Length;
-                byte[] con_bytes = new byte[hex_length / 2];
-                for (int b = 0; b < hex_length; b += 2){
-                    con_bytes[b / 2] = Convert.ToByte(get_hex.Substring(b, 2), 16);
-                }
-                return con_bytes;
-            }
-            public static string TS_AES_Encrypt(string get_plainText){
-                using (Aes gen_aes = Aes.Create()){
-                    gen_aes.Key = TSHexStringToByteArray(AESKey);
-                    gen_aes.IV = TSHexStringToByteArray(AESIV);
-                    gen_aes.Mode = CipherMode.CBC;
-                    ICryptoTransform transform_encryptor = gen_aes.CreateEncryptor(gen_aes.Key, gen_aes.IV);
-                    using (MemoryStream transform_ms = new MemoryStream()){
-                        using (CryptoStream transform_cs = new CryptoStream(transform_ms, transform_encryptor, CryptoStreamMode.Write)){
-                            using (StreamWriter transform_sw = new StreamWriter(transform_cs)){
-                                transform_sw.Write(get_plainText);
-                            }
-                        }
-                        return Convert.ToBase64String(transform_ms.ToArray());
+        public static void TSImageRenderer(object baseTarget, Image sourceImage, int basePadding, ContentAlignment imageAlign = ContentAlignment.MiddleCenter){
+            if (sourceImage == null || baseTarget == null) return;
+            const int minImageSize = 16;
+            try{
+                int calculatedSize;
+                Image previousImage = null;
+                Image ResizeImage(Image targetImg, int targetSize){
+                    Bitmap resizedEngine = new Bitmap(targetSize, targetSize, PixelFormat.Format32bppArgb);
+                    using (Graphics renderGraphics = Graphics.FromImage(resizedEngine)){
+                        renderGraphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        renderGraphics.SmoothingMode = SmoothingMode.AntiAlias;
+                        renderGraphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                        renderGraphics.CompositingQuality = CompositingQuality.HighQuality;
+                        renderGraphics.DrawImage(targetImg, 0, 0, targetSize, targetSize);
                     }
+                    return resizedEngine;
                 }
-            }
-            public static string TS_AES_Decrypt(string cipherText){
-                using (Aes gen_aes = Aes.Create()){
-                    gen_aes.Key = TSHexStringToByteArray(AESKey);
-                    gen_aes.IV = TSHexStringToByteArray(AESIV);
-                    gen_aes.Mode = CipherMode.CBC;
-                    ICryptoTransform transform_decryptor = gen_aes.CreateDecryptor(gen_aes.Key, gen_aes.IV);
-                    using (MemoryStream transform_ms = new MemoryStream(Convert.FromBase64String(cipherText))){
-                        using (CryptoStream transform_cs = new CryptoStream(transform_ms, transform_decryptor, CryptoStreamMode.Read)){
-                            using (StreamReader transform_sr = new StreamReader(transform_cs)){
-                                return transform_sr.ReadToEnd();
-                            }
-                        }
+                if (baseTarget is Control targetControl){
+                    float dpi = targetControl.DeviceDpi > 0 ? targetControl.DeviceDpi : 96f;
+                    float dpiScaleFactor = dpi / 96f;
+                    int paddingWithScale = (int)Math.Round(basePadding * dpiScaleFactor);
+                    //
+                    calculatedSize = targetControl.Height - paddingWithScale;
+                    if (calculatedSize <= 0) { calculatedSize = minImageSize; }
+                    Image resizedImage = ResizeImage(sourceImage, calculatedSize);
+                    if (targetControl is Button buttonMode){
+                        previousImage = buttonMode.Image;
+                        buttonMode.Image = resizedImage;
+                        buttonMode.ImageAlign = imageAlign;
+                    }else if (targetControl is PictureBox pictureBoxMode){
+                        previousImage = pictureBoxMode.Image;
+                        pictureBoxMode.Image = resizedImage;
+                        pictureBoxMode.SizeMode = PictureBoxSizeMode.Zoom;
+                    }else{
+                        resizedImage.Dispose();
                     }
+                }else if (baseTarget is ToolStripItem toolStripItemMode){
+                    calculatedSize = toolStripItemMode.Height - basePadding;
+                    if (calculatedSize <= 0){ calculatedSize = minImageSize; }
+                    Image resizedImage = ResizeImage(sourceImage, calculatedSize);
+                    previousImage = toolStripItemMode.Image;
+                    toolStripItemMode.Image = resizedImage;
+                }else{
+                    return;
                 }
-            }
-        }
-        // SHA512 AND SALT HASHING
-        // ======================================================================================================
-        public static string ts_hash_salting = "turkaysoftware";
-        public static string TSHashPassword(string password, string salt){
-            using (SHA512 sha512 = SHA512.Create()){
-                byte[] inputBytes = Encoding.UTF8.GetBytes(password + salt);
-                byte[] hashBytes = sha512.ComputeHash(inputBytes);
-                return TSHashStringRotate(hashBytes);
-            }
-        }
-        private static string TSHashStringRotate(byte[] hash_bytes){
-            StringBuilder hash = new StringBuilder(256);
-            foreach (byte be in hash_bytes){
-                hash.Append(be.ToString("X2").ToLower());
-            }
-            return hash.ToString();
+                if (previousImage != null && previousImage != sourceImage){ previousImage.Dispose(); }
+            }catch (Exception){ }
         }
         // INTERNET CONNECTION STATUS
         // ======================================================================================================
@@ -301,9 +301,9 @@ namespace Astel{
         // ======================================================================================================
         [DllImport("DwmApi")]
         public static extern int DwmSetWindowAttribute(IntPtr hwnd, int attr, int[] attrValue, int attrSize);
-        // DPI AWARE
+        // DPI AWARE V2
         // ======================================================================================================
         [DllImport("user32.dll")]
-        public static extern bool SetProcessDPIAware();
+        public static extern bool SetProcessDpiAwarenessContext(IntPtr dpiFlag);
     }
 }

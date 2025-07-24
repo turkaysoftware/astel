@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+// TS MODULES
 using static Astel.TSModules;
+using static Astel.TSSecureModule;
 
 namespace Astel.astel_modules{
     public partial class AstelChangePassword : Form{
@@ -9,10 +12,9 @@ namespace Astel.astel_modules{
         // ======================================================================================================
         public void change_password_system_preloader(){
             try{
-                if (Astel.theme == 1){
-                    try { if (DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4) != 1) { DwmSetWindowAttribute(Handle, 20, new[] { 0 }, 4); } } catch (Exception) { }
-                }else if (Astel.theme == 0){
-                    try { if (DwmSetWindowAttribute(Handle, 19, new[] { 1 }, 4) != 0) { DwmSetWindowAttribute(Handle, 20, new[] { 1 }, 4); } } catch (Exception) { }
+                int set_attribute = Astel.theme == 1 ? 20 : 19;
+                if (DwmSetWindowAttribute(Handle, set_attribute, new[] { 1 }, 4) != Astel.theme){
+                    DwmSetWindowAttribute(Handle, 20, new[] { Astel.theme == 1 ? 0 : 1 }, 4);
                 }
                 BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "PageContainerUIBGColor");
                 Panel_BG.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "HeaderBGColor2");
@@ -31,12 +33,14 @@ namespace Astel.astel_modules{
                 foreach (Control control in Panel_BG.Controls){
                     if (control is Button button){
                         button.ForeColor = TS_ThemeEngine.ColorMode(Astel.theme, "DynamicThemeActiveBtnBGColor");
-                        button.BackColor = TS_ThemeEngine.ColorMode(Astel.theme, "ContentLabelRightColor");
-                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(Astel.theme, "ContentLabelRightColor");
-                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(Astel.theme, "ContentLabelRightColor");
-                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(Astel.theme, "ContentLabelRightColorHover");
+                        button.BackColor = TS_ThemeEngine.ColorMode(Astel.theme, "AccentMain");
+                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(Astel.theme, "AccentMain");
+                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(Astel.theme, "AccentMain");
+                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(Astel.theme, "AccentMainHover");
                     }
                 }
+                //
+                TSImageRenderer(BtnChangePassword, Astel.theme == 1 ? Properties.Resources.ct_confirm_light : Properties.Resources.ct_confirm_dark, 18, ContentAlignment.MiddleLeft);
                 //
                 LabelHeader.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "PageContainerUIBGColor");
                 LabelHeader.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(Astel.theme), "ContentLabelLeftColor");
@@ -50,7 +54,7 @@ namespace Astel.astel_modules{
                 LabelNewPassword.Text = TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_label_password_new"));
                 LabelNewPasswordRepeat.Text = TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_label_password_new_repeat"));
                 CheckPassword.Text = TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_visible"));
-                BtnChangePassword.Text = TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_btn"));
+                BtnChangePassword.Text = TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_btn")) + " ";
             }catch (Exception){ }
         }
         // CHANGE PASSWORD LOAD
@@ -76,6 +80,7 @@ namespace Astel.astel_modules{
                 string password_current = TxtCurrentPassword.Text.Trim();
                 string password_new = TxtNewPassword.Text.Trim();
                 string password_new_repeat = TxtNewPasswordRepeat.Text.Trim();
+                //
                 if (string.IsNullOrEmpty(password_current)){
                     TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_info")));
                     return;
@@ -92,23 +97,36 @@ namespace Astel.astel_modules{
                     TS_MessageBoxEngine.TS_MessageBox(this, 2, TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_pass_req_info")));
                     return;
                 }
-                //
-                password_current = TSHashPassword(TxtCurrentPassword.Text.Trim(), ts_hash_salting);
-                TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
-                string saved_password = software_read_settings.TSReadSettings(ts_settings_container, "Password");
-                //
-                if (password_current == saved_password){
-                    if (password_new == password_new_repeat){
-                        TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
-                        software_setting_save.TSWriteSettings(ts_settings_container, "Password", TSHashPassword(password_new, ts_hash_salting));
-                        TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_pass_change_success")), "\n"));
-                    }
-                    else{
-                        TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_compare_info")), "\n"));
-                    }
-                }else{
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_fail_info")), "\n"));
+                if (password_new != password_new_repeat){
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_compare_info")), "\n"));
+                    return;
                 }
+                //
+                TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
+                string saved_salt = software_read_settings.TSReadSettings(ts_session_container, "PasswordSalt");
+                string saved_password = software_read_settings.TSReadSettings(ts_session_container, "PasswordHash");
+                //
+                if (string.IsNullOrEmpty(saved_salt) || string.IsNullOrEmpty(saved_password)){
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_fail_info")), "\n"));
+                    return;
+                }
+                //
+                string hashed_current = TSHashPassword(password_current, saved_salt);
+                //
+                if (hashed_current != saved_password){
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_fail_info")), "\n"));
+                    return;
+                }
+                //
+                string new_salt = GenerateSalt();
+                string new_hashed_password = TSHashPassword(password_new, new_salt);
+                //
+                TSSettingsSave software_setting_save = new TSSettingsSave(ts_session_file);
+                software_setting_save.TSWriteSettings(ts_session_container, "PasswordSalt", new_salt);
+                software_setting_save.TSWriteSettings(ts_session_container, "PasswordHash", new_hashed_password);
+                //
+                TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(TS_String_Encoder(software_lang.TSReadLangs("AstelChangePassword", "asp_pass_change_success")), "\n"));
+                Hide();
             }catch (Exception){ }
         }
         // CHECK PASSWORD VISIBLE

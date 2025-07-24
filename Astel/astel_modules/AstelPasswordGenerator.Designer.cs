@@ -274,12 +274,15 @@
             this.BtnGenPass.FlatAppearance.BorderSize = 0;
             this.BtnGenPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGenPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnGenPass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnGenPass.Location = new System.Drawing.Point(10, 450);
             this.BtnGenPass.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.BtnGenPass.Name = "BtnGenPass";
             this.BtnGenPass.Size = new System.Drawing.Size(558, 35);
             this.BtnGenPass.TabIndex = 5;
             this.BtnGenPass.Text = "KAYDET";
+            this.BtnGenPass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGenPass.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnGenPass.UseVisualStyleBackColor = false;
             this.BtnGenPass.Click += new System.EventHandler(this.BtnGenPass_Click);
             // 

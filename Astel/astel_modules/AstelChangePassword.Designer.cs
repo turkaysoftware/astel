@@ -94,6 +94,7 @@
             this.TxtNewPasswordRepeat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.TxtNewPasswordRepeat.Location = new System.Drawing.Point(10, 215);
             this.TxtNewPasswordRepeat.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
+            this.TxtNewPasswordRepeat.MaxLength = 32;
             this.TxtNewPasswordRepeat.Name = "TxtNewPasswordRepeat";
             this.TxtNewPasswordRepeat.Size = new System.Drawing.Size(283, 25);
             this.TxtNewPasswordRepeat.TabIndex = 6;
@@ -117,6 +118,7 @@
             this.TxtNewPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.TxtNewPassword.Location = new System.Drawing.Point(10, 156);
             this.TxtNewPassword.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
+            this.TxtNewPassword.MaxLength = 32;
             this.TxtNewPassword.Name = "TxtNewPassword";
             this.TxtNewPassword.Size = new System.Drawing.Size(283, 25);
             this.TxtNewPassword.TabIndex = 4;
@@ -140,6 +142,7 @@
             this.TxtCurrentPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.TxtCurrentPassword.Location = new System.Drawing.Point(10, 97);
             this.TxtCurrentPassword.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
+            this.TxtCurrentPassword.MaxLength = 32;
             this.TxtCurrentPassword.Name = "TxtCurrentPassword";
             this.TxtCurrentPassword.Size = new System.Drawing.Size(283, 25);
             this.TxtCurrentPassword.TabIndex = 2;
@@ -152,11 +155,14 @@
             this.BtnChangePassword.FlatAppearance.BorderSize = 0;
             this.BtnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnChangePassword.Location = new System.Drawing.Point(10, 305);
             this.BtnChangePassword.Name = "BtnChangePassword";
             this.BtnChangePassword.Size = new System.Drawing.Size(283, 35);
             this.BtnChangePassword.TabIndex = 8;
             this.BtnChangePassword.Text = "KAYDET";
+            this.BtnChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnChangePassword.UseVisualStyleBackColor = false;
             this.BtnChangePassword.Click += new System.EventHandler(this.BtnChangePassword_Click);
             // 
