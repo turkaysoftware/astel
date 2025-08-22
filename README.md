@@ -13,9 +13,12 @@ Programmed with C# and .NET Framework only. No external libraries, no dependenci
 
 [Click here](https://www.turkaysoftware.com/astel) for full specifications.
 
-![Astel UI - Dark](https://github.com/user-attachments/assets/110409fe-d73c-4bc1-9fcf-c17e704f7ee1)
+<img width="1010" height="633" alt="Astel UI - Dark" src="https://github.com/user-attachments/assets/6fd53616-3d17-4e70-9b97-b0abbaa0550e" />
 
-![Astel UI - Light](https://github.com/user-attachments/assets/9238db9b-7956-47da-8840-07c48c83a546)
+<img width="1010" height="633" alt="Astel UI - Light" src="https://github.com/user-attachments/assets/2da2b5db-7f0a-4a2c-8e45-3e47cdf27d18" />
+
+# Astel Passoword Generator Feature
+<img width="586" height="533" alt="Astel - Password Generator" src="https://github.com/user-attachments/assets/c5bb245f-a769-4db1-96cb-18ba48c4c1d0" />
 
 # Download Astel
 
@@ -44,6 +47,7 @@ With these instructions, you can download and use the correct version of Astel f
 # Supported Languages
 
 - English
+- Italian
 - Turkish
 
 # Supported Themes
@@ -77,16 +81,21 @@ With these instructions, you can download and use the correct version of Astel f
 | **Theme:** Dark | F2 |
 | **Start:** Windowed | F3 |
 | **Start:** Full Screen | F4 |
-| **Data Transfer:** Export Data | F5 |
-| **Data Transfer:** Import Data  | F6 |
-| **Automatic Backup:** Backup On | F7 |
-| **Automatic Backup:** Backup Off | F8 |
-| **Automatic Backup:** Open Backup Folder | F9 |
+| **Data Transfer:** Export Astel File | CTRL + Shift + 1 |
+| **Data Transfer:** Export CSV File | CTRL + Shift + 2 |
+| **Data Transfer:** Import Astel File  | CTRL + Shift + 3 |
+| **Data Transfer:** Import CSV File  | CTRL + Shift + 4 |
+| **Automatic Backup:** Backup On | F5 |
+| **Automatic Backup:** Backup Off | F6 |
+| **Automatic Backup:** Open Backup Folder | F7 |
+| **Safety Warnings:** On | F8 |
+| **Safety Warnings:** Off | F9 |
 | **Change Password** | F10 |
-| **Password Generator** | CTRL + R |
+| **Password Generator** | CTRL + P |
 
 | Extras | Key |
 | -- | :--: |
 | **Check Update** | F11 |
 | **About** | F12 |
 | **TS Wizard** | CTRL + Shift + S |
+| **Buy Me a Coffee** | CTRL + Shift + D |
