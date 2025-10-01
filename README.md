@@ -48,6 +48,7 @@ With these instructions, you can download and use the correct version of Astel f
 
 - English
 - Italian
+- Polish
 - Turkish
 
 # Supported Themes
@@ -79,18 +80,19 @@ With these instructions, you can download and use the correct version of Astel f
 | -- | :--: |
 | **Theme:** Light | F1 |
 | **Theme:** Dark | F2 |
-| **Start:** Windowed | F3 |
-| **Start:** Full Screen | F4 |
+| **Theme:** System | F3 |
+| **Start:** Windowed | F4 |
+| **Start:** Full Screen | F5 |
 | **Data Transfer:** Export Astel File | CTRL + Shift + 1 |
 | **Data Transfer:** Export CSV File | CTRL + Shift + 2 |
 | **Data Transfer:** Import Astel File  | CTRL + Shift + 3 |
 | **Data Transfer:** Import CSV File  | CTRL + Shift + 4 |
-| **Automatic Backup:** Backup On | F5 |
-| **Automatic Backup:** Backup Off | F6 |
-| **Automatic Backup:** Open Backup Folder | F7 |
-| **Safety Warnings:** On | F8 |
-| **Safety Warnings:** Off | F9 |
-| **Change Password** | F10 |
+| **Automatic Backup:** Backup On | F6 |
+| **Automatic Backup:** Backup Off | F7 |
+| **Automatic Backup:** Open Backup Folder | F8 |
+| **Safety Warnings:** On | F9 |
+| **Safety Warnings:** Off | F10 |
+| **Change Password** | CTRL + F10 |
 | **Password Generator** | CTRL + P |
 
 | Extras | Key |
