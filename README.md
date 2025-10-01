@@ -18,7 +18,8 @@ Programmed with C# and .NET Framework only. No external libraries, no dependenci
 <img width="1010" height="633" alt="Astel UI - Light" src="https://github.com/user-attachments/assets/f8216f73-09b6-4911-a194-da2e55b08917" />
 
 # Astel Passoword Generator Feature
-<img width="586" height="533" alt="Astel - Password Generator" src="https://github.com/user-attachments/assets/c5bb245f-a769-4db1-96cb-18ba48c4c1d0" />
+<img width="586" height="533" alt="Astel - Password Generator" src="https://github.com/user-attachments/assets/559bcfbc-fd68-4d11-966a-0a78f8ba022b" />
+
 
 # Download Astel
 
