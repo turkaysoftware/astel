@@ -83,7 +83,7 @@
             this.LabelDeveloper.Location = new System.Drawing.Point(15, 9);
             this.LabelDeveloper.Margin = new System.Windows.Forms.Padding(0);
             this.LabelDeveloper.Name = "LabelDeveloper";
-            this.LabelDeveloper.Size = new System.Drawing.Size(294, 35);
+            this.LabelDeveloper.Size = new System.Drawing.Size(326, 35);
             this.LabelDeveloper.TabIndex = 0;
             this.LabelDeveloper.Text = "Türkay Software";
             this.LabelDeveloper.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -92,11 +92,11 @@
             // 
             this.LabelSoftware.BackColor = System.Drawing.Color.Transparent;
             this.LabelSoftware.Font = new System.Drawing.Font("Segoe UI Black", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LabelSoftware.ForeColor = System.Drawing.Color.Green;
+            this.LabelSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.LabelSoftware.Location = new System.Drawing.Point(15, 42);
             this.LabelSoftware.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.LabelSoftware.Name = "LabelSoftware";
-            this.LabelSoftware.Size = new System.Drawing.Size(294, 35);
+            this.LabelSoftware.Size = new System.Drawing.Size(326, 35);
             this.LabelSoftware.TabIndex = 1;
             this.LabelSoftware.Text = "Preloader";
             // 
@@ -128,7 +128,7 @@
             // 
             // PanelLoaderFE
             // 
-            this.PanelLoaderFE.BackColor = System.Drawing.Color.Green;
+            this.PanelLoaderFE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.PanelLoaderFE.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelLoaderFE.Location = new System.Drawing.Point(0, 0);
             this.PanelLoaderFE.Name = "PanelLoaderFE";
@@ -181,9 +181,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(775, 450);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(775, 450);
             this.Name = "TSPreloader";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TSPreloader";

@@ -73,10 +73,10 @@
             // 
             // About_BmacBtn
             // 
-            this.About_BmacBtn.BackColor = System.Drawing.Color.Green;
-            this.About_BmacBtn.BackgroundColor = System.Drawing.Color.Green;
+            this.About_BmacBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.About_BmacBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.About_BmacBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.About_BmacBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.About_BmacBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.About_BmacBtn.BorderRadius = 10;
             this.About_BmacBtn.BorderSize = 0;
             this.About_BmacBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -85,11 +85,11 @@
             this.About_BmacBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
             this.About_BmacBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.About_BmacBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.About_BmacBtn.Location = new System.Drawing.Point(15, 173);
+            this.About_BmacBtn.Location = new System.Drawing.Point(15, 174);
             this.About_BmacBtn.Margin = new System.Windows.Forms.Padding(3, 1, 1, 25);
             this.About_BmacBtn.Name = "About_BmacBtn";
             this.About_BmacBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.About_BmacBtn.Size = new System.Drawing.Size(335, 35);
+            this.About_BmacBtn.Size = new System.Drawing.Size(335, 36);
             this.About_BmacBtn.TabIndex = 5;
             this.About_BmacBtn.Text = "Media / Bmac";
             this.About_BmacBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -110,13 +110,13 @@
             this.AboutTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.AboutTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.AboutTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.AboutTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AboutTable.Cursor = System.Windows.Forms.Cursors.Default;
@@ -124,13 +124,13 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.AboutTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.AboutTable.EnableHeadersVisualStyles = false;
             this.AboutTable.GridColor = System.Drawing.Color.Gray;
-            this.AboutTable.Location = new System.Drawing.Point(15, 236);
+            this.AboutTable.Location = new System.Drawing.Point(15, 238);
             this.AboutTable.MultiSelect = false;
             this.AboutTable.Name = "AboutTable";
             this.AboutTable.ReadOnly = true;
@@ -138,23 +138,23 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.AboutTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.AboutTable.RowHeadersVisible = false;
             this.AboutTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.AboutTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.AboutTable.Size = new System.Drawing.Size(335, 146);
+            this.AboutTable.Size = new System.Drawing.Size(335, 144);
             this.AboutTable.TabIndex = 6;
             this.AboutTable.SelectionChanged += new System.EventHandler(this.AboutTable_SelectionChanged);
             // 
             // About_GitHubBtn
             // 
-            this.About_GitHubBtn.BackColor = System.Drawing.Color.Green;
-            this.About_GitHubBtn.BackgroundColor = System.Drawing.Color.Green;
+            this.About_GitHubBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.About_GitHubBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.About_GitHubBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.About_GitHubBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.About_GitHubBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.About_GitHubBtn.BorderRadius = 10;
             this.About_GitHubBtn.BorderSize = 0;
             this.About_GitHubBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -167,7 +167,7 @@
             this.About_GitHubBtn.Margin = new System.Windows.Forms.Padding(1, 1, 3, 25);
             this.About_GitHubBtn.Name = "About_GitHubBtn";
             this.About_GitHubBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.About_GitHubBtn.Size = new System.Drawing.Size(166, 35);
+            this.About_GitHubBtn.Size = new System.Drawing.Size(166, 36);
             this.About_GitHubBtn.TabIndex = 4;
             this.About_GitHubBtn.Text = "Media / GitHub";
             this.About_GitHubBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -178,10 +178,10 @@
             // 
             // About_WebsiteBtn
             // 
-            this.About_WebsiteBtn.BackColor = System.Drawing.Color.Green;
-            this.About_WebsiteBtn.BackgroundColor = System.Drawing.Color.Green;
+            this.About_WebsiteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.About_WebsiteBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.About_WebsiteBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.About_WebsiteBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.About_WebsiteBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.About_WebsiteBtn.BorderRadius = 10;
             this.About_WebsiteBtn.BorderSize = 0;
             this.About_WebsiteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -194,7 +194,7 @@
             this.About_WebsiteBtn.Margin = new System.Windows.Forms.Padding(3, 3, 1, 1);
             this.About_WebsiteBtn.Name = "About_WebsiteBtn";
             this.About_WebsiteBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.About_WebsiteBtn.Size = new System.Drawing.Size(166, 35);
+            this.About_WebsiteBtn.Size = new System.Drawing.Size(166, 36);
             this.About_WebsiteBtn.TabIndex = 3;
             this.About_WebsiteBtn.Text = "Media / Web";
             this.About_WebsiteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,7 +239,7 @@
             this.LabelDeveloper.Location = new System.Drawing.Point(15, 9);
             this.LabelDeveloper.Margin = new System.Windows.Forms.Padding(0);
             this.LabelDeveloper.Name = "LabelDeveloper";
-            this.LabelDeveloper.Size = new System.Drawing.Size(294, 35);
+            this.LabelDeveloper.Size = new System.Drawing.Size(335, 35);
             this.LabelDeveloper.TabIndex = 0;
             this.LabelDeveloper.Text = "Türkay Software";
             this.LabelDeveloper.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -248,11 +248,11 @@
             // 
             this.LabelSoftware.BackColor = System.Drawing.Color.Transparent;
             this.LabelSoftware.Font = new System.Drawing.Font("Segoe UI Black", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.LabelSoftware.ForeColor = System.Drawing.Color.Green;
+            this.LabelSoftware.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.LabelSoftware.Location = new System.Drawing.Point(15, 42);
             this.LabelSoftware.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.LabelSoftware.Name = "LabelSoftware";
-            this.LabelSoftware.Size = new System.Drawing.Size(294, 35);
+            this.LabelSoftware.Size = new System.Drawing.Size(335, 35);
             this.LabelSoftware.TabIndex = 1;
             this.LabelSoftware.Text = "About";
             // 
@@ -281,7 +281,7 @@
             // 
             // CloseAboutBtn
             // 
-            this.CloseAboutBtn.BackColor = System.Drawing.Color.Green;
+            this.CloseAboutBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.CloseAboutBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.CloseAboutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseAboutBtn.Dock = System.Windows.Forms.DockStyle.Right;
@@ -320,9 +320,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(775, 450);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(775, 450);
             this.Name = "AstelAbout";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AstelAbout";

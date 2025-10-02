@@ -33,8 +33,8 @@
             this.CheckPassword = new System.Windows.Forms.CheckBox();
             this.LabelPassword = new System.Windows.Forms.Label();
             this.TxtPassword = new System.Windows.Forms.TextBox();
-            this.LabelHeader = new System.Windows.Forms.Label();
             this.BtnLogin = new Astel.TSCustomButton();
+            this.LabelHeader = new System.Windows.Forms.Label();
             this.Panel_BG.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,25 +93,11 @@
             this.TxtPassword.Size = new System.Drawing.Size(333, 25);
             this.TxtPassword.TabIndex = 2;
             // 
-            // LabelHeader
-            // 
-            this.LabelHeader.BackColor = System.Drawing.Color.White;
-            this.LabelHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LabelHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.LabelHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeader.Location = new System.Drawing.Point(10, 10);
-            this.LabelHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
-            this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(333, 35);
-            this.LabelHeader.TabIndex = 0;
-            this.LabelHeader.Text = "GİRİŞ YAP";
-            this.LabelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // BtnLogin
             // 
-            this.BtnLogin.BackColor = System.Drawing.Color.Green;
-            this.BtnLogin.BackgroundColor = System.Drawing.Color.Green;
-            this.BtnLogin.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnLogin.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnLogin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.BtnLogin.BorderRadius = 10;
             this.BtnLogin.BorderSize = 0;
             this.BtnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -126,11 +112,25 @@
             this.BtnLogin.Size = new System.Drawing.Size(333, 35);
             this.BtnLogin.TabIndex = 4;
             this.BtnLogin.Text = "KAYDET";
-            this.BtnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnLogin.TextColor = System.Drawing.Color.White;
-            this.BtnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnLogin.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLogin.UseVisualStyleBackColor = false;
             this.BtnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            // 
+            // LabelHeader
+            // 
+            this.LabelHeader.BackColor = System.Drawing.Color.White;
+            this.LabelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LabelHeader.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.LabelHeader.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LabelHeader.Location = new System.Drawing.Point(10, 10);
+            this.LabelHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
+            this.LabelHeader.Name = "LabelHeader";
+            this.LabelHeader.Size = new System.Drawing.Size(333, 35);
+            this.LabelHeader.TabIndex = 0;
+            this.LabelHeader.Text = "GİRİŞ YAP";
+            this.LabelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AstelLogin
             // 
@@ -142,9 +142,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(375, 280);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(375, 280);
             this.Name = "AstelLogin";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

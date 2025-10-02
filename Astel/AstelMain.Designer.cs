@@ -37,6 +37,7 @@
             this.Panel_Main = new System.Windows.Forms.Panel();
             this.DataMainTable = new System.Windows.Forms.DataGridView();
             this.Panel_Footer = new System.Windows.Forms.Panel();
+            this.BtnOpenUrl = new Astel.TSCustomButton();
             this.BtnRndPssGen = new Astel.TSCustomButton();
             this.BtnCopyUrl = new Astel.TSCustomButton();
             this.LabelUrl = new System.Windows.Forms.Label();
@@ -62,9 +63,11 @@
             this.themeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lightThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.systemThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.italianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.polishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turkishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -119,13 +122,13 @@
             this.DataMainTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataMainTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataMainTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataMainTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataMainTable.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -133,7 +136,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DataMainTable.DefaultCellStyle = dataGridViewCellStyle3;
@@ -148,7 +151,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(87)))), ((int)(((byte)(160)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DataMainTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
@@ -161,6 +164,7 @@
             // 
             // Panel_Footer
             // 
+            this.Panel_Footer.Controls.Add(this.BtnOpenUrl);
             this.Panel_Footer.Controls.Add(this.BtnRndPssGen);
             this.Panel_Footer.Controls.Add(this.BtnCopyUrl);
             this.Panel_Footer.Controls.Add(this.LabelUrl);
@@ -184,11 +188,32 @@
             this.Panel_Footer.Size = new System.Drawing.Size(988, 180);
             this.Panel_Footer.TabIndex = 1;
             // 
+            // BtnOpenUrl
+            // 
+            this.BtnOpenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BorderRadius = 3;
+            this.BtnOpenUrl.BorderSize = 0;
+            this.BtnOpenUrl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnOpenUrl.FlatAppearance.BorderSize = 0;
+            this.BtnOpenUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOpenUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnOpenUrl.ForeColor = System.Drawing.Color.White;
+            this.BtnOpenUrl.Location = new System.Drawing.Point(678, 31);
+            this.BtnOpenUrl.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.BtnOpenUrl.Name = "BtnOpenUrl";
+            this.BtnOpenUrl.Size = new System.Drawing.Size(27, 27);
+            this.BtnOpenUrl.TabIndex = 13;
+            this.BtnOpenUrl.TextColor = System.Drawing.Color.White;
+            this.BtnOpenUrl.UseVisualStyleBackColor = false;
+            this.BtnOpenUrl.Click += new System.EventHandler(this.BtnOpenUrl_Click);
+            // 
             // BtnRndPssGen
             // 
-            this.BtnRndPssGen.BackColor = System.Drawing.Color.DimGray;
-            this.BtnRndPssGen.BackgroundColor = System.Drawing.Color.DimGray;
-            this.BtnRndPssGen.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnRndPssGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnRndPssGen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnRndPssGen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.BtnRndPssGen.BorderRadius = 3;
             this.BtnRndPssGen.BorderSize = 0;
             this.BtnRndPssGen.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -206,9 +231,9 @@
             // 
             // BtnCopyUrl
             // 
-            this.BtnCopyUrl.BackColor = System.Drawing.Color.DimGray;
-            this.BtnCopyUrl.BackgroundColor = System.Drawing.Color.DimGray;
-            this.BtnCopyUrl.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnCopyUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.BtnCopyUrl.BorderRadius = 3;
             this.BtnCopyUrl.BorderSize = 0;
             this.BtnCopyUrl.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -216,8 +241,7 @@
             this.BtnCopyUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCopyUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
             this.BtnCopyUrl.ForeColor = System.Drawing.Color.White;
-            this.BtnCopyUrl.Location = new System.Drawing.Point(640, 31);
-            this.BtnCopyUrl.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.BtnCopyUrl.Location = new System.Drawing.Point(645, 31);
             this.BtnCopyUrl.Name = "BtnCopyUrl";
             this.BtnCopyUrl.Size = new System.Drawing.Size(27, 27);
             this.BtnCopyUrl.TabIndex = 12;
@@ -246,7 +270,7 @@
             this.TxtUrl.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.TxtUrl.MaxLength = 128;
             this.TxtUrl.Name = "TxtUrl";
-            this.TxtUrl.Size = new System.Drawing.Size(274, 25);
+            this.TxtUrl.Size = new System.Drawing.Size(279, 25);
             this.TxtUrl.TabIndex = 11;
             // 
             // CmbService
@@ -282,14 +306,14 @@
             this.FLP_Btns.Location = new System.Drawing.Point(763, 10);
             this.FLP_Btns.Name = "FLP_Btns";
             this.FLP_Btns.Size = new System.Drawing.Size(225, 165);
-            this.FLP_Btns.TabIndex = 15;
+            this.FLP_Btns.TabIndex = 16;
             // 
             // DeleteBtn
             // 
             this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteBtn.BackColor = System.Drawing.Color.DimGray;
-            this.DeleteBtn.BackgroundColor = System.Drawing.Color.DimGray;
-            this.DeleteBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.DeleteBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.DeleteBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.DeleteBtn.BorderRadius = 10;
             this.DeleteBtn.BorderSize = 0;
             this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -300,7 +324,7 @@
             this.DeleteBtn.Location = new System.Drawing.Point(0, 125);
             this.DeleteBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.DeleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.DeleteBtn.Size = new System.Drawing.Size(225, 40);
             this.DeleteBtn.TabIndex = 2;
             this.DeleteBtn.Text = "SİL";
@@ -312,9 +336,9 @@
             // UpdateBtn
             // 
             this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdateBtn.BackColor = System.Drawing.Color.DimGray;
-            this.UpdateBtn.BackgroundColor = System.Drawing.Color.DimGray;
-            this.UpdateBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.UpdateBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.UpdateBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.UpdateBtn.BorderRadius = 10;
             this.UpdateBtn.BorderSize = 0;
             this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -322,10 +346,10 @@
             this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
             this.UpdateBtn.ForeColor = System.Drawing.Color.White;
-            this.UpdateBtn.Location = new System.Drawing.Point(0, 75);
-            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.UpdateBtn.Location = new System.Drawing.Point(0, 73);
+            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(0, 7, 0, 7);
             this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.UpdateBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.UpdateBtn.Size = new System.Drawing.Size(225, 40);
             this.UpdateBtn.TabIndex = 1;
             this.UpdateBtn.Text = "GÜNCELLE";
@@ -337,9 +361,9 @@
             // AddBtn
             // 
             this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddBtn.BackColor = System.Drawing.Color.DimGray;
-            this.AddBtn.BackgroundColor = System.Drawing.Color.DimGray;
-            this.AddBtn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.AddBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.AddBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.AddBtn.BorderRadius = 10;
             this.AddBtn.BorderSize = 0;
             this.AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -347,10 +371,10 @@
             this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
             this.AddBtn.ForeColor = System.Drawing.Color.White;
-            this.AddBtn.Location = new System.Drawing.Point(0, 25);
+            this.AddBtn.Location = new System.Drawing.Point(0, 21);
             this.AddBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.AddBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
             this.AddBtn.Size = new System.Drawing.Size(225, 40);
             this.AddBtn.TabIndex = 0;
             this.AddBtn.Text = "EKLE";
@@ -386,9 +410,9 @@
             // 
             // BtnCopyPassword
             // 
-            this.BtnCopyPassword.BackColor = System.Drawing.Color.DimGray;
-            this.BtnCopyPassword.BackgroundColor = System.Drawing.Color.DimGray;
-            this.BtnCopyPassword.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnCopyPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyPassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.BtnCopyPassword.BorderRadius = 3;
             this.BtnCopyPassword.BorderSize = 0;
             this.BtnCopyPassword.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -407,9 +431,9 @@
             // 
             // BtnCopyEmail
             // 
-            this.BtnCopyEmail.BackColor = System.Drawing.Color.DimGray;
-            this.BtnCopyEmail.BackgroundColor = System.Drawing.Color.DimGray;
-            this.BtnCopyEmail.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnCopyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyEmail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.BtnCopyEmail.BorderRadius = 3;
             this.BtnCopyEmail.BorderSize = 0;
             this.BtnCopyEmail.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -436,7 +460,7 @@
             this.LabelNote.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.LabelNote.Name = "LabelNote";
             this.LabelNote.Size = new System.Drawing.Size(33, 19);
-            this.LabelNote.TabIndex = 13;
+            this.LabelNote.TabIndex = 14;
             this.LabelNote.Text = "Not";
             // 
             // TxtNote
@@ -448,8 +472,8 @@
             this.TxtNote.MaxLength = 128;
             this.TxtNote.Multiline = true;
             this.TxtNote.Name = "TxtNote";
-            this.TxtNote.Size = new System.Drawing.Size(307, 84);
-            this.TxtNote.TabIndex = 14;
+            this.TxtNote.Size = new System.Drawing.Size(345, 84);
+            this.TxtNote.TabIndex = 15;
             // 
             // LabelPassword
             // 
@@ -538,16 +562,17 @@
             // 
             this.themeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lightThemeToolStripMenuItem,
-            this.darkThemeToolStripMenuItem});
+            this.darkThemeToolStripMenuItem,
+            this.systemThemeToolStripMenuItem});
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
-            this.themeToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.themeToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.themeToolStripMenuItem.Text = "Theme";
             // 
             // lightThemeToolStripMenuItem
             // 
             this.lightThemeToolStripMenuItem.Name = "lightThemeToolStripMenuItem";
             this.lightThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.lightThemeToolStripMenuItem.Text = "Light Theme";
             this.lightThemeToolStripMenuItem.Click += new System.EventHandler(this.LightThemeToolStripMenuItem_Click);
             // 
@@ -555,18 +580,27 @@
             // 
             this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
             this.darkThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.darkThemeToolStripMenuItem.Text = "Dark Theme";
             this.darkThemeToolStripMenuItem.Click += new System.EventHandler(this.DarkThemeToolStripMenuItem_Click);
+            // 
+            // systemThemeToolStripMenuItem
+            // 
+            this.systemThemeToolStripMenuItem.Name = "systemThemeToolStripMenuItem";
+            this.systemThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.systemThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.systemThemeToolStripMenuItem.Text = "System Theme";
+            this.systemThemeToolStripMenuItem.Click += new System.EventHandler(this.SystemThemeToolStripMenuItem_Click);
             // 
             // languageToolStripMenuItem
             // 
             this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.englishToolStripMenuItem,
             this.italianToolStripMenuItem,
+            this.polishToolStripMenuItem,
             this.turkishToolStripMenuItem});
             this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-            this.languageToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.languageToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.languageToolStripMenuItem.Text = "Language";
             // 
             // englishToolStripMenuItem
@@ -581,6 +615,12 @@
             this.italianToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.italianToolStripMenuItem.Text = "Italian";
             // 
+            // polishToolStripMenuItem
+            // 
+            this.polishToolStripMenuItem.Name = "polishToolStripMenuItem";
+            this.polishToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.polishToolStripMenuItem.Text = "Polish";
+            // 
             // turkishToolStripMenuItem
             // 
             this.turkishToolStripMenuItem.Name = "turkishToolStripMenuItem";
@@ -593,13 +633,13 @@
             this.windowedToolStripMenuItem,
             this.fullScreenToolStripMenuItem});
             this.startupToolStripMenuItem.Name = "startupToolStripMenuItem";
-            this.startupToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.startupToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.startupToolStripMenuItem.Text = "Startup";
             // 
             // windowedToolStripMenuItem
             // 
             this.windowedToolStripMenuItem.Name = "windowedToolStripMenuItem";
-            this.windowedToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
+            this.windowedToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
             this.windowedToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.windowedToolStripMenuItem.Text = "Windowed";
             this.windowedToolStripMenuItem.Click += new System.EventHandler(this.WindowedToolStripMenuItem_Click);
@@ -607,7 +647,7 @@
             // fullScreenToolStripMenuItem
             // 
             this.fullScreenToolStripMenuItem.Name = "fullScreenToolStripMenuItem";
-            this.fullScreenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F4;
+            this.fullScreenToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.fullScreenToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.fullScreenToolStripMenuItem.Text = "Full Screen";
             this.fullScreenToolStripMenuItem.Click += new System.EventHandler(this.FullScreenToolStripMenuItem_Click);
@@ -618,7 +658,7 @@
             this.exportDataToolStripMenuItem,
             this.importDataToolStripMenuItem});
             this.dataTransferToolStripMenuItem.Name = "dataTransferToolStripMenuItem";
-            this.dataTransferToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.dataTransferToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.dataTransferToolStripMenuItem.Text = "Data Transfer";
             // 
             // exportDataToolStripMenuItem
@@ -682,13 +722,13 @@
             this.autoDataBackupOffToolStripMenuItem,
             this.autoDataBackupFolderToolStripMenuItem});
             this.autoDataBackupToolStripMenuItem.Name = "autoDataBackupToolStripMenuItem";
-            this.autoDataBackupToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.autoDataBackupToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.autoDataBackupToolStripMenuItem.Text = "Data Backup";
             // 
             // autoDataBackupOnToolStripMenuItem
             // 
             this.autoDataBackupOnToolStripMenuItem.Name = "autoDataBackupOnToolStripMenuItem";
-            this.autoDataBackupOnToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
+            this.autoDataBackupOnToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
             this.autoDataBackupOnToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoDataBackupOnToolStripMenuItem.Text = "Data Backup On";
             this.autoDataBackupOnToolStripMenuItem.Click += new System.EventHandler(this.AutoDataBackupOnToolStripMenuItem_Click);
@@ -696,7 +736,7 @@
             // autoDataBackupOffToolStripMenuItem
             // 
             this.autoDataBackupOffToolStripMenuItem.Name = "autoDataBackupOffToolStripMenuItem";
-            this.autoDataBackupOffToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F6;
+            this.autoDataBackupOffToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
             this.autoDataBackupOffToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoDataBackupOffToolStripMenuItem.Text = "Data Backup Off";
             this.autoDataBackupOffToolStripMenuItem.Click += new System.EventHandler(this.AutoDataBackupOffToolStripMenuItem_Click);
@@ -704,7 +744,7 @@
             // autoDataBackupFolderToolStripMenuItem
             // 
             this.autoDataBackupFolderToolStripMenuItem.Name = "autoDataBackupFolderToolStripMenuItem";
-            this.autoDataBackupFolderToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F7;
+            this.autoDataBackupFolderToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F8;
             this.autoDataBackupFolderToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
             this.autoDataBackupFolderToolStripMenuItem.Text = "Data Backup Folder";
             this.autoDataBackupFolderToolStripMenuItem.Click += new System.EventHandler(this.AutoDataBackupFolderToolStripMenuItem_Click);
@@ -715,30 +755,30 @@
             this.safetyWarningsOnToolStripMenuItem,
             this.safetyWarningsOffToolStripMenuItem});
             this.safetyWarningsToolStripMenuItem.Name = "safetyWarningsToolStripMenuItem";
-            this.safetyWarningsToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.safetyWarningsToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.safetyWarningsToolStripMenuItem.Text = "Safety Warnings";
             // 
             // safetyWarningsOnToolStripMenuItem
             // 
             this.safetyWarningsOnToolStripMenuItem.Name = "safetyWarningsOnToolStripMenuItem";
-            this.safetyWarningsOnToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F8;
-            this.safetyWarningsOnToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.safetyWarningsOnToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
+            this.safetyWarningsOnToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.safetyWarningsOnToolStripMenuItem.Text = "Safety Warnings On";
             this.safetyWarningsOnToolStripMenuItem.Click += new System.EventHandler(this.SafetyWarningsOnToolStripMenuItem_Click);
             // 
             // safetyWarningsOffToolStripMenuItem
             // 
             this.safetyWarningsOffToolStripMenuItem.Name = "safetyWarningsOffToolStripMenuItem";
-            this.safetyWarningsOffToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F9;
-            this.safetyWarningsOffToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.safetyWarningsOffToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
+            this.safetyWarningsOffToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.safetyWarningsOffToolStripMenuItem.Text = "Safety Warnings Off";
             this.safetyWarningsOffToolStripMenuItem.Click += new System.EventHandler(this.SafetyWarningsOffToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.changePasswordToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F10)));
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.ChangePasswordToolStripMenuItem_Click);
             // 
@@ -746,7 +786,7 @@
             // 
             this.checkforUpdatesToolStripMenuItem.Name = "checkforUpdatesToolStripMenuItem";
             this.checkforUpdatesToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F11;
-            this.checkforUpdatesToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.checkforUpdatesToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.checkforUpdatesToolStripMenuItem.Text = "Check Update";
             this.checkforUpdatesToolStripMenuItem.Click += new System.EventHandler(this.CheckforUpdatesToolStripMenuItem_Click);
             // 
@@ -875,6 +915,9 @@
         private System.Windows.Forms.ToolStripMenuItem safetyWarningsOffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem italianToolStripMenuItem;
         private TSCustomButton BtnRndPssGen;
+        private System.Windows.Forms.ToolStripMenuItem systemThemeToolStripMenuItem;
+        private TSCustomButton BtnOpenUrl;
+        private System.Windows.Forms.ToolStripMenuItem polishToolStripMenuItem;
     }
 }
 

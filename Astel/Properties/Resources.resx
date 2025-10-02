@@ -166,6 +166,12 @@
   <data name="ct_instagram_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\theme_light\ct_instagram_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ct_link_mc_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_ui\theme_dark\ct_link_mc_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ct_link_mc_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_ui\theme_light\ct_link_mc_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ct_login_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\theme_dark\ct_login_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

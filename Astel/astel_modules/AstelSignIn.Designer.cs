@@ -73,9 +73,9 @@
             // 
             // BtnSignIn
             // 
-            this.BtnSignIn.BackColor = System.Drawing.Color.Green;
-            this.BtnSignIn.BackgroundColor = System.Drawing.Color.Green;
-            this.BtnSignIn.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnSignIn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnSignIn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.BtnSignIn.BorderRadius = 10;
             this.BtnSignIn.BorderSize = 0;
             this.BtnSignIn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -90,9 +90,9 @@
             this.BtnSignIn.Size = new System.Drawing.Size(333, 35);
             this.BtnSignIn.TabIndex = 6;
             this.BtnSignIn.Text = "KAYDET";
-            this.BtnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSignIn.TextColor = System.Drawing.Color.White;
-            this.BtnSignIn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnSignIn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnSignIn.UseVisualStyleBackColor = false;
             this.BtnSignIn.Click += new System.EventHandler(this.BtnSignIn_Click);
             // 
@@ -172,9 +172,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(375, 340);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(375, 340);
             this.Name = "AstelSignIn";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

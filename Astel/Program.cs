@@ -19,12 +19,9 @@ namespace Astel{
         // VERSION MODE
         public static int ts_version_mode = 0;
         // ======================================================================================================
-        // DPI AWARE MODERN API
-        static readonly IntPtr DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2 = new IntPtr(-4);
-        // ======================================================================================================
         [STAThread]
         static void Main(){
-            SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2); // PerMonitorV2
+            SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
             //
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -41,14 +41,14 @@
             this.CheckUppercase = new System.Windows.Forms.CheckBox();
             this.Panel_Mode = new System.Windows.Forms.Panel();
             this.LabelMode = new System.Windows.Forms.Label();
+            this.RadioMixed = new System.Windows.Forms.RadioButton();
+            this.RadioWrite = new System.Windows.Forms.RadioButton();
+            this.RadioRead = new System.Windows.Forms.RadioButton();
+            this.BtnGenPass = new Astel.TSCustomButton();
             this.PassLenghtLabel = new System.Windows.Forms.Label();
             this.PassGenLenght = new System.Windows.Forms.TrackBar();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.MainToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.RadioMixed = new Astel.TSCustomRadioButton();
-            this.RadioWrite = new Astel.TSCustomRadioButton();
-            this.RadioRead = new Astel.TSCustomRadioButton();
-            this.BtnGenPass = new Astel.TSCustomButton();
             this.Panel_BG.SuspendLayout();
             this.TLP_Control.SuspendLayout();
             this.Panel_Feature.SuspendLayout();
@@ -225,6 +225,76 @@
             this.LabelMode.Text = "GİRİŞ YAP";
             this.LabelMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // RadioMixed
+            // 
+            this.RadioMixed.AutoSize = true;
+            this.RadioMixed.Checked = true;
+            this.RadioMixed.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RadioMixed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.RadioMixed.Location = new System.Drawing.Point(10, 126);
+            this.RadioMixed.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.RadioMixed.MinimumSize = new System.Drawing.Size(0, 21);
+            this.RadioMixed.Name = "RadioMixed";
+            this.RadioMixed.Size = new System.Drawing.Size(65, 21);
+            this.RadioMixed.TabIndex = 3;
+            this.RadioMixed.TabStop = true;
+            this.RadioMixed.Text = "Karışık";
+            this.RadioMixed.UseVisualStyleBackColor = true;
+            // 
+            // RadioWrite
+            // 
+            this.RadioWrite.AutoSize = true;
+            this.RadioWrite.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RadioWrite.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.RadioWrite.Location = new System.Drawing.Point(10, 92);
+            this.RadioWrite.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.RadioWrite.MinimumSize = new System.Drawing.Size(0, 21);
+            this.RadioWrite.Name = "RadioWrite";
+            this.RadioWrite.Size = new System.Drawing.Size(111, 21);
+            this.RadioWrite.TabIndex = 2;
+            this.RadioWrite.Text = "Yazması Kolay";
+            this.RadioWrite.UseVisualStyleBackColor = true;
+            // 
+            // RadioRead
+            // 
+            this.RadioRead.AutoSize = true;
+            this.RadioRead.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.RadioRead.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.RadioRead.Location = new System.Drawing.Point(10, 58);
+            this.RadioRead.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.RadioRead.MinimumSize = new System.Drawing.Size(0, 21);
+            this.RadioRead.Name = "RadioRead";
+            this.RadioRead.Size = new System.Drawing.Size(116, 21);
+            this.RadioRead.TabIndex = 1;
+            this.RadioRead.Text = "Okuması Kolay";
+            this.RadioRead.UseVisualStyleBackColor = true;
+            // 
+            // BtnGenPass
+            // 
+            this.BtnGenPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnGenPass.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnGenPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnGenPass.BorderRadius = 10;
+            this.BtnGenPass.BorderSize = 0;
+            this.BtnGenPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGenPass.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnGenPass.FlatAppearance.BorderSize = 0;
+            this.BtnGenPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGenPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnGenPass.ForeColor = System.Drawing.Color.White;
+            this.BtnGenPass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGenPass.Location = new System.Drawing.Point(10, 450);
+            this.BtnGenPass.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.BtnGenPass.Name = "BtnGenPass";
+            this.BtnGenPass.Size = new System.Drawing.Size(558, 35);
+            this.BtnGenPass.TabIndex = 5;
+            this.BtnGenPass.Text = "KAYDET";
+            this.BtnGenPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGenPass.TextColor = System.Drawing.Color.White;
+            this.BtnGenPass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnGenPass.UseVisualStyleBackColor = false;
+            this.BtnGenPass.Click += new System.EventHandler(this.BtnGenPass_Click);
+            // 
             // PassLenghtLabel
             // 
             this.PassLenghtLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -277,85 +347,6 @@
             this.MainToolTip.OwnerDraw = true;
             this.MainToolTip.Draw += new System.Windows.Forms.DrawToolTipEventHandler(this.MainToolTip_Draw);
             // 
-            // RadioMixed
-            // 
-            this.RadioMixed.AutoSize = true;
-            this.RadioMixed.Checked = true;
-            this.RadioMixed.CheckedColor = System.Drawing.Color.Green;
-            this.RadioMixed.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RadioMixed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.RadioMixed.Location = new System.Drawing.Point(10, 126);
-            this.RadioMixed.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.RadioMixed.MinimumSize = new System.Drawing.Size(0, 21);
-            this.RadioMixed.Name = "RadioMixed";
-            this.RadioMixed.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.RadioMixed.Size = new System.Drawing.Size(75, 21);
-            this.RadioMixed.TabIndex = 3;
-            this.RadioMixed.TabStop = true;
-            this.RadioMixed.Text = "Karışık";
-            this.RadioMixed.UnCheckedColor = System.Drawing.Color.Gray;
-            this.RadioMixed.UseVisualStyleBackColor = true;
-            // 
-            // RadioWrite
-            // 
-            this.RadioWrite.AutoSize = true;
-            this.RadioWrite.CheckedColor = System.Drawing.Color.Green;
-            this.RadioWrite.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RadioWrite.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.RadioWrite.Location = new System.Drawing.Point(10, 92);
-            this.RadioWrite.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.RadioWrite.MinimumSize = new System.Drawing.Size(0, 21);
-            this.RadioWrite.Name = "RadioWrite";
-            this.RadioWrite.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.RadioWrite.Size = new System.Drawing.Size(121, 21);
-            this.RadioWrite.TabIndex = 2;
-            this.RadioWrite.Text = "Yazması Kolay";
-            this.RadioWrite.UnCheckedColor = System.Drawing.Color.Gray;
-            this.RadioWrite.UseVisualStyleBackColor = true;
-            // 
-            // RadioRead
-            // 
-            this.RadioRead.AutoSize = true;
-            this.RadioRead.CheckedColor = System.Drawing.Color.Green;
-            this.RadioRead.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RadioRead.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.RadioRead.Location = new System.Drawing.Point(10, 58);
-            this.RadioRead.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
-            this.RadioRead.MinimumSize = new System.Drawing.Size(0, 21);
-            this.RadioRead.Name = "RadioRead";
-            this.RadioRead.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.RadioRead.Size = new System.Drawing.Size(126, 21);
-            this.RadioRead.TabIndex = 1;
-            this.RadioRead.Text = "Okuması Kolay";
-            this.RadioRead.UnCheckedColor = System.Drawing.Color.Gray;
-            this.RadioRead.UseVisualStyleBackColor = true;
-            // 
-            // BtnGenPass
-            // 
-            this.BtnGenPass.BackColor = System.Drawing.Color.Green;
-            this.BtnGenPass.BackgroundColor = System.Drawing.Color.Green;
-            this.BtnGenPass.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.BtnGenPass.BorderRadius = 10;
-            this.BtnGenPass.BorderSize = 0;
-            this.BtnGenPass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGenPass.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BtnGenPass.FlatAppearance.BorderSize = 0;
-            this.BtnGenPass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGenPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnGenPass.ForeColor = System.Drawing.Color.White;
-            this.BtnGenPass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGenPass.Location = new System.Drawing.Point(10, 450);
-            this.BtnGenPass.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.BtnGenPass.Name = "BtnGenPass";
-            this.BtnGenPass.Size = new System.Drawing.Size(558, 35);
-            this.BtnGenPass.TabIndex = 5;
-            this.BtnGenPass.Text = "KAYDET";
-            this.BtnGenPass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnGenPass.TextColor = System.Drawing.Color.White;
-            this.BtnGenPass.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.BtnGenPass.UseVisualStyleBackColor = false;
-            this.BtnGenPass.Click += new System.EventHandler(this.BtnGenPass_Click);
-            // 
             // AstelPasswordGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -366,9 +357,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(600, 540);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(600, 540);
             this.Name = "AstelPasswordGenerator";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -399,9 +388,9 @@
         private System.Windows.Forms.CheckBox CheckUppercase;
         private System.Windows.Forms.Panel Panel_Mode;
         internal System.Windows.Forms.Label LabelMode;
-        private TSCustomRadioButton RadioMixed;
-        private TSCustomRadioButton RadioWrite;
-        private TSCustomRadioButton RadioRead;
+        private System.Windows.Forms.RadioButton RadioMixed;
+        private System.Windows.Forms.RadioButton RadioWrite;
+        private System.Windows.Forms.RadioButton RadioRead;
         private TSCustomButton BtnGenPass;
         private System.Windows.Forms.Label PassLenghtLabel;
         private System.Windows.Forms.TrackBar PassGenLenght;

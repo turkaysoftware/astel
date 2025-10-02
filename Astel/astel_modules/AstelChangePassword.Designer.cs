@@ -155,9 +155,9 @@
             // 
             // BtnChangePassword
             // 
-            this.BtnChangePassword.BackColor = System.Drawing.Color.Green;
-            this.BtnChangePassword.BackgroundColor = System.Drawing.Color.Green;
-            this.BtnChangePassword.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.BtnChangePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnChangePassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnChangePassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.BtnChangePassword.BorderRadius = 10;
             this.BtnChangePassword.BorderSize = 0;
             this.BtnChangePassword.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -172,9 +172,9 @@
             this.BtnChangePassword.Size = new System.Drawing.Size(333, 35);
             this.BtnChangePassword.TabIndex = 8;
             this.BtnChangePassword.Text = "KAYDET";
-            this.BtnChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnChangePassword.TextColor = System.Drawing.Color.White;
-            this.BtnChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.BtnChangePassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnChangePassword.UseVisualStyleBackColor = false;
             this.BtnChangePassword.Click += new System.EventHandler(this.BtnChangePassword_Click);
             // 
@@ -202,9 +202,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(375, 395);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(375, 395);
             this.Name = "AstelChangePassword";
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

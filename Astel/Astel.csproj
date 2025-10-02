@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>25.09.0.%2a</ApplicationVersion>
+    <ApplicationVersion>25.10.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -94,9 +94,14 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Astel.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -216,6 +221,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AstelLogo.ico" />
+    <None Include="astel_images\astel_ui\theme_light\ct_link_mc_light.png" />
+    <None Include="astel_images\astel_ui\theme_dark\ct_link_mc_dark.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_safety_warnings_light.png" />
     <None Include="astel_images\astel_ui\theme_dark\tm_safety_warnings_dark.png" />
     <None Include="astel_images\astel_ui\theme_light\ct_bmac_mc_light.png" />

@@ -12,9 +12,6 @@ namespace Astel.astel_modules{
         // ======================================================================================================
         public void Change_password_system_preloader(){
             try{
-                //
-                TSSetWindowTheme(Handle, AstelMain.theme);
-                //
                 BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "PageContainerUIBGColor");
                 Panel_BG.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "HeaderBGColor2");
                 //
@@ -39,7 +36,7 @@ namespace Astel.astel_modules{
                     }
                 }
                 //
-                TSImageRenderer(BtnChangePassword, AstelMain.theme == 1 ? Properties.Resources.ct_confirm_light : Properties.Resources.ct_confirm_dark, 18, ContentAlignment.MiddleLeft);
+                TSImageRenderer(BtnChangePassword, AstelMain.theme == 1 ? Properties.Resources.ct_confirm_light : Properties.Resources.ct_confirm_dark, 18, ContentAlignment.MiddleRight);
                 //
                 LabelHeader.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "PageContainerUIBGColor");
                 LabelHeader.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "ContentLabelLeftColor");
@@ -53,7 +50,7 @@ namespace Astel.astel_modules{
                 LabelNewPassword.Text = software_lang.TSReadLangs("AstelChangePassword", "asp_label_password_new");
                 LabelNewPasswordRepeat.Text = software_lang.TSReadLangs("AstelChangePassword", "asp_label_password_new_repeat");
                 CheckPassword.Text = software_lang.TSReadLangs("AstelChangePassword", "asp_visible");
-                BtnChangePassword.Text = software_lang.TSReadLangs("AstelChangePassword", "asp_btn") + " ";
+                BtnChangePassword.Text = " " + software_lang.TSReadLangs("AstelChangePassword", "asp_btn");
             }catch (Exception){ }
         }
         // CHANGE PASSWORD LOAD

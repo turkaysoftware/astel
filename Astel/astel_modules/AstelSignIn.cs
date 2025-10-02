@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 // TS MODULES
@@ -15,44 +14,40 @@ namespace Astel.astel_modules{
         public void Login_system_preloader(){
             try{
                 TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
-                Dictionary<string, string> themeModes = new Dictionary<string, string>{
-                    { "0", "0" },
-                    { "1", "1" }
-                };
-                string theme_mode = software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus");
-                string signin_global_theme = themeModes.ContainsKey(theme_mode) ? themeModes[theme_mode] : "1";
+                int theme_mode = int.TryParse(software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus"), out int the_status) && (the_status == 0 || the_status == 1 || the_status == 2) ? the_status : 1;
+                theme_mode = GetSystemTheme(theme_mode);
                 //
-                TSSetWindowTheme(Handle, Convert.ToInt32(signin_global_theme));
+                TSThemeModeHelper.SetThemeMode(theme_mode == 0);
                 //
-                BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "PageContainerUIBGColor");
-                Panel_BG.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "HeaderBGColor2");
+                BackColor = TS_ThemeEngine.ColorMode(theme_mode, "PageContainerUIBGColor");
+                Panel_BG.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "HeaderBGColor2");
                 //
                 foreach (Control control in Panel_BG.Controls){
                     if (control is Label label){
-                        label.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "ContentLabelLeftColor");
+                        label.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "ContentLabelLeftColor");
                     }
                 }
                 foreach (Control control in Panel_BG.Controls){
                     if (control is TextBox textbox){
-                        textbox.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "TextboxBGColor");
-                        textbox.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "TextboxFEColor");
+                        textbox.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "TextboxBGColor");
+                        textbox.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "TextboxFEColor");
                     }
                 }
                 foreach (Control control in Panel_BG.Controls){
                     if (control is Button button){
-                        button.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "DynamicThemeActiveBtnBGColor");
-                        button.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "AccentMain");
-                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "AccentMain");
-                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "AccentMain");
-                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "AccentMainHover");
+                        button.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "DynamicThemeActiveBtnBGColor");
+                        button.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
+                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
+                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
+                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMainHover");
                     }
                 }
                 //
-                TSImageRenderer(BtnSignIn, Convert.ToInt32(signin_global_theme) == 1 ? Properties.Resources.ct_confirm_light : Properties.Resources.ct_confirm_dark, 18, ContentAlignment.MiddleLeft);
+                TSImageRenderer(BtnSignIn, theme_mode == 1 ? Properties.Resources.ct_confirm_light : Properties.Resources.ct_confirm_dark, 18, ContentAlignment.MiddleRight);
                 //
-                LabelHeader.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "PageContainerUIBGColor");
-                LabelHeader.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "ContentLabelLeftColor");
-                CheckPassword.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(signin_global_theme), "ContentLabelLeftColor");
+                LabelHeader.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "PageContainerUIBGColor");
+                LabelHeader.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "ContentLabelLeftColor");
+                CheckPassword.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "ContentLabelLeftColor");
                 // ======================================================================================================
                 string lang_code = software_read_settings.TSReadSettings(ts_settings_container, "LanguageStatus");
                 string selectedLangCode = TSPreloaderSetDefaultLanguage(lang_code);
@@ -65,7 +60,7 @@ namespace Astel.astel_modules{
                 LabelPassword.Text = software_lang.TSReadLangs("AstelSignIn", "as_label_password");
                 LabelPasswordRepeat.Text = software_lang.TSReadLangs("AstelSignIn", "as_label_password_repeat");
                 CheckPassword.Text = software_lang.TSReadLangs("AstelSignIn", "as_visible");
-                BtnSignIn.Text = software_lang.TSReadLangs("AstelSignIn", "as_btn") + " ";
+                BtnSignIn.Text = " " + software_lang.TSReadLangs("AstelSignIn", "as_btn");
             }catch (Exception){ }
         }
         // SIGN IN LOAD

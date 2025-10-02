@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Text;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Collections.Generic;
 // TS MODULES
 using static Astel.TSModules;
-using System.Drawing;
 
 namespace Astel.astel_modules{
     public partial class AstelPasswordGenerator : Form{
@@ -72,9 +72,6 @@ namespace Astel.astel_modules{
         }
         public void Password_generator_preloader(){
             try{
-                //
-                TSSetWindowTheme(Handle, AstelMain.theme);
-                //
                 MainToolTip.ForeColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "HeaderFEColor2");
                 MainToolTip.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "HeaderBGColor2");
                 //
@@ -105,11 +102,7 @@ namespace Astel.astel_modules{
                 PassLenghtLabel.BackColor = PassGenLenght.BackColor = PassResultLabel.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "PageContainerUIBGColor");
                 PassLenghtLabel.ForeColor = PassGenLenght.ForeColor = PassResultLabel.ForeColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "ContentLabelLeftColor");
                 //
-                TSImageRenderer(BtnGenPass, AstelMain.theme == 1 ? Properties.Resources.ct_generate_light : Properties.Resources.ct_generate_dark, 18, ContentAlignment.MiddleLeft);
-                //
-                RadioRead.CheckedColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
-                RadioWrite.CheckedColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
-                RadioMixed.CheckedColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
+                TSImageRenderer(BtnGenPass, AstelMain.theme == 1 ? Properties.Resources.ct_generate_light : Properties.Resources.ct_generate_dark, 18, ContentAlignment.MiddleRight);
                 //
                 var lang = new TSGetLangs(AstelMain.lang_path);
                 Text = string.Format(lang.TSReadLangs("AstelPasswordGenerator", "apg_title"), Application.ProductName);
@@ -126,7 +119,7 @@ namespace Astel.astel_modules{
                 //
                 MainToolTip.RemoveAll();
                 MainToolTip.SetToolTip(PassResultLabel, lang.TSReadLangs("AstelPasswordGenerator", "apg_pass_copy"));
-                BtnGenPass.Text = lang.TSReadLangs("AstelPasswordGenerator", "apg_gen_pass_btn") + " ";
+                BtnGenPass.Text = " " + lang.TSReadLangs("AstelPasswordGenerator", "apg_gen_pass_btn");
             }catch (Exception){ }
         }
         // TOOLTIP SETTINGS

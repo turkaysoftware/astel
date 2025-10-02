@@ -7,6 +7,7 @@
 // GitHub: https://github.com/turkaysoftware/astel
 // ======================================================================================================
 
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -38,16 +39,21 @@ namespace Astel{
             // LANGUAGE SET MODES
             englishToolStripMenuItem.Tag = "en";
             italianToolStripMenuItem.Tag = "it";
+            polishToolStripMenuItem.Tag = "pl";
             turkishToolStripMenuItem.Tag = "tr";
             // LANGUAGE SET EVENTS
             englishToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
             italianToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
+            polishToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
             turkishToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
+            //
+            TSThemeModeHelper.InitializeGlobalTheme();
+            SystemEvents.UserPreferenceChanged += (s, e) => TSUseSystemTheme();
         }
         // GLOBAL VARIABLES
         // ======================================================================================================
         public static string lang, lang_path;
-        public static int theme, startup_status, auto_backup_status, safety_warnings_status;
+        public static int theme, themeSystem, startup_status, auto_backup_status, safety_warnings_status;
         // LOCAL VARIABLES
         // ======================================================================================================
         readonly string ts_wizard_name = "TS Wizard";
@@ -103,6 +109,7 @@ namespace Astel{
             // DOUBLE BUFFER TABLE
             typeof(DataGridView).InvokeMember("DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty, null, DataMainTable, new object[] { true });
             // TEMPORARY COLUMN
+            DataMainTable.RowTemplate.Height = (int)(26 * this.DeviceDpi / 96f);
             for (int i = 1; i <= 7; i++){ DataMainTable.Columns.Add("x" + i, "x" + i); }
             //
             foreach (DataGridViewColumn DataTable in DataMainTable.Columns){
@@ -113,19 +120,22 @@ namespace Astel{
             BtnCopyPassword.Height = TxtPassword.Height + 2;
             BtnCopyUrl.Height = TxtUrl.Height + 2;
             BtnRndPssGen.Height = TxtPassword.Height + 2;
+            BtnOpenUrl.Height = TxtUrl.Height + 2;
             // THEME - LANG - VIEW MODE PRELOADER
             // ======================================================================================================
             TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
             //
-            int theme_mode = int.TryParse(software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus"), out int the_status) ? the_status : 1;
-            Theme_engine(theme_mode);
+            int theme_mode = int.TryParse(software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus"), out int the_status) && (the_status == 0 || the_status == 1 || the_status == 2) ? the_status : 1;
+            if (theme_mode == 2) { themeSystem = 2; Theme_engine(GetSystemTheme(2)); } else Theme_engine(theme_mode);
             darkThemeToolStripMenuItem.Checked = theme_mode == 0;
             lightThemeToolStripMenuItem.Checked = theme_mode == 1;
+            systemThemeToolStripMenuItem.Checked = theme_mode == 2;
             //
             string lang_mode = software_read_settings.TSReadSettings(ts_settings_container, "LanguageStatus");
             var languageFiles = new Dictionary<string, (object langResource, ToolStripMenuItem menuItem, bool fileExists)>{
                 { "en", (ts_lang_en, englishToolStripMenuItem, File.Exists(ts_lang_en)) },
                 { "it", (ts_lang_it, italianToolStripMenuItem, File.Exists(ts_lang_en)) },
+                { "pl", (ts_lang_pl, polishToolStripMenuItem, File.Exists(ts_lang_pl)) },
                 { "tr", (ts_lang_tr, turkishToolStripMenuItem, File.Exists(ts_lang_tr)) },
             };
             foreach (var langLoader in languageFiles) { langLoader.Value.menuItem.Enabled = langLoader.Value.fileExists; }
@@ -168,14 +178,16 @@ namespace Astel{
             AstelLoadXMLData();
             DGVColumnFormatter();
             //
-            int totalWidth = DataMainTable.Width;
-            int idWidth = 60, dateWidth = 185;
-            int remaining = totalWidth - (idWidth + dateWidth);
-            int middleCount = DataMainTable.Columns.Count - 2;
-            int col2Width = (int)(remaining * 0.9 / (middleCount - 1 + 0.9));
-            int otherWidth = (int)(remaining / (middleCount - 1 + 0.9));
-            for (int i = 0; i < DataMainTable.Columns.Count; i++){
-                DataMainTable.Columns[i].Width = i == 0 ? idWidth : i == 1 ? col2Width : i == DataMainTable.Columns.Count - 1 ? dateWidth : otherWidth;
+            DataMainTable.Columns[0].Width = (int)(50 * this.DeviceDpi / 96f);
+            DataMainTable.Columns[1].Width = (int)(100 * this.DeviceDpi / 96f);
+            DataMainTable.Columns[2].Width = (int)(140 * this.DeviceDpi / 96f);
+            DataMainTable.Columns[3].Width = (int)(140 * this.DeviceDpi / 96f);
+            DataMainTable.Columns[4].Width = (int)(140 * this.DeviceDpi / 96f);
+            DataMainTable.Columns[5].Width = (int)(140 * this.DeviceDpi / 96f);
+            DataMainTable.Columns[6].Width = (int)(160 * this.DeviceDpi / 96f);
+            foreach (DataGridViewColumn columnPadding in DataMainTable.Columns){
+                int scaledPadding = (int)(3 * this.DeviceDpi / 96f);
+                columnPadding.DefaultCellStyle.Padding = new Padding(scaledPadding, 0, 0, 0);
             }
             // RUN TASKS
             Task softwareUpdateCheck = Task.Run(() => Software_update_check(0));
@@ -276,7 +288,6 @@ namespace Astel{
             if (!File.Exists(ts_data_xml_path)) CreateEmptyXmlFile();
             var ts_xDoc = XDocument.Load(ts_data_xml_path);
             var ts_xDoc_root = ts_xDoc.Element("Datas");
-            //
             DataSet ts_dataSet = new DataSet();
             DataTable ts_dataTable = new DataTable("Datas");
             ts_dataTable.Columns.Add("ID", typeof(int));
@@ -286,7 +297,6 @@ namespace Astel{
             ts_dataTable.Columns.Add("Url", typeof(string));
             ts_dataTable.Columns.Add("Note", typeof(string));
             ts_dataTable.Columns.Add("PassChangeDate", typeof(string));
-            //
             if (ts_xDoc_root != null){
                 foreach (var ts_xml_mode in ts_xDoc_root.Elements("Data")){
                     DataRow ts_xml_row = ts_dataTable.NewRow();
@@ -509,6 +519,10 @@ namespace Astel{
                 }
             }catch (Exception){ }
         }
+
+
+
+
         // RANDOM PASSWORD GENERATOR
         // ======================================================================================================
         private readonly Random rnd_pass = new Random();
@@ -534,6 +548,22 @@ namespace Astel{
             }
             TxtPassword.Text = new string(initialChars.ToArray());
         }
+
+
+        // OPEN URL TO BROWSER
+        private void BtnOpenUrl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(TxtUrl.Text.Trim()))
+                {
+                    Process.Start(new ProcessStartInfo(TxtUrl.Text.Trim()) { UseShellExecute = true });
+                }
+            }
+            catch (Exception) { }
+        }
+
+
         // TEXTBOX ROTATE DATA
         // ======================================================================================================
         private void DataMainTable_CellClick(object sender, DataGridViewCellEventArgs e){
@@ -650,32 +680,44 @@ namespace Astel{
         }
         // ======================================================================================================
         // THEME SETTINGS
+        private ToolStripMenuItem selected_theme = null;
         private void Select_theme_active(object target_theme){
-            ToolStripMenuItem selected_theme = null;
+            if (target_theme == null)
+                return;
+            ToolStripMenuItem clicked_theme = (ToolStripMenuItem)target_theme;
+            if (selected_theme == clicked_theme)
+                return;
             Select_theme_deactive();
-            if (target_theme != null){
-                if (selected_theme != (ToolStripMenuItem)target_theme){
-                    selected_theme = (ToolStripMenuItem)target_theme;
-                    selected_theme.Checked = true;
-                }
-            }
+            selected_theme = clicked_theme;
+            selected_theme.Checked = true;
         }
         private void Select_theme_deactive(){
-            foreach (ToolStripMenuItem disabled_theme in themeToolStripMenuItem.DropDownItems){
-                disabled_theme.Checked = false;
+            foreach (ToolStripMenuItem theme in themeToolStripMenuItem.DropDownItems){
+                theme.Checked = false;
             }
         }
+        private void SystemThemeToolStripMenuItem_Click(object sender, EventArgs e){
+            themeSystem = 2; Theme_engine(GetSystemTheme(2)); SaveTheme(2); Select_theme_active(sender);
+        }
         private void LightThemeToolStripMenuItem_Click(object sender, EventArgs e){
-            if (theme != 1){ Theme_engine(1); Select_theme_active(sender); }
+            themeSystem = 0; Theme_engine(1); SaveTheme(1); Select_theme_active(sender);
         }
         private void DarkThemeToolStripMenuItem_Click(object sender, EventArgs e){
-            if (theme != 0){ Theme_engine(0); Select_theme_active(sender); }
+            themeSystem = 0; Theme_engine(0); SaveTheme(0); Select_theme_active(sender);
+        }
+        private void TSUseSystemTheme(){ if (themeSystem == 2) Theme_engine(GetSystemTheme(2)); }
+        private void SaveTheme(int ts){
+            // SAVE CURRENT THEME
+            try{
+                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                software_setting_save.TSWriteSettings(ts_settings_container, "ThemeStatus", Convert.ToString(ts));
+            }catch (Exception){ }
         }
         private void Theme_engine(int ts){
             try{
                 theme = ts;
                 //
-                TSSetWindowTheme(Handle, theme);
+                TSThemeModeHelper.SetThemeMode(ts == 0);
                 //
                 if (theme == 1){
                     TSImageRenderer(settingsToolStripMenuItem, Properties.Resources.tm_settings_light, 0, ContentAlignment.MiddleRight);
@@ -694,14 +736,15 @@ namespace Astel{
                     TSImageRenderer(bmacToolStripMenuItem, Properties.Resources.tm_bmac_light, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(aboutToolStripMenuItem, Properties.Resources.tm_about_light, 0, ContentAlignment.MiddleRight);
                     //
-                    TSImageRenderer(AddBtn, Properties.Resources.ct_add_light, 24, ContentAlignment.MiddleLeft);
-                    TSImageRenderer(UpdateBtn, Properties.Resources.ct_update_light, 24, ContentAlignment.MiddleLeft);
-                    TSImageRenderer(DeleteBtn, Properties.Resources.ct_delete_light, 24, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(AddBtn, Properties.Resources.ct_add_light, 23, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(UpdateBtn, Properties.Resources.ct_update_light, 23, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(DeleteBtn, Properties.Resources.ct_delete_light, 23, ContentAlignment.MiddleLeft);
                     //
                     TSImageRenderer(BtnCopyEmail, Properties.Resources.ct_copy_light, 12);
                     TSImageRenderer(BtnCopyPassword, Properties.Resources.ct_copy_light, 12);
                     TSImageRenderer(BtnCopyUrl, Properties.Resources.ct_copy_light, 12);
                     TSImageRenderer(BtnRndPssGen, Properties.Resources.ct_generate_light, 12);
+                    TSImageRenderer(BtnOpenUrl, Properties.Resources.ct_link_mc_light, 12);
                 }else if (theme == 0){
                     TSImageRenderer(settingsToolStripMenuItem, Properties.Resources.tm_settings_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(themeToolStripMenuItem, Properties.Resources.tm_theme_dark, 0, ContentAlignment.MiddleRight);
@@ -719,14 +762,15 @@ namespace Astel{
                     TSImageRenderer(bmacToolStripMenuItem, Properties.Resources.tm_bmac_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(aboutToolStripMenuItem, Properties.Resources.tm_about_dark, 0, ContentAlignment.MiddleRight);
                     //
-                    TSImageRenderer(AddBtn, Properties.Resources.ct_add_dark, 24, ContentAlignment.MiddleLeft);
-                    TSImageRenderer(UpdateBtn, Properties.Resources.ct_update_dark, 24, ContentAlignment.MiddleLeft);
-                    TSImageRenderer(DeleteBtn, Properties.Resources.ct_delete_dark, 24, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(AddBtn, Properties.Resources.ct_add_dark, 23, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(UpdateBtn, Properties.Resources.ct_update_dark, 23, ContentAlignment.MiddleLeft);
+                    TSImageRenderer(DeleteBtn, Properties.Resources.ct_delete_dark, 23, ContentAlignment.MiddleLeft);
                     //
                     TSImageRenderer(BtnCopyEmail, Properties.Resources.ct_copy_dark, 12);
                     TSImageRenderer(BtnCopyPassword, Properties.Resources.ct_copy_dark, 12);
                     TSImageRenderer(BtnCopyUrl, Properties.Resources.ct_copy_dark, 12);
                     TSImageRenderer(BtnRndPssGen, Properties.Resources.ct_generate_dark, 12);
+                    TSImageRenderer(BtnOpenUrl, Properties.Resources.ct_link_mc_dark, 12);
                 }
                 header_colors[0] = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor");
                 header_colors[1] = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
@@ -787,11 +831,6 @@ namespace Astel{
                 DataMainTable.DefaultCellStyle.SelectionForeColor = TS_ThemeEngine.ColorMode(theme, "DataGridHeaderFEColor");
                 //
                 Software_other_page_preloader();
-                //
-                try{
-                    TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
-                    software_setting_save.TSWriteSettings(ts_settings_container, "ThemeStatus", Convert.ToString(ts));
-                }catch (Exception){ }
             }catch (Exception){ }
         }
         private void SetMenuStripColors(MenuStrip menuStrip, Color bgColor, Color fgColor){
@@ -868,10 +907,12 @@ namespace Astel{
                 themeToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_theme");
                 lightThemeToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderThemes", "theme_light");
                 darkThemeToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderThemes", "theme_dark");
+                systemThemeToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderThemes", "theme_system");
                 // LANGS
                 languageToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_language");
                 englishToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_en");
                 italianToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_it");
+                polishToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_pl");
                 turkishToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_tr");
                 // STARTUP MODE
                 startupToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_start");
@@ -920,6 +961,7 @@ namespace Astel{
                 MainToolTip.SetToolTip(BtnCopyPassword, software_lang.TSReadLangs("AstelHome", "ah_copy_hover"));
                 MainToolTip.SetToolTip(BtnCopyUrl, software_lang.TSReadLangs("AstelHome", "ah_copy_hover"));
                 MainToolTip.SetToolTip(BtnRndPssGen, software_lang.TSReadLangs("AstelHome", "ah_secure_pass_hover"));
+                MainToolTip.SetToolTip(BtnOpenUrl, software_lang.TSReadLangs("AstelHome", "ah_open_url_hover"));
                 //
                 AddBtn.Text = " " + software_lang.TSReadLangs("AstelHome", "ah_button_add");
                 UpdateBtn.Text = " " + software_lang.TSReadLangs("AstelHome", "ah_button_update");
@@ -1480,7 +1522,7 @@ namespace Astel{
                         TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(software_lang.TSReadLangs("HeaderHelp", "header_help_info_notification"), ts_wizard_name));
                     }
                 }else{
-                    DialogResult ts_wizard_query = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(software_lang.TSReadLangs("TSWizard", "tsw_content"), software_lang.TSReadLangs("HeaderMenu", "header_menu_ts_wizard"), Application.CompanyName, "\n\n", Application.ProductName, Application.CompanyName, "\n\n"), string.Format(software_lang.TSReadLangs("TSWizard", "tsw_title"), Application.ProductName));
+                    DialogResult ts_wizard_query = TS_MessageBoxEngine.TS_MessageBox(this, 5, string.Format(software_lang.TSReadLangs("TSWizard", "tsw_content"), software_lang.TSReadLangs("HeaderMenu", "header_menu_ts_wizard"), Application.CompanyName, "\n\n", Application.ProductName, Application.CompanyName, "\n\n"), string.Format("{0} - {1}", Application.ProductName, ts_wizard_name));
                     if (ts_wizard_query == DialogResult.Yes){
                         Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_wizard) { UseShellExecute = true });
                     }
