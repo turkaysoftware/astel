@@ -51,6 +51,7 @@ With these instructions, you can download and use the correct version of Astel f
 - Italian
 - Polish
 - Turkish
+- **For translation support: [Translation Guide for Astel](https://github.com/turkaysoftware/astel/discussions/3)**
 
 # Supported Themes
 
