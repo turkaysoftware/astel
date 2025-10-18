@@ -25,7 +25,7 @@ namespace Astel{
             github_link         = "https://github.com/turkaysoftware",
             // Other Links
             ts_wizard           = "https://www.turkaysoftware.com/ts-wizard",
-            ts_bmac             = "https://buymeacoffee.com/turkaysoftware";
+            ts_donate           = "https://buymeacoffee.com/turkaysoftware";
         }
         // VERSIONS
         // ======================================================================================================
@@ -171,9 +171,7 @@ namespace Astel{
                     }
                     try{
                         File.WriteAllLines(_iniFilePath, lines, Encoding.UTF8);
-                    }catch (IOException){
-                        //Console.Error.WriteLine("INI yazma hatası: " + ex.Message);
-                    }
+                    }catch (IOException){ }
                 }
             }
         }
@@ -239,7 +237,6 @@ namespace Astel{
                         }
                         return _cachedLines;
                     }catch (IOException){
-                        // Console.Error.WriteLine("INI okuma hatası: " + ex.Message);
                         return new string[0];
                     }
                 }

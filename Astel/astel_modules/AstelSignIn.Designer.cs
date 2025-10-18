@@ -51,10 +51,10 @@
             this.Panel_BG.Controls.Add(this.TxtPassword);
             this.Panel_BG.Controls.Add(this.LabelHeader);
             this.Panel_BG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_BG.Location = new System.Drawing.Point(3, 3);
+            this.Panel_BG.Location = new System.Drawing.Point(0, 0);
             this.Panel_BG.Name = "Panel_BG";
             this.Panel_BG.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel_BG.Size = new System.Drawing.Size(353, 295);
+            this.Panel_BG.Size = new System.Drawing.Size(434, 301);
             this.Panel_BG.TabIndex = 0;
             // 
             // CheckPassword
@@ -85,9 +85,9 @@
             this.BtnSignIn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
             this.BtnSignIn.ForeColor = System.Drawing.Color.White;
             this.BtnSignIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnSignIn.Location = new System.Drawing.Point(10, 250);
+            this.BtnSignIn.Location = new System.Drawing.Point(10, 256);
             this.BtnSignIn.Name = "BtnSignIn";
-            this.BtnSignIn.Size = new System.Drawing.Size(333, 35);
+            this.BtnSignIn.Size = new System.Drawing.Size(414, 35);
             this.BtnSignIn.TabIndex = 6;
             this.BtnSignIn.Text = "KAYDET";
             this.BtnSignIn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,7 +119,7 @@
             this.TxtPasswordRepeat.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.TxtPasswordRepeat.MaxLength = 32;
             this.TxtPasswordRepeat.Name = "TxtPasswordRepeat";
-            this.TxtPasswordRepeat.Size = new System.Drawing.Size(333, 25);
+            this.TxtPasswordRepeat.Size = new System.Drawing.Size(414, 25);
             this.TxtPasswordRepeat.TabIndex = 4;
             // 
             // LabelPassword
@@ -145,7 +145,7 @@
             this.TxtPassword.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.TxtPassword.MaxLength = 32;
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(333, 25);
+            this.TxtPassword.Size = new System.Drawing.Size(414, 25);
             this.TxtPassword.TabIndex = 2;
             // 
             // LabelHeader
@@ -157,7 +157,7 @@
             this.LabelHeader.Location = new System.Drawing.Point(10, 10);
             this.LabelHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(333, 35);
+            this.LabelHeader.Size = new System.Drawing.Size(414, 35);
             this.LabelHeader.TabIndex = 0;
             this.LabelHeader.Text = "ŞİFRE BELİRLE";
             this.LabelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(359, 301);
+            this.ClientSize = new System.Drawing.Size(434, 301);
             this.Controls.Add(this.Panel_BG);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -174,7 +174,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AstelSignIn";
-            this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AstelSignIn";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AstelSignIn_FormClosing);

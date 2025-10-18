@@ -47,10 +47,10 @@
             this.Panel_BG.Controls.Add(this.BtnLogin);
             this.Panel_BG.Controls.Add(this.LabelHeader);
             this.Panel_BG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_BG.Location = new System.Drawing.Point(3, 3);
+            this.Panel_BG.Location = new System.Drawing.Point(0, 0);
             this.Panel_BG.Name = "Panel_BG";
             this.Panel_BG.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel_BG.Size = new System.Drawing.Size(353, 235);
+            this.Panel_BG.Size = new System.Drawing.Size(434, 241);
             this.Panel_BG.TabIndex = 0;
             // 
             // CheckPassword
@@ -90,7 +90,7 @@
             this.TxtPassword.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.TxtPassword.MaxLength = 32;
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.Size = new System.Drawing.Size(333, 25);
+            this.TxtPassword.Size = new System.Drawing.Size(414, 25);
             this.TxtPassword.TabIndex = 2;
             // 
             // BtnLogin
@@ -107,9 +107,9 @@
             this.BtnLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
             this.BtnLogin.ForeColor = System.Drawing.Color.White;
             this.BtnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLogin.Location = new System.Drawing.Point(10, 190);
+            this.BtnLogin.Location = new System.Drawing.Point(10, 196);
             this.BtnLogin.Name = "BtnLogin";
-            this.BtnLogin.Size = new System.Drawing.Size(333, 35);
+            this.BtnLogin.Size = new System.Drawing.Size(414, 35);
             this.BtnLogin.TabIndex = 4;
             this.BtnLogin.Text = "KAYDET";
             this.BtnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -127,7 +127,7 @@
             this.LabelHeader.Location = new System.Drawing.Point(10, 10);
             this.LabelHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(333, 35);
+            this.LabelHeader.Size = new System.Drawing.Size(414, 35);
             this.LabelHeader.TabIndex = 0;
             this.LabelHeader.Text = "GİRİŞ YAP";
             this.LabelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(359, 241);
+            this.ClientSize = new System.Drawing.Size(434, 241);
             this.Controls.Add(this.Panel_BG);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -144,7 +144,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AstelLogin";
-            this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AstelLogin";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AstelLogin_FormClosing);

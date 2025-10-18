@@ -65,10 +65,10 @@
             this.Panel_BG.Controls.Add(this.PassGenLenght);
             this.Panel_BG.Controls.Add(this.LabelHeader);
             this.Panel_BG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_BG.Location = new System.Drawing.Point(3, 3);
+            this.Panel_BG.Location = new System.Drawing.Point(0, 0);
             this.Panel_BG.Name = "Panel_BG";
             this.Panel_BG.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel_BG.Size = new System.Drawing.Size(578, 495);
+            this.Panel_BG.Size = new System.Drawing.Size(584, 501);
             this.Panel_BG.TabIndex = 0;
             // 
             // PassResultLabel
@@ -82,7 +82,7 @@
             this.PassResultLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.PassResultLabel.Name = "PassResultLabel";
             this.PassResultLabel.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.PassResultLabel.Size = new System.Drawing.Size(558, 53);
+            this.PassResultLabel.Size = new System.Drawing.Size(564, 53);
             this.PassResultLabel.TabIndex = 4;
             this.PassResultLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PassResultLabel.DoubleClick += new System.EventHandler(this.PassResultLabel_DoubleClick);
@@ -103,7 +103,7 @@
             this.TLP_Control.Name = "TLP_Control";
             this.TLP_Control.RowCount = 1;
             this.TLP_Control.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TLP_Control.Size = new System.Drawing.Size(558, 195);
+            this.TLP_Control.Size = new System.Drawing.Size(564, 195);
             this.TLP_Control.TabIndex = 1;
             // 
             // Panel_Feature
@@ -119,7 +119,7 @@
             this.Panel_Feature.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.Panel_Feature.Name = "Panel_Feature";
             this.Panel_Feature.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel_Feature.Size = new System.Drawing.Size(276, 195);
+            this.Panel_Feature.Size = new System.Drawing.Size(279, 195);
             this.Panel_Feature.TabIndex = 0;
             // 
             // LabelFeature
@@ -131,7 +131,7 @@
             this.LabelFeature.Location = new System.Drawing.Point(10, 10);
             this.LabelFeature.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.LabelFeature.Name = "LabelFeature";
-            this.LabelFeature.Size = new System.Drawing.Size(256, 35);
+            this.LabelFeature.Size = new System.Drawing.Size(259, 35);
             this.LabelFeature.TabIndex = 0;
             this.LabelFeature.Text = "GİRİŞ YAP";
             this.LabelFeature.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,11 +204,11 @@
             this.Panel_Mode.Controls.Add(this.RadioWrite);
             this.Panel_Mode.Controls.Add(this.RadioRead);
             this.Panel_Mode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_Mode.Location = new System.Drawing.Point(282, 0);
+            this.Panel_Mode.Location = new System.Drawing.Point(285, 0);
             this.Panel_Mode.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.Panel_Mode.Name = "Panel_Mode";
             this.Panel_Mode.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel_Mode.Size = new System.Drawing.Size(276, 195);
+            this.Panel_Mode.Size = new System.Drawing.Size(279, 195);
             this.Panel_Mode.TabIndex = 1;
             // 
             // LabelMode
@@ -220,7 +220,7 @@
             this.LabelMode.Location = new System.Drawing.Point(10, 10);
             this.LabelMode.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.LabelMode.Name = "LabelMode";
-            this.LabelMode.Size = new System.Drawing.Size(256, 35);
+            this.LabelMode.Size = new System.Drawing.Size(259, 35);
             this.LabelMode.TabIndex = 0;
             this.LabelMode.Text = "GİRİŞ YAP";
             this.LabelMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -283,10 +283,10 @@
             this.BtnGenPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
             this.BtnGenPass.ForeColor = System.Drawing.Color.White;
             this.BtnGenPass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGenPass.Location = new System.Drawing.Point(10, 450);
+            this.BtnGenPass.Location = new System.Drawing.Point(10, 456);
             this.BtnGenPass.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.BtnGenPass.Name = "BtnGenPass";
-            this.BtnGenPass.Size = new System.Drawing.Size(558, 35);
+            this.BtnGenPass.Size = new System.Drawing.Size(564, 35);
             this.BtnGenPass.TabIndex = 5;
             this.BtnGenPass.Text = "KAYDET";
             this.BtnGenPass.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -305,7 +305,7 @@
             this.PassLenghtLabel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
             this.PassLenghtLabel.Name = "PassLenghtLabel";
             this.PassLenghtLabel.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.PassLenghtLabel.Size = new System.Drawing.Size(558, 40);
+            this.PassLenghtLabel.Size = new System.Drawing.Size(564, 40);
             this.PassLenghtLabel.TabIndex = 2;
             this.PassLenghtLabel.Text = "Şifre Uzunluğu:";
             this.PassLenghtLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -322,7 +322,7 @@
             this.PassGenLenght.Maximum = 32;
             this.PassGenLenght.Minimum = 6;
             this.PassGenLenght.Name = "PassGenLenght";
-            this.PassGenLenght.Size = new System.Drawing.Size(558, 45);
+            this.PassGenLenght.Size = new System.Drawing.Size(564, 45);
             this.PassGenLenght.TabIndex = 3;
             this.PassGenLenght.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.PassGenLenght.Value = 12;
@@ -337,7 +337,7 @@
             this.LabelHeader.Location = new System.Drawing.Point(10, 10);
             this.LabelHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(558, 35);
+            this.LabelHeader.Size = new System.Drawing.Size(564, 35);
             this.LabelHeader.TabIndex = 0;
             this.LabelHeader.Text = "GİRİŞ YAP";
             this.LabelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -359,7 +359,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AstelPasswordGenerator";
-            this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AstelPasswordGenerator";
             this.Load += new System.EventHandler(this.AstelPasswordGenerator_Load);

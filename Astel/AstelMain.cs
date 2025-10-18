@@ -264,6 +264,9 @@ namespace Astel{
             if (!string.IsNullOrEmpty(crossLinker64)){
                 if (crossLinker64 != saved_crossLinker64){
                     File.Delete(ts_data_xml_path);
+                    if (Directory.Exists(ts_data_backup_folder)){
+                        Directory.Delete(ts_data_backup_folder, true);
+                    }
                     CreateEmptyXmlFile();
                     InitializeAES();
                     TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("CrossLinker", "cl_message"), "\n\n", "\n\n"));
@@ -288,6 +291,16 @@ namespace Astel{
             if (!File.Exists(ts_data_xml_path)) CreateEmptyXmlFile();
             var ts_xDoc = XDocument.Load(ts_data_xml_path);
             var ts_xDoc_root = ts_xDoc.Element("Datas");
+            // UPDATE FILE SV VERSION
+            if (ts_xDoc_root != null){
+                string currentVersion = ts_xDoc_root.Attribute("SV")?.Value ?? string.Empty;
+                string newVersion = TS_VersionEngine.TS_SofwareVersion(1, Program.ts_version_mode);
+                if (currentVersion != newVersion){
+                    ts_xDoc_root.SetAttributeValue("SV", newVersion);
+                    ts_xDoc.Save(ts_data_xml_path);
+                }
+            }
+            // ...
             DataSet ts_dataSet = new DataSet();
             DataTable ts_dataTable = new DataTable("Datas");
             ts_dataTable.Columns.Add("ID", typeof(int));
@@ -733,7 +746,7 @@ namespace Astel{
                     TSImageRenderer(safetyWarningsToolStripMenuItem, Properties.Resources.tm_safety_warnings_light, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(passwordGeneratorToolStripMenuItem, Properties.Resources.tm_password_generator_light, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(tSWizardToolStripMenuItem, Properties.Resources.tm_ts_wizard_light, 0, ContentAlignment.MiddleRight);
-                    TSImageRenderer(bmacToolStripMenuItem, Properties.Resources.tm_bmac_light, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(donateToolStripMenuItem, Properties.Resources.tm_donate_light, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(aboutToolStripMenuItem, Properties.Resources.tm_about_light, 0, ContentAlignment.MiddleRight);
                     //
                     TSImageRenderer(AddBtn, Properties.Resources.ct_add_light, 23, ContentAlignment.MiddleLeft);
@@ -759,7 +772,7 @@ namespace Astel{
                     TSImageRenderer(safetyWarningsToolStripMenuItem, Properties.Resources.tm_safety_warnings_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(passwordGeneratorToolStripMenuItem, Properties.Resources.tm_password_generator_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(tSWizardToolStripMenuItem, Properties.Resources.tm_ts_wizard_dark, 0, ContentAlignment.MiddleRight);
-                    TSImageRenderer(bmacToolStripMenuItem, Properties.Resources.tm_bmac_dark, 0, ContentAlignment.MiddleRight);
+                    TSImageRenderer(donateToolStripMenuItem, Properties.Resources.tm_donate_dark, 0, ContentAlignment.MiddleRight);
                     TSImageRenderer(aboutToolStripMenuItem, Properties.Resources.tm_about_dark, 0, ContentAlignment.MiddleRight);
                     //
                     TSImageRenderer(AddBtn, Properties.Resources.ct_add_dark, 23, ContentAlignment.MiddleLeft);
@@ -815,6 +828,7 @@ namespace Astel{
                 CmbService.ForeColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxFEColor");
                 CmbService.HoverBackColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBGColor");
                 CmbService.ButtonColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBGColor2");
+                CmbService.ArrowColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxFEColor");
                 CmbService.HoverButtonColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBGColor2");
                 CmbService.BorderColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBorderColor");
                 CmbService.FocusedBorderColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBorderColor");
@@ -943,8 +957,8 @@ namespace Astel{
                 passwordGeneratorToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_pass_gen");
                 // TS WIZARD
                 tSWizardToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_ts_wizard");
-                // BMAC
-                bmacToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_bmac");
+                // DONATE
+                donateToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_donate");
                 // ABOUT
                 aboutToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderMenu", "header_menu_about");
                 // HOME
@@ -1120,8 +1134,13 @@ namespace Astel{
         }
         private void Backup_folder_open(){
             try{
-                string folderPath = Path.GetFullPath(ts_data_backup_folder.Trim());
-                Process.Start(new ProcessStartInfo("explorer.exe", folderPath){ UseShellExecute = true });
+                if (Directory.Exists(ts_data_backup_folder)){
+                    string folderPath = Path.GetFullPath(ts_data_backup_folder);
+                    Process.Start(new ProcessStartInfo("explorer.exe", folderPath){ UseShellExecute = true });
+                }else{
+                    TSGetLangs software_lang = new TSGetLangs(lang_path);
+                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AutoBackup", "ab_not_available"));
+                }
             }catch (Exception){ }
         }
         // SOFTWARE OPERATION CONTROLLER MODULE
@@ -1351,8 +1370,10 @@ namespace Astel{
         }
         private void ImportAstelFromFile(string filePath){
             TSGetLangs software_lang = new TSGetLangs(lang_path);
-            DialogResult import_warning = TS_MessageBoxEngine.TS_MessageBox(this, 6, string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_warning"), "\n\n", "\n\n"));
-            if (import_warning != DialogResult.Yes) return;
+            if (DataMainTable.Rows.Count > 0){
+                DialogResult import_warning = TS_MessageBoxEngine.TS_MessageBox(this, 6, string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_warning"), "\n\n", "\n\n"));
+                if (import_warning != DialogResult.Yes) return;
+            }
             try{
                 string target_data = Path.Combine(ts_session_root_path, "AstelData.xml");
                 File.Copy(filePath, target_data, true);
@@ -1388,8 +1409,10 @@ namespace Astel{
         }
         private void ImportCSVFromFile(DataGridView dgv, string filePath){
             TSGetLangs software_lang = new TSGetLangs(lang_path);
-            DialogResult import_warning = TS_MessageBoxEngine.TS_MessageBox(this, 6, string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_warning"), "\n\n", "\n\n"));
-            if (import_warning != DialogResult.Yes) return;
+            if (DataMainTable.Rows.Count > 0){
+                DialogResult import_warning = TS_MessageBoxEngine.TS_MessageBox(this, 6, string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_warning"), "\n\n", "\n\n"));
+                if (import_warning != DialogResult.Yes) return;
+            }
             try{
                 if (!(dgv.DataSource is DataTable dt)){
                     return;
@@ -1499,11 +1522,11 @@ namespace Astel{
         private void PasswordGeneratorToolStripMenuItem_Click(object sender, EventArgs e){
             TSToolLauncher<AstelPasswordGenerator>("astel_password_generator", "header_menu_pass_gen");
         }
-        // BUY ME A COFFEE LINK
+        // DONATE LINK
         // ======================================================================================================
-        private void BmacToolStripMenuItem_Click(object sender, EventArgs e){
+        private void DonateToolStripMenuItem_Click(object sender, EventArgs e){
             try{
-                Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_bmac){ UseShellExecute = true });
+                Process.Start(new ProcessStartInfo(TS_LinkSystem.ts_donate){ UseShellExecute = true });
             }catch (Exception){ }
         }
         // TS WIZARD

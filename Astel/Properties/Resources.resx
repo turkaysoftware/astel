@@ -124,12 +124,6 @@
   <data name="ct_add_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\theme_light\ct_add_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ct_bmac_mc_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\astel_images\astel_ui\theme_dark\ct_bmac_mc_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ct_bmac_mc_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\astel_images\astel_ui\theme_light\ct_bmac_mc_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ct_confirm_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\theme_dark\ct_confirm_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,12 +208,6 @@
   <data name="tm_auto_backup_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\theme_light\tm_auto_backup_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="tm_bmac_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\astel_images\astel_ui\theme_dark\tm_bmac_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tm_bmac_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\astel_images\astel_ui\theme_light\tm_bmac_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="tm_change_password_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\theme_dark\tm_change_password_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -243,6 +231,18 @@
   </data>
   <data name="tm_data_transfer_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\theme_light\tm_data_transfer_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tm_donate_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_ui\theme_dark\tm_donate_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tm_donate_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_ui\theme_light\tm_donate_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tm_donate_mc_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_ui\theme_dark\tm_donate_mc_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tm_donate_mc_light" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\astel_ui\theme_light\tm_donate_mc_light.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tm_language_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\theme_dark\tm_language_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,7 +295,7 @@
   <data name="ts_close" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\astel_images\astel_ui\ts_material\ts_close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ts_preloader_release" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\astel_images\ts_preloader\ts_preloader_release.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ts_preloader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\astel_images\ts_preloader\ts_preloader.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -90,7 +90,7 @@
             this.checkforUpdatesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.passwordGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tSWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bmacToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Panel_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataMainTable)).BeginInit();
@@ -534,7 +534,7 @@
             this.settingsToolStripMenuItem,
             this.passwordGeneratorToolStripMenuItem,
             this.tSWizardToolStripMenuItem,
-            this.bmacToolStripMenuItem,
+            this.donateToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.HeaderMenu.Location = new System.Drawing.Point(0, 0);
             this.HeaderMenu.Name = "HeaderMenu";
@@ -809,15 +809,15 @@
             this.tSWizardToolStripMenuItem.Text = "TSWizard";
             this.tSWizardToolStripMenuItem.Click += new System.EventHandler(this.TSWizardToolStripMenuItem_Click);
             // 
-            // bmacToolStripMenuItem
+            // donateToolStripMenuItem
             // 
-            this.bmacToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bmacToolStripMenuItem.Name = "bmacToolStripMenuItem";
-            this.bmacToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            this.donateToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.donateToolStripMenuItem.Name = "donateToolStripMenuItem";
+            this.donateToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.D)));
-            this.bmacToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.bmacToolStripMenuItem.Text = "Bmac";
-            this.bmacToolStripMenuItem.Click += new System.EventHandler(this.BmacToolStripMenuItem_Click);
+            this.donateToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.donateToolStripMenuItem.Text = "Donate";
+            this.donateToolStripMenuItem.Click += new System.EventHandler(this.DonateToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -901,7 +901,7 @@
         private System.Windows.Forms.ToolStripMenuItem autoDataBackupOnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoDataBackupOffToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem autoDataBackupFolderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bmacToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem donateToolStripMenuItem;
         private TSCustomComboBox CmbService;
         private System.Windows.Forms.ToolStripMenuItem cSVExportFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem astelExportFileToolStripMenuItem;

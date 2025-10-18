@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>25.10.0.%2a</ApplicationVersion>
+    <ApplicationVersion>25.11.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -221,12 +221,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AstelLogo.ico" />
+    <None Include="astel_images\astel_ui\theme_light\tm_donate_mc_light.png" />
+    <None Include="astel_images\astel_ui\theme_light\tm_donate_light.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_donate_mc_dark.png" />
+    <None Include="astel_images\astel_ui\theme_dark\tm_donate_dark.png" />
+    <None Include="astel_images\ts_preloader\ts_preloader.jpg" />
     <None Include="astel_images\astel_ui\theme_light\ct_link_mc_light.png" />
     <None Include="astel_images\astel_ui\theme_dark\ct_link_mc_dark.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_safety_warnings_light.png" />
     <None Include="astel_images\astel_ui\theme_dark\tm_safety_warnings_dark.png" />
-    <None Include="astel_images\astel_ui\theme_light\ct_bmac_mc_light.png" />
-    <None Include="astel_images\astel_ui\theme_dark\ct_bmac_mc_dark.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_update_light.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_ts_wizard_light.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_theme_light.png" />
@@ -238,7 +241,6 @@
     <None Include="astel_images\astel_ui\theme_light\tm_data_import_light.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_data_export_light.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_change_password_light.png" />
-    <None Include="astel_images\astel_ui\theme_light\tm_bmac_light.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_auto_backup_light.png" />
     <None Include="astel_images\astel_ui\theme_light\tm_about_light.png" />
     <None Include="astel_images\astel_ui\theme_light\ct_youtube_light.png" />
@@ -264,7 +266,6 @@
     <None Include="astel_images\astel_ui\theme_dark\tm_data_import_dark.png" />
     <None Include="astel_images\astel_ui\theme_dark\tm_data_export_dark.png" />
     <None Include="astel_images\astel_ui\theme_dark\tm_change_password_dark.png" />
-    <None Include="astel_images\astel_ui\theme_dark\tm_bmac_dark.png" />
     <None Include="astel_images\astel_ui\theme_dark\tm_auto_backup_dark.png" />
     <None Include="astel_images\astel_ui\theme_dark\tm_about_dark.png" />
     <None Include="astel_images\astel_ui\theme_dark\ct_youtube_dark.png" />
@@ -279,7 +280,6 @@
     <None Include="astel_images\astel_ui\theme_dark\ct_copy_dark.png" />
     <None Include="astel_images\astel_ui\theme_dark\ct_confirm_dark.png" />
     <None Include="astel_images\astel_ui\theme_dark\ct_add_dark.png" />
-    <None Include="astel_images\ts_preloader\ts_preloader_release.jpg" />
     <None Include="astel_images\astel_ui\ts_material\ts_close.png" />
   </ItemGroup>
   <ItemGroup />

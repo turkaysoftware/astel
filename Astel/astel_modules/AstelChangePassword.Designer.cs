@@ -55,10 +55,10 @@
             this.Panel_BG.Controls.Add(this.BtnChangePassword);
             this.Panel_BG.Controls.Add(this.LabelHeader);
             this.Panel_BG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Panel_BG.Location = new System.Drawing.Point(3, 3);
+            this.Panel_BG.Location = new System.Drawing.Point(0, 0);
             this.Panel_BG.Name = "Panel_BG";
             this.Panel_BG.Padding = new System.Windows.Forms.Padding(10);
-            this.Panel_BG.Size = new System.Drawing.Size(353, 350);
+            this.Panel_BG.Size = new System.Drawing.Size(434, 356);
             this.Panel_BG.TabIndex = 0;
             // 
             // CheckPassword
@@ -98,7 +98,7 @@
             this.TxtNewPasswordRepeat.Margin = new System.Windows.Forms.Padding(3, 3, 3, 7);
             this.TxtNewPasswordRepeat.MaxLength = 32;
             this.TxtNewPasswordRepeat.Name = "TxtNewPasswordRepeat";
-            this.TxtNewPasswordRepeat.Size = new System.Drawing.Size(333, 25);
+            this.TxtNewPasswordRepeat.Size = new System.Drawing.Size(414, 25);
             this.TxtNewPasswordRepeat.TabIndex = 6;
             // 
             // LabelNewPassword
@@ -124,7 +124,7 @@
             this.TxtNewPassword.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.TxtNewPassword.MaxLength = 32;
             this.TxtNewPassword.Name = "TxtNewPassword";
-            this.TxtNewPassword.Size = new System.Drawing.Size(333, 25);
+            this.TxtNewPassword.Size = new System.Drawing.Size(414, 25);
             this.TxtNewPassword.TabIndex = 4;
             // 
             // LabelCurrentPassword
@@ -150,7 +150,7 @@
             this.TxtCurrentPassword.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.TxtCurrentPassword.MaxLength = 32;
             this.TxtCurrentPassword.Name = "TxtCurrentPassword";
-            this.TxtCurrentPassword.Size = new System.Drawing.Size(333, 25);
+            this.TxtCurrentPassword.Size = new System.Drawing.Size(414, 25);
             this.TxtCurrentPassword.TabIndex = 2;
             // 
             // BtnChangePassword
@@ -167,9 +167,9 @@
             this.BtnChangePassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
             this.BtnChangePassword.ForeColor = System.Drawing.Color.White;
             this.BtnChangePassword.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnChangePassword.Location = new System.Drawing.Point(10, 305);
+            this.BtnChangePassword.Location = new System.Drawing.Point(10, 311);
             this.BtnChangePassword.Name = "BtnChangePassword";
-            this.BtnChangePassword.Size = new System.Drawing.Size(333, 35);
+            this.BtnChangePassword.Size = new System.Drawing.Size(414, 35);
             this.BtnChangePassword.TabIndex = 8;
             this.BtnChangePassword.Text = "KAYDET";
             this.BtnChangePassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -187,7 +187,7 @@
             this.LabelHeader.Location = new System.Drawing.Point(10, 10);
             this.LabelHeader.Margin = new System.Windows.Forms.Padding(0, 0, 0, 30);
             this.LabelHeader.Name = "LabelHeader";
-            this.LabelHeader.Size = new System.Drawing.Size(333, 35);
+            this.LabelHeader.Size = new System.Drawing.Size(414, 35);
             this.LabelHeader.TabIndex = 0;
             this.LabelHeader.Text = "ŞİFRE DEĞİŞTİR";
             this.LabelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,7 +196,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(359, 356);
+            this.ClientSize = new System.Drawing.Size(434, 356);
             this.Controls.Add(this.Panel_BG);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -204,7 +204,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AstelChangePassword";
-            this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AstelChangePassword";
             this.Load += new System.EventHandler(this.AstelChangePassword_Load);
