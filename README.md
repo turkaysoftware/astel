@@ -3,9 +3,7 @@
 > [!TIP]
 **_This program is completely free to use. I do not earn any income from its use. However, you can support me by donating to the address below so that I can continue my work 💚 Even if you cannot provide financial support, you can help spread the software and increase its visibility by sharing it._**
 
-**[Buy Me a Coffee - turkaysoftware](https://buymeacoffee.com/turkaysoftware)**
-
-<img width="150" height="150" alt="Buy Me a Coffee - turkaysoftware" src="https://github.com/user-attachments/assets/9987c7dc-f8dd-42ab-a7f9-d8a4fca2e3d5" />
+**[DONATE LINK](https://buymeacoffee.com/turkaysoftware)**
 
 **Astel** is a **password management software** developed by **Eray Türkay**.  **None of your personal information is transferred to any other medium other than your computer**. Therefore it is completely secure. 
 
