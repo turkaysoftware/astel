@@ -43,28 +43,13 @@ After downloading the Astel application, you will find two options: **Astel_x64.
 
 With these instructions, you can download and use the correct version of Astel for your device. If you need further assistance, please feel free to reach out!
 
-# Supported Languages
+# Advanced Features
+- **Multi-Architecture Support:** Fully compatible with x64-x86 and ARM processors.
+- **Multi-Language System:** Fully supports 14 or more languages. **Supported Languages:** _Arabic, Chinese, English, French, German, Hindi, Italian, Japanase, Korean, Polish, Portuguese, Russian, Spanish, Turkish_ | **For translation support: [Translation Guide for Astel](https://github.com/turkaysoftware/astel/discussions/3)**
+- Advanced interface features such as Light / Dark / System Theme.
+- [TS Wizard](https://www.turkaysoftware.com/ts-wizard) provides an automatic update and monitoring system.
 
-- English
-- Italian
-- Polish
-- Turkish
-- **For translation support: [Translation Guide for Astel](https://github.com/turkaysoftware/astel/discussions/3)**
-
-# Supported Themes
-
-- Light Theme
-- Dark Theme
-
-# Supported Operating Systems
-
-- Windows 11 x64
-- Windows 10 x64
-
-# Supported Architectures
-
-- 64 Bit (x64)
-- ARM64 (ARM CPU)
+<img width="427" height="336" alt="Astel - Advanced Features" src="https://github.com/user-attachments/assets/c3918511-525b-4f29-9ab8-59fb33bf85b9" />
 
 # System Requirements
 
