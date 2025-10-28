@@ -45,6 +45,9 @@ With these instructions, you can download and use the correct version of Astel f
 - **Multi-Architecture Support:** Fully compatible with x64-x86 and ARM processors.
 - **Multi-Language System:** Fully supports 14 or more languages. **Supported Languages:** _Arabic, Chinese, English, French, German, Hindi, Italian, Japanase, Korean, Polish, Portuguese, Russian, Spanish, Turkish_ | **For translation support: [Translation Guide for Astel](https://github.com/turkaysoftware/astel/discussions/3)**
 - Advanced interface features such as Light / Dark / System Theme.
+- **Data Transfer:** You can export/import your data in both *.astel and *.csv formats.
+- **Automatic Backup:** The system automatically backs up your data at specified intervals in an encrypted format, preventing data loss.
+- **Advanced Password Generator:** You can create secure passwords using our advanced password generator, which can meet all your needs.
 - [TS Wizard](https://www.turkaysoftware.com/ts-wizard) provides an automatic update and monitoring system.
 
 <img width="427" height="336" alt="Astel - Advanced Features" src="https://github.com/user-attachments/assets/c3918511-525b-4f29-9ab8-59fb33bf85b9" />
