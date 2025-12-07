@@ -11,11 +11,11 @@ Programmed with C# and .NET Framework only. No external libraries, no dependenci
 
 [Click here](https://www.turkaysoftware.com/astel) for full specifications.
 
-<img width="1010" height="633" alt="Astel UI" src="https://github.com/user-attachments/assets/84258c1b-10d6-416f-a1ad-354532fb1f11" />
+<img width="1010" height="633" alt="Astel UI" src="https://github.com/user-attachments/assets/9a007eb1-7253-4221-ae99-313da897e3c6" />
 
 # Astel Passoword Generator Feature
 
-<img width="586" height="533" alt="Astel - Password Generator" src="https://github.com/user-attachments/assets/7b0ce7f5-0e3f-4579-84a9-49ff0cac1e46" />
+<img width="586" height="533" alt="Astel - Password Generator" src="https://github.com/user-attachments/assets/bfe7d287-9fba-41b8-a3a6-a9dd37e17176" />
 
 # Download Astel
 
