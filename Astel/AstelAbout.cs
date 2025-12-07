@@ -75,10 +75,10 @@ namespace Astel{
                 foreach (Control ui_buttons in PanelTxt.Controls){
                     if (ui_buttons is Button about_button){
                         about_button.ForeColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "DynamicThemeActiveBtnBGColor");
-                        about_button.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
-                        about_button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
-                        about_button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
-                        about_button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMainHover");
+                        about_button.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColor");
+                        about_button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColor");
+                        about_button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColor");
+                        about_button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColorHover");
                     }
                 }
                 //

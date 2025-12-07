@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 // TS MODULES
 using static Astel.TSModules;
@@ -7,7 +8,7 @@ using static Astel.TSSecureModule;
 
 namespace Astel.astel_modules{
     public partial class AstelChangePassword : Form{
-        public AstelChangePassword(){ InitializeComponent(); CheckForIllegalCrossThreadCalls = false; }
+        public AstelChangePassword(){ InitializeComponent(); }
         // SIGN IN PRELOADER
         // ======================================================================================================
         public void Change_password_system_preloader(){
@@ -31,10 +32,10 @@ namespace Astel.astel_modules{
                 foreach (Control control in Panel_BG.Controls){
                     if (control is Button button){
                         button.ForeColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "DynamicThemeActiveBtnBGColor");
-                        button.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
-                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
-                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
-                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMainHover");
+                        button.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColor");
+                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColor");
+                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColor");
+                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColorHover");
                     }
                 }
                 //
@@ -67,65 +68,91 @@ namespace Astel.astel_modules{
         }
         // CHANGE PASSWORD BTN
         // ======================================================================================================
-        private void BtnChangePassword_Click(object sender, EventArgs e){
-            Change_password_function();
+        private async void BtnChangePassword_Click(object sender, EventArgs e){
+            await Change_password_function();
         }
         // CHANGE PASSWORD FUNCTION
         // ======================================================================================================
-        private void Change_password_function(){
+        private async Task Change_password_function(){
             TSGetLangs software_lang = new TSGetLangs(AstelMain.lang_path);
-            try{
-                string password_current = TxtCurrentPassword.Text.Trim();
-                string password_new = TxtNewPassword.Text.Trim();
-                string password_new_repeat = TxtNewPasswordRepeat.Text.Trim();
-                //
-                if (string.IsNullOrEmpty(password_current)){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_info"));
-                    return;
-                }
-                if (string.IsNullOrEmpty(password_new)){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_info"));
-                    return;
-                }
-                if (string.IsNullOrEmpty(password_new_repeat)){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_repeat_info"));
-                    return;
-                }
-                if (password_new.Length < 6 || password_new.Length > 32){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelChangePassword", "asp_pass_req_info"));
-                    return;
-                }
-                if (password_new != password_new_repeat){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_compare_info"), "\n"));
-                    return;
-                }
-                //
-                TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
-                string saved_salt = software_read_settings.TSReadSettings(ts_session_container, "PasswordSalt");
-                string saved_password = software_read_settings.TSReadSettings(ts_session_container, "PasswordHash");
+            //
+            string password_current = TxtCurrentPassword.Text.Trim();
+            string password_new = TxtNewPassword.Text.Trim();
+            string password_new_repeat = TxtNewPasswordRepeat.Text.Trim();
+            //
+            if (string.IsNullOrEmpty(password_current)){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_info"));
+                BeginInvoke(new Action(() => {
+                    TxtCurrentPassword.Focus();
+                }));
+                return;
+            }
+            if (string.IsNullOrEmpty(password_new)){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_info"));
+                BeginInvoke(new Action(() => {
+                    TxtNewPassword.Focus();
+                }));
+                return;
+            }
+            if (string.IsNullOrEmpty(password_new_repeat)){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_repeat_info"));
+                BeginInvoke(new Action(() => {
+                    TxtNewPasswordRepeat.Focus();
+                }));
+                return;
+            }
+            if (password_new.Length < 6 || password_new.Length > 32){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelChangePassword", "asp_pass_req_info"));
+                BeginInvoke(new Action(() => {
+                    TxtNewPassword.Focus();
+                }));
+                return;
+            }
+            if (password_new != password_new_repeat){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelChangePassword", "asp_new_pass_compare_info"), "\n"));
+                return;
+            }
+            //
+            Text = $"{string.Format(software_lang.TSReadLangs("AstelChangePassword", "asp_title"), Application.ProductName)} - " +  software_lang.TSReadLangs("AstelChangePassword", "asp_check_cp_change");
+            TxtCurrentPassword.Enabled = false;
+            TxtNewPassword.Enabled = false;
+            TxtNewPasswordRepeat.Enabled = false;
+            BtnChangePassword.Enabled = false;
+            //
+            bool change_password_status = await Task.Run(() =>{
+                TSSettingsSave read = new TSSettingsSave(ts_session_file);
+                string saved_salt = read.TSReadSettings(ts_session_container, "PasswordSalt");
+                string saved_password = read.TSReadSettings(ts_session_container, "PasswordHash");
                 //
                 if (string.IsNullOrEmpty(saved_salt) || string.IsNullOrEmpty(saved_password)){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_fail_info"), "\n"));
-                    return;
+                    return false;
                 }
-                //
                 string hashed_current = TSHashPassword(password_current, saved_salt);
-                //
                 if (hashed_current != saved_password){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_fail_info"), "\n"));
-                    return;
+                    return false;
                 }
                 //
                 string new_salt = GenerateSalt();
-                string new_hashed_password = TSHashPassword(password_new, new_salt);
+                string new_hashed = TSHashPassword(password_new, new_salt);
                 //
-                TSSettingsSave software_setting_save = new TSSettingsSave(ts_session_file);
-                software_setting_save.TSWriteSettings(ts_session_container, "PasswordSalt", new_salt);
-                software_setting_save.TSWriteSettings(ts_session_container, "PasswordHash", new_hashed_password);
-                //
+                TSSettingsSave write = new TSSettingsSave(ts_session_file);
+                write.TSWriteSettings(ts_session_container, "PasswordSalt", new_salt);
+                write.TSWriteSettings(ts_session_container, "PasswordHash", new_hashed);
+                return true;
+            });
+            //
+            if (change_password_status){
                 TS_MessageBoxEngine.TS_MessageBox(this, 1, string.Format(software_lang.TSReadLangs("AstelChangePassword", "asp_pass_change_success"), "\n"));
                 Hide();
-            }catch (Exception){ }
+            }else{
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelChangePassword", "asp_current_pass_fail_info"), "\n"));
+            }
+            //
+            Text = string.Format(software_lang.TSReadLangs("AstelChangePassword", "asp_title"), Application.ProductName);
+            TxtCurrentPassword.Enabled = true;
+            TxtNewPassword.Enabled = true;
+            TxtNewPasswordRepeat.Enabled = true;
+            BtnChangePassword.Enabled = true;
         }
         // CHECK PASSWORD VISIBLE
         // ======================================================================================================

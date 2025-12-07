@@ -1,6 +1,6 @@
 ﻿// ======================================================================================================
 // Astel - Password Management Software
-// © Copyright 2024-2025, Eray Türkay.
+// © Copyright 2024-2026, Eray Türkay.
 // Project Type: Open Source
 // License: MIT License
 // Website: https://www.turkaysoftware.com/astel
@@ -195,19 +195,23 @@ namespace Astel{
         private void MainToolTip_Draw(object sender, DrawToolTipEventArgs e){ e.DrawBackground(); e.DrawBorder(); e.DrawText(); }
         // LOAD
         // ======================================================================================================
-        private void Astel_Load(object sender, EventArgs e){
-            Text = TS_VersionEngine.TS_SofwareVersion(0);
-            HeaderMenu.Cursor = Cursors.Hand;
+        private async void Astel_Load(object sender, EventArgs e){ 
             // PREFETCH
             ServiceListAdd();
             RunSoftwareEngine();
+            //
+            TSGetLangs software_lang = new TSGetLangs(lang_path);
+            Text = TS_VersionEngine.TS_SofwareVersion(0) + " - " + software_lang.TSReadLangs("AstelHome", "ah_load");
+            HeaderMenu.Cursor = Cursors.Hand;
             // TEMPORARY COLUMN CLEAR
             DataMainTable.Columns.Clear();
             // LOGIN SECURITY
-            InitializeLoaderSecurity();
+            await InitializeLoaderSecurityAsync();
             // LOAD
             AstelLoadXMLData();
             DGVColumnFormatter();
+            //
+            Text = TS_VersionEngine.TS_SofwareVersion(0);
             //
             DataMainTable.Columns[0].Width = (int)(50 * this.DeviceDpi / 96f);
             DataMainTable.Columns[1].Width = (int)(100 * this.DeviceDpi / 96f);
@@ -249,47 +253,45 @@ namespace Astel{
             CmbService.Items.AddRange(content_services);
             CmbService.SelectedIndex = 0;
         }
-        private XDocument InitializeAES(){
-            var ts_xDoc = XDocument.Load(ts_data_xml_path);
-            var root = ts_xDoc.Element("Datas");
-            //
-            string saltBase64 = root.Attribute("ST")?.Value.Trim();
-            string passwordBase64 = root.Attribute("EK")?.Value.Trim();
-            //
-            byte[] salt_byte;
-            string password_string;
-            //
-            if (string.IsNullOrEmpty(saltBase64) || string.IsNullOrEmpty(passwordBase64)){
-                byte[] passwordBytes = new byte[32];
-                salt_byte = new byte[16];
-                using (var rng = RandomNumberGenerator.Create()){
-                    rng.GetBytes(passwordBytes);
-                    rng.GetBytes(salt_byte);
+        private async Task<XDocument> InitializeAESAsync(){
+            return await Task.Run(() =>{
+                var ts_xDoc = XDocument.Load(ts_data_xml_path);
+                var root = ts_xDoc.Element("Datas");
+                string saltBase64 = root.Attribute("ST")?.Value.Trim();
+                string passwordBase64 = root.Attribute("EK")?.Value.Trim();
+                byte[] salt_byte;
+                string password_string;
+                if (string.IsNullOrEmpty(saltBase64) || string.IsNullOrEmpty(passwordBase64)){
+                    byte[] passwordBytes = new byte[32];
+                    salt_byte = new byte[16];
+                    using (var rng = RandomNumberGenerator.Create()){
+                        rng.GetBytes(passwordBytes);
+                        rng.GetBytes(salt_byte);
+                    }
+                    password_string = Convert.ToBase64String(passwordBytes);
+                    root.SetAttributeValue("EK", password_string);
+                    root.SetAttributeValue("ST", Convert.ToBase64String(salt_byte));
+                }else{
+                    password_string = passwordBase64;
+                    salt_byte = Convert.FromBase64String(saltBase64);
                 }
-                password_string = Convert.ToBase64String(passwordBytes);
-                root.SetAttributeValue("EK", password_string);
-                root.SetAttributeValue("ST", Convert.ToBase64String(salt_byte));
-            }else{
-                password_string = passwordBase64;
-                salt_byte = Convert.FromBase64String(saltBase64);
-            }
-            using (var keyDeriver = new Rfc2898DeriveBytes(password_string, salt_byte, 7_500)){
-                byte[] aesKey = keyDeriver.GetBytes(32);
-                TS_AES_Encryption.SetKey(aesKey);
-            }
-            ts_xDoc.Save(ts_data_xml_path);
-            return ts_xDoc;
+                using (var keyDeriver = new Rfc2898DeriveBytes(password_string, salt_byte, 210_000, HashAlgorithmName.SHA512)){
+                    byte[] aesKey = keyDeriver.GetBytes(32);
+                    TS_AES_Encryption.SetKey(aesKey);
+                }
+                ts_xDoc.Save(ts_data_xml_path);
+                return ts_xDoc;
+            });
         }
-        private void InitializeLoaderSecurity(){
-            if (!File.Exists(ts_data_xml_path)){ CreateEmptyXmlFile(); }
-            //
+        private async Task InitializeLoaderSecurityAsync(){
+            if (!File.Exists(ts_data_xml_path)){
+                CreateEmptyXmlFile();
+            }
             TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
             TSGetLangs software_lang = new TSGetLangs(lang_path);
-            //
-            var ts_xDoc = InitializeAES();
+            var ts_xDoc = await InitializeAESAsync();
             var root = ts_xDoc.Element("Datas");
             root.SetAttributeValue("SV", TS_VersionEngine.TS_SofwareVersion(1));
-            //
             string saved_crossLinker64 = software_read_settings.TSReadSettings(ts_session_container, "CrossLinker").Trim();
             string crossLinker64 = root.Attribute("CL")?.Value.Trim();
             if (!string.IsNullOrEmpty(crossLinker64)){
@@ -299,7 +301,7 @@ namespace Astel{
                         Directory.Delete(ts_data_backup_folder, true);
                     }
                     CreateEmptyXmlFile();
-                    InitializeAES();
+                    await InitializeAESAsync();
                     TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("CrossLinker", "cl_message"), "\n\n", "\n\n"));
                     return;
                 }
@@ -331,7 +333,7 @@ namespace Astel{
                     ts_xDoc.Save(ts_data_xml_path);
                 }
             }
-            // ...
+            //
             DataSet ts_dataSet = new DataSet();
             DataTable ts_dataTable = new DataTable("Datas");
             ts_dataTable.Columns.Add("ID", typeof(int));
@@ -387,13 +389,13 @@ namespace Astel{
         }
         // ADD DATA
         // ======================================================================================================
-        private void AddBtn_Click(object sender, EventArgs e){
-            ProgressData(false);
+        private async void AddBtn_Click(object sender, EventArgs e){
+            await ProgressData(false);
         }
         // UPDATE DATA
         // ======================================================================================================
-        private void UpdateBtn_Click(object sender, EventArgs e){
-            ProgressData(true);
+        private async void UpdateBtn_Click(object sender, EventArgs e){
+            await ProgressData(true);
         }
         // VALIDATE AND PROGRESS FUNCTIONS
         // ======================================================================================================
@@ -448,7 +450,7 @@ namespace Astel{
             }
             return (strongPassword, checksPasswordRequire);
         }
-        private void ProgressData(bool isUpdate){
+        private async Task ProgressData(bool isUpdate){
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             try{
                 if (isUpdate && DataMainTable.SelectedRows.Count == 0){
@@ -465,7 +467,7 @@ namespace Astel{
                         return;
                 }
                 //
-                if (!File.Exists(ts_data_xml_path)) InitializeLoaderSecurity();
+                if (!File.Exists(ts_data_xml_path)) await InitializeLoaderSecurityAsync();
                 //
                 var ts_xDoc = XDocument.Load(ts_data_xml_path);
                 var ts_xml_root = ts_xDoc.Element("Datas");
@@ -807,7 +809,7 @@ namespace Astel{
                 }
                 header_colors[0] = TS_ThemeEngine.ColorMode(theme, "HeaderBGColor");
                 header_colors[1] = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor");
-                header_colors[2] = TS_ThemeEngine.ColorMode(theme, "AccentMain");
+                header_colors[2] = TS_ThemeEngine.ColorMode(theme, "AccentColor");
                 HeaderMenu.Renderer = new HeaderMenuColors();
                 // TOOLTIP
                 MainToolTip.ForeColor = TS_ThemeEngine.ColorMode(theme, "HeaderFEColor2");
@@ -838,10 +840,10 @@ namespace Astel{
                 foreach (Control control in combinedBtnsControls){
                     if (control is Button button){
                         button.ForeColor = TS_ThemeEngine.ColorMode(theme, "DynamicThemeActiveBtnBGColor");
-                        button.BackColor = TS_ThemeEngine.ColorMode(theme, "AccentMain");
-                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme, "AccentMain");
-                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme, "AccentMain");
-                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme, "AccentMainHover");
+                        button.BackColor = TS_ThemeEngine.ColorMode(theme, "AccentColor");
+                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme, "AccentColor");
+                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme, "AccentColor");
+                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme, "AccentColorHover");
                     }
                 }
                 CmbService.BackColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBGColor");
@@ -1364,7 +1366,7 @@ namespace Astel{
             }
             File.WriteAllText(filePath, sb.ToString(), Encoding.UTF8);
         }
-        // IMPORT
+        // IMPORT 
         // ==========================
         private void AstelImportDataToolStripMenuItem_Click(object sender, EventArgs e){
             using (var ofd = new OpenFileDialog()){
@@ -1377,24 +1379,26 @@ namespace Astel{
                 }
             }
         }
-        private void CSVImportDataToolStripMenuItem_Click(object sender, EventArgs e){
+        private async void CSVImportDataToolStripMenuItem_Click(object sender, EventArgs e){
             using (var ofd = new OpenFileDialog()){
                 TSGetLangs software_lang = new TSGetLangs(lang_path);
                 ofd.Title = string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_location"), Application.ProductName, ts_data_backup_extension_csv);
                 ofd.Filter = string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_file_name"), ts_data_backup_extension_csv_name, string.Format("(*{0})|*{1}", ts_data_backup_extension_csv, ts_data_backup_extension_csv));
                 ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 if (ofd.ShowDialog() == DialogResult.OK){
-                    ImportCSVFromFile(DataMainTable, ofd.FileName);
+                   await ImportCSVFromFile(DataMainTable, ofd.FileName);
                 }
             }
         }
-        private void ImportAstelFromFile(string filePath){
+        private async void ImportAstelFromFile(string filePath){
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             if (DataMainTable.Rows.Count > 0){
                 DialogResult import_warning = TS_MessageBoxEngine.TS_MessageBox(this, 6, string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_warning"), "\n\n", "\n\n"));
                 if (import_warning != DialogResult.Yes) return;
             }
             try{
+                Text = TS_VersionEngine.TS_SofwareVersion(0) + " - " + software_lang.TSReadLangs("AstelHome", "ah_load");
+                //
                 string target_data = Path.Combine(ts_session_root_path, "AstelData.xml");
                 File.Copy(filePath, target_data, true);
                 //
@@ -1418,16 +1422,18 @@ namespace Astel{
                 root.SetAttributeValue("CL", saved_crossLinker64);
                 ts_xDoc.Save(ts_data_xml_path);
                 //
-                InitializeLoaderSecurity();
+                await InitializeLoaderSecurityAsync();
                 AstelLoadXMLData();
                 NodeClearInput();
                 //
                 TS_MessageBoxEngine.TS_MessageBox(this, 1, software_lang.TSReadLangs("DataTransfer", "hdt_import_success"));
             }catch (Exception ex){
                 TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_failed"), "\n", "\n\n", ex.Message));
+            }finally{
+                Text = TS_VersionEngine.TS_SofwareVersion(0);
             }
         }
-        private void ImportCSVFromFile(DataGridView dgv, string filePath){
+        private async Task ImportCSVFromFile(DataGridView dgv, string filePath){
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             if (DataMainTable.Rows.Count > 0){
                 DialogResult import_warning = TS_MessageBoxEngine.TS_MessageBox(this, 6, string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_warning"), "\n\n", "\n\n"));
@@ -1437,10 +1443,13 @@ namespace Astel{
                 if (!(dgv.DataSource is DataTable dt)){
                     return;
                 }
+                //
+                Text = TS_VersionEngine.TS_SofwareVersion(0) + " - " + software_lang.TSReadLangs("AstelHome", "ah_load");
+                //
                 dt.Rows.Clear();
                 string[] lines = File.ReadAllLines(filePath, Encoding.UTF8);
                 if (lines.Length <= 1) return;
-                if (!File.Exists(ts_data_xml_path)) InitializeLoaderSecurity();
+                if (!File.Exists(ts_data_xml_path)) await InitializeLoaderSecurityAsync();
                 var ts_xDoc = XDocument.Load(ts_data_xml_path);
                 var ts_xml_root = ts_xDoc.Element("Datas");
                 int currentMaxId = GetMaxIdFromXml();
@@ -1488,6 +1497,8 @@ namespace Astel{
                 TS_MessageBoxEngine.TS_MessageBox(this, 1, software_lang.TSReadLangs("DataTransfer", "hdt_import_success"));
             }catch (Exception ex){
                 TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(software_lang.TSReadLangs("DataTransfer", "hdt_import_failed"), "\n", "\n\n", ex.Message));
+            }finally{
+                Text = TS_VersionEngine.TS_SofwareVersion(0);
             }
         }
         // DRAG & DROP IMPORT DATA FEATURE
@@ -1504,13 +1515,13 @@ namespace Astel{
             }
             e.Effect = DragDropEffects.None;
         }
-        private void Astel_DragDrop(object sender, DragEventArgs e){
+        private async void Astel_DragDrop(object sender, DragEventArgs e){
             if (e.Data.GetDataPresent(DataFormats.FileDrop)){
                 var astel_file = (string[])e.Data.GetData(DataFormats.FileDrop);
                 if (astel_file.Length == 1 && Path.GetExtension(astel_file[0]).ToLower() == ts_data_backup_extension_astel){
                     ImportAstelFromFile(astel_file[0]);
                 }else if (astel_file.Length == 1 && Path.GetExtension(astel_file[0]).ToLower() == ts_data_backup_extension_csv){
-                    ImportCSVFromFile(DataMainTable, astel_file[0]);
+                    await ImportCSVFromFile(DataMainTable, astel_file[0]);
                 }
             }
         }

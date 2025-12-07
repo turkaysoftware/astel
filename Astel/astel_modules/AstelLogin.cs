@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 // TS MODULES
 using static Astel.TSModules;
@@ -7,7 +8,7 @@ using static Astel.TSSecureModule;
 
 namespace Astel.astel_modules{
     public partial class AstelLogin : Form{
-        public AstelLogin(){ InitializeComponent(); CheckForIllegalCrossThreadCalls = false; }
+        public AstelLogin(){ InitializeComponent(); }
         // LOGIN PRELOADER
         // ======================================================================================================
         string login_global_lang;
@@ -37,10 +38,10 @@ namespace Astel.astel_modules{
                 foreach (Control control in Panel_BG.Controls){
                     if (control is Button button){
                         button.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "DynamicThemeActiveBtnBGColor");
-                        button.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
-                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
-                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
-                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMainHover");
+                        button.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColor");
+                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColor");
+                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColor");
+                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColorHover");
                     }
                 }
                 //
@@ -73,33 +74,44 @@ namespace Astel.astel_modules{
         }
         // LOGIN BTN
         // ======================================================================================================
-        private void BtnLogin_Click(object sender, EventArgs e){
-            Login_system();
+        private async void BtnLogin_Click(object sender, EventArgs e){
+            await Login_system();
         }
         // LOGIN FUNCTION
         // ======================================================================================================
-        private void Login_system(){
+        private async Task Login_system(){
             TSGetLangs software_lang = new TSGetLangs(login_global_lang);
-            try{
-                string get_password = TxtPassword.Text.Trim();
-                if (string.IsNullOrEmpty(get_password)){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelLogin", "al_password_info"));
-                    return;
-                }
-                //
-                TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
-                string saved_salt = software_read_settings.TSReadSettings(ts_session_container, "PasswordSalt");
-                string saved_password = software_read_settings.TSReadSettings(ts_session_container, "PasswordHash");
-                //
+            string get_password = TxtPassword.Text.Trim();
+            if (string.IsNullOrEmpty(get_password)){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelLogin", "al_password_info"));
+                return;
+            }
+            //
+            Text = $"{string.Format(software_lang.TSReadLangs("AstelLogin", "al_title"), Application.ProductName)} - " + software_lang.TSReadLangs("AstelLogin", "al_check_login");
+            TxtPassword.Enabled = false;
+            BtnLogin.Enabled = false;
+            //
+            bool login_status = await Task.Run(() =>{
+                TSSettingsSave read = new TSSettingsSave(ts_session_file);
+                string saved_salt = read.TSReadSettings(ts_session_container, "PasswordSalt");
+                string saved_password = read.TSReadSettings(ts_session_container, "PasswordHash");
                 string hashed_input = TSHashPassword(get_password, saved_salt);
-                if (hashed_input == saved_password){
-                    AstelMain astel = new AstelMain();
-                    astel.Show();
-                    Hide();
-                }else{
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelLogin", "al_password_failed"), "\n"));
-                }
-            }catch (Exception){ }
+                return hashed_input == saved_password;
+            });
+            //
+            if (login_status){
+                new AstelMain().Show();
+                Hide();
+            }else{
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelLogin", "al_password_failed"), "\n\n"));
+                BeginInvoke(new Action(() =>{
+                    TxtPassword.Focus();
+                }));
+            }
+            //
+            Text = string.Format(software_lang.TSReadLangs("AstelLogin", "al_title"), Application.ProductName);
+            TxtPassword.Enabled = true;
+            BtnLogin.Enabled = true;
         }
         // CHECK PASSWORD VISIBLE
         // ======================================================================================================

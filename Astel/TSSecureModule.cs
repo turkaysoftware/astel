@@ -69,13 +69,13 @@ namespace Astel{
         }
         // ADVANCED SHA512 ENCRYPTION
         // ======================================================================================================
-        public static string TSHashPassword(string password, string saltBase64, int iterations = 7_500){
+        public static string TSHashPassword(string password, string saltBase64, int iterations = 210_000){
             byte[] saltBytes = Convert.FromBase64String(saltBase64);
-            using (var pbkdf2 = new Rfc2898DeriveBytes(password, saltBytes, iterations)){
+            using (var pbkdf2 = new Rfc2898DeriveBytes(password, saltBytes, iterations, HashAlgorithmName.SHA512)){
                 byte[] hash = pbkdf2.GetBytes(64);
                 return BitConverter.ToString(hash).Replace("-", string.Empty).ToLowerInvariant();
             }
-        }
+        }   
         // RANDOM SALT GENERATOR
         // ======================================================================================================
         public static string GenerateSalt(int size = 16){

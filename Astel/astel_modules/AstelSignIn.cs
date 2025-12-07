@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 // TS MODULES
 using static Astel.TSModules;
@@ -7,7 +8,7 @@ using static Astel.TSSecureModule;
 
 namespace Astel.astel_modules{
     public partial class AstelSignIn : Form{
-        public AstelSignIn(){ InitializeComponent(); CheckForIllegalCrossThreadCalls = false; }
+        public AstelSignIn(){ InitializeComponent(); }
         // SIGN IN PRELOADER
         // ======================================================================================================
         string signin_global_lang;
@@ -37,10 +38,10 @@ namespace Astel.astel_modules{
                 foreach (Control control in Panel_BG.Controls){
                     if (control is Button button){
                         button.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "DynamicThemeActiveBtnBGColor");
-                        button.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
-                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
-                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMain");
-                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentMainHover");
+                        button.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColor");
+                        button.FlatAppearance.BorderColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColor");
+                        button.FlatAppearance.MouseDownBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColor");
+                        button.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColorHover");
                     }
                 }
                 //
@@ -75,47 +76,74 @@ namespace Astel.astel_modules{
         }
         // SIGN IN BTN
         // ======================================================================================================
-        private void BtnSignIn_Click(object sender, EventArgs e){
-            Sign_in_function();
+        private async void BtnSignIn_Click(object sender, EventArgs e){
+            await Sign_in_function();
         }
         // SIGN IN FUNCTION
         // ======================================================================================================
-        private void Sign_in_function(){
+        private async Task Sign_in_function(){
             TSGetLangs software_lang = new TSGetLangs(signin_global_lang);
-            try{
-                string password_1 = TxtPassword.Text.Trim();
-                string password_2 = TxtPasswordRepeat.Text.Trim();
-                if (string.IsNullOrEmpty(password_1)){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelSignIn", "as_password_info"));
-                    return;
+            string password_1 = TxtPassword.Text.Trim();
+            string password_2 = TxtPasswordRepeat.Text.Trim();
+            //
+            if (string.IsNullOrEmpty(password_1)){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelSignIn", "as_password_info"));
+                BeginInvoke(new Action(() => {
+                    TxtPassword.Focus();
+                }));
+                return;
+            }
+            if (string.IsNullOrEmpty(password_2)){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelSignIn", "as_password_repeat_info"));
+                BeginInvoke(new Action(() => {
+                    TxtPasswordRepeat.Focus();
+                }));
+                return;
+            }
+            if (password_1.Length < 6 || password_1.Length > 32){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelSignIn", "as_password_req_info"));
+                BeginInvoke(new Action(() => {
+                    TxtPassword.Focus();
+                }));
+                return;
+            }
+            if (password_1 != password_2){
+                TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelSignIn", "as_password_set_failed"), "\n"));
+                return;
+            }
+            //
+            Text = $"{string.Format(software_lang.TSReadLangs("AstelSignIn", "as_title"), Application.ProductName)} - " + software_lang.TSReadLangs("AstelSignIn", "as_check_signin");
+            TxtPassword.Enabled = false;
+            TxtPasswordRepeat.Enabled = false;
+            BtnSignIn.Enabled = false;
+            //
+            bool set_password_status = await Task.Run(() =>{
+                try{
+                    string salt = GenerateSalt();
+                    string hashed_password = TSHashPassword(password_1, salt);
+                    //
+                    TSSettingsSave software_setting_save = new TSSettingsSave(ts_session_file);
+                    software_setting_save.TSWriteSettings(ts_session_container, "SessionMode", "1");
+                    software_setting_save.TSWriteSettings(ts_session_container, "PasswordHash", hashed_password);
+                    software_setting_save.TSWriteSettings(ts_session_container, "PasswordSalt", salt);
+                    software_setting_save.TSWriteSettings(ts_session_container, "CrossLinker", GenerateSecureRandomString(32));
+                    return true;
+                }catch{
+                    return false;
                 }
-                if (string.IsNullOrEmpty(password_2)){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelSignIn", "as_password_repeat_info"));
-                    return;
-                }
-                if (password_1.Length < 6 || password_1.Length > 32){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, software_lang.TSReadLangs("AstelSignIn", "as_password_req_info"));
-                    return;
-                }
-                if (password_1 != password_2){
-                    TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("AstelSignIn", "as_password_set_failed"), "\n"));
-                    return;
-                }
-                string salt = GenerateSalt();
-                string hashed_password = TSHashPassword(password_1, salt);
-                //
-                TSSettingsSave software_setting_save = new TSSettingsSave(ts_session_file);
-                software_setting_save.TSWriteSettings(ts_session_container, "SessionMode", "1");
-                software_setting_save.TSWriteSettings(ts_session_container, "PasswordHash", hashed_password);
-                software_setting_save.TSWriteSettings(ts_session_container, "PasswordSalt", salt);
-                software_setting_save.TSWriteSettings(ts_session_container, "CrossLinker", GenerateSecureRandomString(32));
-                //
+            });
+            //
+            if (set_password_status){
                 TS_MessageBoxEngine.TS_MessageBox(this, 1, software_lang.TSReadLangs("AstelSignIn", "as_password_set_success"));
-                //
-                AstelMain astel_ui = new AstelMain();
-                astel_ui.Show();
+                AstelMain astel = new AstelMain();
+                astel.Show();
                 Hide();
-            }catch (Exception){ }
+            }
+            //
+            Text = string.Format(software_lang.TSReadLangs("AstelSignIn", "as_title"), Application.ProductName);
+            TxtPassword.Enabled = true;
+            TxtPasswordRepeat.Enabled = true;
+            BtnSignIn.Enabled = true;
         }
         // CHECK PASSWORD VISIBLE
         // ======================================================================================================

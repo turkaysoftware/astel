@@ -87,11 +87,11 @@ namespace Astel.astel_modules{
                 });
                 SetControlColors<Button>(Panel_BG, btn =>{
                     btn.ForeColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "DynamicThemeActiveBtnBGColor");
-                    var color = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMain");
+                    var color = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColor");
                     btn.BackColor = color;
                     btn.FlatAppearance.BorderColor = color;
                     btn.FlatAppearance.MouseDownBackColor = color;
-                    btn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentMainHover");
+                    btn.FlatAppearance.MouseOverBackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColorHover");
                 });
                 //
                 LabelHeader.BackColor = Panel_Feature.BackColor = Panel_Mode.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "PageContainerUIBGColor");
