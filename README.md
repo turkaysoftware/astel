@@ -50,8 +50,6 @@ With these instructions, you can download and use the correct version of Astel f
 - **Advanced Password Generator:** You can create secure passwords using our advanced password generator, which can meet all your needs.
 - [TS Wizard](https://www.turkaysoftware.com/ts-wizard) provides an automatic update and monitoring system.
 
-<img width="427" height="336" alt="Astel - Advanced Features" src="https://github.com/user-attachments/assets/c3918511-525b-4f29-9ab8-59fb33bf85b9" />
-
 # System Requirements
 
 |  | Minimum Requirements | Recommended Requirements |
@@ -59,31 +57,3 @@ With these instructions, you can download and use the correct version of Astel f
 | OS: | Windows 10 x64 | Windows 10 22H2 x64|
 | RAM: | 25 MB Free RAM | 50 MB Free RAM |
 | .NET: | .NET Framework 4.8.1 | .NET Framework 4.8.1 |
-
-# Shortcut Key Layouts
-
-| Main Features | Key |
-| -- | :--: |
-| **Theme:** Light | F1 |
-| **Theme:** Dark | F2 |
-| **Theme:** System | F3 |
-| **Start:** Windowed | F4 |
-| **Start:** Full Screen | F5 |
-| **Data Transfer:** Export Astel File | CTRL + Shift + 1 |
-| **Data Transfer:** Export CSV File | CTRL + Shift + 2 |
-| **Data Transfer:** Import Astel File  | CTRL + Shift + 3 |
-| **Data Transfer:** Import CSV File  | CTRL + Shift + 4 |
-| **Automatic Backup:** Backup On | F6 |
-| **Automatic Backup:** Backup Off | F7 |
-| **Automatic Backup:** Open Backup Folder | F8 |
-| **Safety Warnings:** On | F9 |
-| **Safety Warnings:** Off | F10 |
-| **Change Password** | CTRL + F10 |
-| **Password Generator** | CTRL + P |
-
-| Extras | Key |
-| -- | :--: |
-| **Check Update** | F11 |
-| **About** | F12 |
-| **TS Wizard** | CTRL + Shift + S |
-| **Donate** | CTRL + Shift + D |
