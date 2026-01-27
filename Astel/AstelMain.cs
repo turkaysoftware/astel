@@ -14,6 +14,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -41,6 +42,7 @@ namespace Astel{
             arabicToolStripMenuItem.Tag = "ar";
             chineseToolStripMenuItem.Tag = "zh";
             englishToolStripMenuItem.Tag = "en";
+            dutchToolStripMenuItem.Tag = "nl";
             frenchToolStripMenuItem.Tag = "fr";
             germanToolStripMenuItem.Tag = "de";
             hindiToolStripMenuItem.Tag = "hi";
@@ -57,6 +59,7 @@ namespace Astel{
             arabicToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
             chineseToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
             englishToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
+            dutchToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
             frenchToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
             germanToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
             hindiToolStripMenuItem.Click += LanguageToolStripMenuItem_Click;
@@ -93,14 +96,15 @@ namespace Astel{
                 Graphics g = e.Graphics;
                 g.SmoothingMode = SmoothingMode.AntiAlias;
                 float dpiScale = g.DpiX / 96f;
-                // TICK BG
-                // using (SolidBrush bgBrush = new SolidBrush(header_colors[0])){ RectangleF bgRect = new RectangleF( e.ImageRectangle.Left, e.ImageRectangle.Top, e.ImageRectangle.Width,e.ImageRectangle.Height); g.FillRectangle(bgBrush, bgRect); }
-                using (Pen anti_alias_pen = new Pen(header_colors[2], 3 * dpiScale)){
-                    Rectangle rect = e.ImageRectangle;
-                    Point p1 = new Point((int)(rect.Left + 3 * dpiScale), (int)(rect.Top + rect.Height / 2));
-                    Point p2 = new Point((int)(rect.Left + 7 * dpiScale), (int)(rect.Bottom - 4 * dpiScale));
-                    Point p3 = new Point((int)(rect.Right - 2 * dpiScale), (int)(rect.Top + 3 * dpiScale));
-                    g.DrawLines(anti_alias_pen, new Point[] { p1, p2, p3 });
+                Rectangle rect = e.ImageRectangle;
+                using (Pen anti_alias_pen = new Pen(header_colors[2], 2.2f * dpiScale)){
+                    anti_alias_pen.StartCap = LineCap.Round;
+                    anti_alias_pen.EndCap = LineCap.Round;
+                    anti_alias_pen.LineJoin = LineJoin.Round;
+                    PointF p1 = new PointF(rect.Left + rect.Width * 0.18f, rect.Top + rect.Height * 0.52f);
+                    PointF p2 = new PointF(rect.Left + rect.Width * 0.38f, rect.Top + rect.Height * 0.72f);
+                    PointF p3 = new PointF(rect.Left + rect.Width * 0.78f, rect.Top + rect.Height * 0.28f);
+                    g.DrawLines(anti_alias_pen, new[] { p1, p2, p3 });
                 }
             }
         }
@@ -157,6 +161,7 @@ namespace Astel{
                 { "ar", (ts_lang_ar, arabicToolStripMenuItem, File.Exists(ts_lang_ar)) },
                 { "zh", (ts_lang_zh, chineseToolStripMenuItem, File.Exists(ts_lang_zh)) },
                 { "en", (ts_lang_en, englishToolStripMenuItem, File.Exists(ts_lang_en)) },
+                { "nl", (ts_lang_nl, dutchToolStripMenuItem, File.Exists(ts_lang_nl)) },
                 { "fr", (ts_lang_fr, frenchToolStripMenuItem, File.Exists(ts_lang_fr)) },
                 { "de", (ts_lang_de, germanToolStripMenuItem, File.Exists(ts_lang_de)) },
                 { "hi", (ts_lang_hi, hindiToolStripMenuItem, File.Exists(ts_lang_hi)) },
@@ -234,21 +239,57 @@ namespace Astel{
         // SERVICE LIST ADD
         // ======================================================================================================
         private void ServiceListAdd(){
-            string[] content_services = new string[]{
-                "-", "Adobe", "Airbnb", "Amazon", "Asana", "BeReal",
-                "Bing", "Bitbucket", "ChatGPT", "ClickUp", "Coursera", "Crunchyroll",
-                "Deezer", "Discord", "Disney+", "Dropbox", "Duolingo", "eBay",
-                "Epic Games", "Facebook", "GitHub", "Grab", "HBO Max", "Instagram",
-                "LinkedIn", "LINE", "Lyft", "Medium", "MEGA", "Microsoft",
-                "Miro", "Monday.com", "Netflix", "Notion", "NordVPN", "OneDrive",
-                "Paramount+", "PayPal", "Peacock", "Pinterest", "Quora", "Reddit",
-                "Revolut", "Roblox", "Salesforce", "Shopify", "Signal", "Slack",
-                "Snapchat", "SoundCloud", "Spotify", "Stack Overflow", "Steam", "Stripe",
-                "Threads", "TikTok", "Trello", "Twitch", "Twitter (X)", "Uber",
-                "Udemy", "Venmo", "Viber", "Waze", "WeChat", "WhatsApp",
-                "Wise", "WordPress", "Yahoo", "YouTube", "Zoom", "Google", "Apple"
+            string[] globalServices = new string[]{
+                "-",
+                // Social / Communication
+                "Facebook", "Instagram", "Threads", "Twitter (X)", "LinkedIn", "Reddit",
+                "Pinterest", "Quora", "Medium", "TikTok", "Snapchat",
+                "WhatsApp", "Telegram", "Signal", "Viber", "WeChat", "LINE",
+                "Discord", "Slack",
+                // Entertainment / Media
+                "Netflix", "Spotify", "Disney+", "HBO Max", "Paramount+", "Peacock",
+                "Twitch", "Kick", "SoundCloud", "Deezer", "Crunchyroll",
+                // Game
+                "Steam", "Epic Games", "Roblox", "PlayStation Network", "Battle.net", "Ubisoft", "EA Play",
+                // Shopping / Finance (Global)
+                "Amazon", "eBay", "Etsy", "Shopify",
+                "PayPal", "Stripe", "Venmo", "Wise", "Revolut",
+                // Productivity / Cloud – Primary Identities
+                "Google", "Apple", "Microsoft", "Samsung", "Xiaomi",
+                // Independent Cloud / Productivity
+                "Dropbox", "MEGA", "Notion", "Trello", "Asana", "ClickUp",
+                "Monday.com", "Miro", "Zoom",
+                // Developer
+                "GitHub", "GitLab", "Bitbucket", "Stack Overflow",
+                // Travel / Transportation (Global)
+                "Uber", "Bolt", "Airbnb"
             };
-            Array.Sort(content_services);
+            string[] turkeyServices = new string[]{
+                // Turkey – E-Commerce / Service
+                "Trendyol", "Hepsiburada", "n11", "Yemeksepeti", "Getir", "Migros Hemen",
+                "BİM Online", "A101 Kapıda",
+                "Sahibinden", "Letgo", "PTT", "PTTAVM",
+                // Turkey – Transportation / Tickets
+                "Biletix", "Passo", "Obilet", "TCDD",
+                "THY", "Pegasus", "AJet", "SunExpress",
+                "İSPARK",
+                // Turkey – Finance / Banks
+                "Ziraat Bankası", "Ziraat Katılım", "İş Bankası", "Garanti BBVA", "Yapı Kredi",
+                "Akbank", "QNB Finansbank", "DenizBank", "TEB", "ING Bank", "Halkbank",
+                "VakıfBank", "Şekerbank", "AnadoluBank", "Fibabanka", "Burgan Bank",
+                "Odeabank", "Alternatif Bank", "HSBC Türkiye",
+                "Kuveyt Türk", "Albaraka Türk", "Türkiye Finans",
+                "Papara", "Enpara", "İninal", "Paycell",
+                // Turkey – Government / Operator
+                "E-Devlet", "E-Nabız", "MHRS",
+                "Turkcell", "Vodafone", "Türk Telekom",
+                "İstanbulkart"
+            };
+            var services_main = new List<string>(globalServices);
+            var get_region = new RegionInfo(CultureInfo.CurrentCulture.LCID);
+            if (get_region.TwoLetterISORegionName == "TR"){ services_main.AddRange(turkeyServices); }
+            string[] content_services = services_main.ToArray();
+            Array.Sort(content_services, StringComparer.CurrentCultureIgnoreCase);
             CmbService.Items.Clear();
             CmbService.Items.AddRange(content_services);
             CmbService.SelectedIndex = 0;
@@ -949,6 +990,7 @@ namespace Astel{
                 arabicToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_ar");
                 chineseToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_zh");
                 englishToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_en");
+                dutchToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_nl");
                 frenchToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_fr");
                 germanToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_de");
                 hindiToolStripMenuItem.Text = software_lang.TSReadLangs("HeaderLangs", "lang_hi");
@@ -1209,11 +1251,12 @@ namespace Astel{
         // UPDATE CHECK ENGINE
         // ======================================================================================================
         private void CheckforUpdatesToolStripMenuItem_Click(object sender, EventArgs e){
-            Software_update_check(1);
+            Task.Run(() => Software_update_check(1));
         }
         public void Software_update_check(int _check_update_ui){
             try{
                 TSGetLangs software_lang = new TSGetLangs(lang_path);
+                SetUpdateMenuEnabled(false);
                 if (!IsNetworkCheck()){
                     if (_check_update_ui == 1){
                         TS_MessageBoxEngine.TS_MessageBox(this, 2, string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_not_connection"), "\n\n"), string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_title"), Application.ProductName));
@@ -1252,6 +1295,15 @@ namespace Astel{
             }catch (Exception ex){
                 TSGetLangs software_lang = new TSGetLangs(lang_path);
                 TS_MessageBoxEngine.TS_MessageBox(this, 3, string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_error"), "\n\n", ex.Message), string.Format(software_lang.TSReadLangs("SoftwareUpdate", "su_title"), Application.ProductName));
+            }finally{
+                SetUpdateMenuEnabled(true);
+            }
+        }
+        private void SetUpdateMenuEnabled(bool enabled){
+            if (InvokeRequired){
+                BeginInvoke(new Action(() => checkforUpdatesToolStripMenuItem.Enabled = enabled));
+            }else{
+                checkforUpdatesToolStripMenuItem.Enabled = enabled;
             }
         }
         // DATA TRANSFER

@@ -34,15 +34,16 @@ namespace Astel{
         private string load_text;
         // LOAD
         // ======================================================================================================
-        private void TSPreloader_Load(object sender, EventArgs e){
-            Software_preloader();
+        private async void TSPreloader_Load(object sender, EventArgs e){
+            if (!Software_preloader()){
+                return;
+            }
             Software_set_launch();
-            //
             if (Program.ts_pre_debug_mode == true){
                 LabelLoader.Text = "Loading - 50%";
                 PanelLoaderFE.Width = (int)(PanelLoaderBG.Width * 0.5);
             }else{
-                Task.Run(() => Load_animation(), Program.TS_TokenEngine.Token);
+                await Load_animation();
             }
         }
         // SOFTWARE PRELOADER
@@ -54,23 +55,23 @@ namespace Astel{
         |   1 = Light Theme   |  TSModules.cs         |  1 = Full Screen        |  1 = On
         |   ------------------------------------------------------------------------------------------
         */
-        private void Software_preloader(){
+        private bool Software_preloader(){
             try{
                 // CHECK LANGS FOLDER
                 if (!Directory.Exists(ts_lf)){
                     Software_prelaoder_alert(0);
-                    return;
+                    return false;
                 }
                 // CHECK LANGS FILE
                 var lang_files = Directory.GetFiles(ts_lf, "*.ini");
                 if (lang_files.Length == 0){
                     Software_prelaoder_alert(1);
-                    return;
+                    return false;
                 }
                 // CHECK ENGLISH LANG FILE
                 if (!File.Exists(ts_lang_en)){
                     Software_prelaoder_alert(2);
-                    return;
+                    return false;
                 }
                 // CHECK SETTINGS FILE
                 if (!File.Exists(ts_sf)){
@@ -87,9 +88,10 @@ namespace Astel{
                         software_settings_save.TSWriteSettings(ts_settings_container, "AutoBackupStatus", "1");
                         // SET SAFETY WARNINGS MODE
                         software_settings_save.TSWriteSettings(ts_settings_container, "SafetyWarnings", "1");
-                    } catch (Exception ex){
+                    }catch (Exception ex){
                         // ERROR LOG
                         LogError(ex);
+                        return false;
                     }
                 }
                 // CHECK SESSION FILE
@@ -101,17 +103,22 @@ namespace Astel{
                     }catch (Exception ex){
                         // SET ERROR LOG
                         LogError(ex);
+                        return false;
                     }
                 }
+                return true;
             }catch (IOException ioEx){
                 // IO ERROR LOG
                 LogError(ioEx);
+                return false;
             }catch (UnauthorizedAccessException uaEx){
                 // ACCESS ERROR LOG
                 LogError(uaEx);
+                return false;
             }catch (Exception ex){
                 // OTHER ERROR LOG
                 LogError(ex);
+                return false;
             }
         }
         // PRELOAD ALERT
@@ -202,9 +209,7 @@ namespace Astel{
             int progress_interval = 0;
             int progress_increment = 5;
             int progress_delay = 10;
-            //
             TSProgressExecutive(0);
-            //
             while (progress_interval < 100){
                 TSProgressExecutive(progress_interval);
                 if (progress_interval + progress_increment >= 100){
@@ -213,31 +218,30 @@ namespace Astel{
                     break;
                 }
                 progress_interval += progress_increment;
-                await Task.Delay(progress_delay);
+                await Task.Delay(progress_delay, Program.TS_TokenEngine.Token);
+            }
+            if (IsDisposed || !IsHandleCreated)
+                return;
+            // DYNAMIC STARTUP
+            TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
+            string session_mode = software_read_settings.TSReadSettings(ts_session_container, "SessionMode");
+            //
+            AstelSignIn astelSignIn = new AstelSignIn();
+            AstelLogin astelLogin = new AstelLogin();
+            //
+            switch (session_mode){
+                case "0":
+                    astelSignIn.Show();
+                    break;
+                case "1":
+                    astelLogin.Show();
+                    break;
+                default:
+                    astelSignIn.Show();
+                    break;
             }
             //
-            BeginInvoke(new Action(() => {
-                // DYNAMIC STARTUP
-                TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
-                string session_mode = software_read_settings.TSReadSettings(ts_session_container, "SessionMode");
-                //
-                AstelSignIn astelSignIn = new AstelSignIn();
-                AstelLogin astelLogin = new AstelLogin();
-                //
-                switch (session_mode){
-                    case "0":
-                        astelSignIn.Show();
-                        break;
-                    case "1":
-                        astelLogin.Show();
-                        break;
-                    default:
-                        astelSignIn.Show();
-                        break;
-                }
-                //
-                Hide();
-            }));
+            Hide();
         }
     }
 }

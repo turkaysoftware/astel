@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AstelPasswordGenerator));
             this.Panel_BG = new System.Windows.Forms.Panel();
             this.PassResultLabel = new System.Windows.Forms.Label();
             this.TLP_Control = new System.Windows.Forms.TableLayoutPanel();
@@ -325,7 +324,7 @@
             this.PassGenLenght.Size = new System.Drawing.Size(564, 45);
             this.PassGenLenght.TabIndex = 3;
             this.PassGenLenght.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.PassGenLenght.Value = 12;
+            this.PassGenLenght.Value = 15;
             this.PassGenLenght.ValueChanged += new System.EventHandler(this.PassGenLenght_ValueChanged);
             // 
             // LabelHeader
@@ -355,7 +354,7 @@
             this.Controls.Add(this.Panel_BG);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = Properties.Resources.AstelLogo;
+            this.Icon = global::Astel.Properties.Resources.AstelLogo;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AstelPasswordGenerator";

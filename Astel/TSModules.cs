@@ -202,6 +202,7 @@ namespace Astel{
         public static readonly string ts_lang_ar = ts_lf + @"\Arabic.ini";              // Arabic       | ar
         public static readonly string ts_lang_zh = ts_lf + @"\Chinese.ini";             // Chinese      | zh
         public static readonly string ts_lang_en = ts_lf + @"\English.ini";             // English      | en
+        public static readonly string ts_lang_nl = ts_lf + @"\Dutch.ini";               // Nederlands   | nl
         public static readonly string ts_lang_fr = ts_lf + @"\French.ini";              // French       | fr
         public static readonly string ts_lang_de = ts_lf + @"\German.ini";              // German       | de
         public static readonly string ts_lang_hi = ts_lf + @"\Hindi.ini";               // Hindi        | hi
@@ -219,6 +220,7 @@ namespace Astel{
             { "ar", ts_lang_ar },
             { "zh", ts_lang_zh },
             { "en", ts_lang_en },
+            { "nl", ts_lang_nl },
             { "fr", ts_lang_fr },
             { "de", ts_lang_de },
             { "hi", ts_lang_hi },
@@ -490,13 +492,17 @@ namespace Astel{
         // ======================================================================================================
         public static bool IsNetworkCheck(){
             try{
-                HttpWebRequest server_request = (HttpWebRequest)WebRequest.Create("http://clients3.google.com/generate_204");
-                server_request.KeepAlive = false;
-                server_request.Timeout = 2500;
-                using (var server_response = (HttpWebResponse)server_request.GetResponse()){
-                    return server_response.StatusCode == HttpStatusCode.NoContent;
+                var check_net = (HttpWebRequest)WebRequest.Create("http://clients3.google.com/generate_204");
+                check_net.Method = "GET";
+                check_net.KeepAlive = false;
+                check_net.Proxy = null;
+                check_net.Timeout = 2500;
+                check_net.ReadWriteTimeout = 2500;
+                check_net.AllowAutoRedirect = false;
+                using (var resp_net = (HttpWebResponse)check_net.GetResponse()){
+                    return resp_net.StatusCode == HttpStatusCode.NoContent;
                 }
-            }catch{
+            }catch (WebException){
                 return false;
             }
         }

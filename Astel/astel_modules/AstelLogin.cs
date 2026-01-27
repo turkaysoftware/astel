@@ -62,6 +62,12 @@ namespace Astel.astel_modules{
                 LabelPassword.Text = software_lang.TSReadLangs("AstelLogin", "al_label_password");
                 CheckPassword.Text = software_lang.TSReadLangs("AstelLogin", "al_visible");
                 BtnLogin.Text = " " + software_lang.TSReadLangs("AstelLogin", "al_btn");
+                // PASS VISIBLE MODE
+                string pass_vis_mode = software_read_settings.TSReadSettings(ts_settings_container, "LoginPassVisible");
+                if (string.IsNullOrEmpty(pass_vis_mode)){ pass_vis_mode = "0"; }
+                bool pass_vis_mode_bool = pass_vis_mode == "1";
+                TxtPassword.UseSystemPasswordChar = !pass_vis_mode_bool;
+                CheckPassword.Checked = pass_vis_mode_bool;
             }catch (Exception){ }
         }
         // LOGIN LOAD
@@ -121,6 +127,10 @@ namespace Astel.astel_modules{
             }else if (CheckPassword.Checked == false){
                 TxtPassword.UseSystemPasswordChar = true;
             }
+            try{
+                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                software_setting_save.TSWriteSettings(ts_settings_container, "LoginPassVisible", (CheckPassword.Checked ? 1 : 0).ToString());
+            }catch (Exception) { }
         }
         // EXIT
         // ======================================================================================================

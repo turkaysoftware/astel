@@ -29,27 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Panel_Main = new System.Windows.Forms.Panel();
             this.DataMainTable = new System.Windows.Forms.DataGridView();
             this.Panel_Footer = new System.Windows.Forms.Panel();
-            this.BtnOpenUrl = new Astel.TSCustomButton();
-            this.BtnRndPssGen = new Astel.TSCustomButton();
-            this.BtnCopyUrl = new Astel.TSCustomButton();
             this.LabelUrl = new System.Windows.Forms.Label();
             this.TxtUrl = new System.Windows.Forms.TextBox();
-            this.CmbService = new Astel.TSCustomComboBox();
             this.FLP_Btns = new System.Windows.Forms.FlowLayoutPanel();
-            this.DeleteBtn = new Astel.TSCustomButton();
-            this.UpdateBtn = new Astel.TSCustomButton();
-            this.AddBtn = new Astel.TSCustomButton();
             this.LabelService = new System.Windows.Forms.Label();
             this.TxtService = new System.Windows.Forms.TextBox();
-            this.BtnCopyPassword = new Astel.TSCustomButton();
-            this.BtnCopyEmail = new Astel.TSCustomButton();
             this.LabelNote = new System.Windows.Forms.Label();
             this.TxtNote = new System.Windows.Forms.TextBox();
             this.LabelPassword = new System.Windows.Forms.Label();
@@ -64,11 +55,21 @@
             this.darkThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemThemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.italianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.polishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.turkishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.arabicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.germanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hindiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.italianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.japaneseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.koreanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.polishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.portugueseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.turkishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dutchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,15 +93,15 @@
             this.tSWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.germanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hindiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.japaneseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.koreanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.portugueseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnOpenUrl = new Astel.TSCustomButton();
+            this.BtnRndPssGen = new Astel.TSCustomButton();
+            this.BtnCopyUrl = new Astel.TSCustomButton();
+            this.CmbService = new Astel.TSCustomComboBox();
+            this.DeleteBtn = new Astel.TSCustomButton();
+            this.UpdateBtn = new Astel.TSCustomButton();
+            this.AddBtn = new Astel.TSCustomButton();
+            this.BtnCopyPassword = new Astel.TSCustomButton();
+            this.BtnCopyEmail = new Astel.TSCustomButton();
             this.Panel_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataMainTable)).BeginInit();
             this.Panel_Footer.SuspendLayout();
@@ -124,31 +125,31 @@
             this.DataMainTable.AllowUserToAddRows = false;
             this.DataMainTable.AllowUserToDeleteRows = false;
             this.DataMainTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-            this.DataMainTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.DataMainTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DataMainTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DataMainTable.BackgroundColor = System.Drawing.Color.White;
             this.DataMainTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DataMainTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataMainTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataMainTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DataMainTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataMainTable.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DataMainTable.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DataMainTable.DefaultCellStyle = dataGridViewCellStyle3;
             this.DataMainTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataMainTable.EnableHeadersVisualStyles = false;
             this.DataMainTable.GridColor = System.Drawing.Color.Gray;
@@ -156,14 +157,14 @@
             this.DataMainTable.MultiSelect = false;
             this.DataMainTable.Name = "DataMainTable";
             this.DataMainTable.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DataMainTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DataMainTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DataMainTable.RowHeadersVisible = false;
             this.DataMainTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.DataMainTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -197,67 +198,6 @@
             this.Panel_Footer.Size = new System.Drawing.Size(988, 180);
             this.Panel_Footer.TabIndex = 1;
             // 
-            // BtnOpenUrl
-            // 
-            this.BtnOpenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnOpenUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnOpenUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnOpenUrl.BorderRadius = 3;
-            this.BtnOpenUrl.BorderSize = 0;
-            this.BtnOpenUrl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnOpenUrl.FlatAppearance.BorderSize = 0;
-            this.BtnOpenUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOpenUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnOpenUrl.ForeColor = System.Drawing.Color.White;
-            this.BtnOpenUrl.Location = new System.Drawing.Point(678, 31);
-            this.BtnOpenUrl.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.BtnOpenUrl.Name = "BtnOpenUrl";
-            this.BtnOpenUrl.Size = new System.Drawing.Size(27, 27);
-            this.BtnOpenUrl.TabIndex = 13;
-            this.BtnOpenUrl.TextColor = System.Drawing.Color.White;
-            this.BtnOpenUrl.UseVisualStyleBackColor = false;
-            this.BtnOpenUrl.Click += new System.EventHandler(this.BtnOpenUrl_Click);
-            // 
-            // BtnRndPssGen
-            // 
-            this.BtnRndPssGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnRndPssGen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnRndPssGen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnRndPssGen.BorderRadius = 3;
-            this.BtnRndPssGen.BorderSize = 0;
-            this.BtnRndPssGen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnRndPssGen.FlatAppearance.BorderSize = 0;
-            this.BtnRndPssGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRndPssGen.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnRndPssGen.ForeColor = System.Drawing.Color.White;
-            this.BtnRndPssGen.Location = new System.Drawing.Point(285, 149);
-            this.BtnRndPssGen.Name = "BtnRndPssGen";
-            this.BtnRndPssGen.Size = new System.Drawing.Size(27, 27);
-            this.BtnRndPssGen.TabIndex = 8;
-            this.BtnRndPssGen.TextColor = System.Drawing.Color.White;
-            this.BtnRndPssGen.UseVisualStyleBackColor = false;
-            this.BtnRndPssGen.Click += new System.EventHandler(this.BtnRndPssGen_Click);
-            // 
-            // BtnCopyUrl
-            // 
-            this.BtnCopyUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyUrl.BorderRadius = 3;
-            this.BtnCopyUrl.BorderSize = 0;
-            this.BtnCopyUrl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCopyUrl.FlatAppearance.BorderSize = 0;
-            this.BtnCopyUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCopyUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnCopyUrl.ForeColor = System.Drawing.Color.White;
-            this.BtnCopyUrl.Location = new System.Drawing.Point(645, 31);
-            this.BtnCopyUrl.Name = "BtnCopyUrl";
-            this.BtnCopyUrl.Size = new System.Drawing.Size(27, 27);
-            this.BtnCopyUrl.TabIndex = 12;
-            this.BtnCopyUrl.TextColor = System.Drawing.Color.White;
-            this.BtnCopyUrl.UseVisualStyleBackColor = false;
-            this.BtnCopyUrl.Click += new System.EventHandler(this.BtnCopyUrl_Click);
-            // 
             // LabelUrl
             // 
             this.LabelUrl.AutoSize = true;
@@ -282,29 +222,6 @@
             this.TxtUrl.Size = new System.Drawing.Size(279, 25);
             this.TxtUrl.TabIndex = 11;
             // 
-            // CmbService
-            // 
-            this.CmbService.ArrowColor = System.Drawing.SystemColors.WindowText;
-            this.CmbService.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.CmbService.ButtonColor = System.Drawing.SystemColors.ControlDark;
-            this.CmbService.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CmbService.DisabledBackColor = System.Drawing.SystemColors.Control;
-            this.CmbService.DisabledButtonColor = System.Drawing.SystemColors.ControlDark;
-            this.CmbService.DisabledForeColor = System.Drawing.SystemColors.GrayText;
-            this.CmbService.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CmbService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbService.FocusedBorderColor = System.Drawing.Color.DodgerBlue;
-            this.CmbService.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.CmbService.FormattingEnabled = true;
-            this.CmbService.HoverBackColor = System.Drawing.SystemColors.Window;
-            this.CmbService.HoverButtonColor = System.Drawing.SystemColors.ControlDark;
-            this.CmbService.Location = new System.Drawing.Point(245, 32);
-            this.CmbService.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.CmbService.Name = "CmbService";
-            this.CmbService.Size = new System.Drawing.Size(100, 25);
-            this.CmbService.TabIndex = 2;
-            this.CmbService.SelectedIndexChanged += new System.EventHandler(this.CmbService_SelectedIndexChanged);
-            // 
             // FLP_Btns
             // 
             this.FLP_Btns.AutoSize = true;
@@ -317,81 +234,6 @@
             this.FLP_Btns.Name = "FLP_Btns";
             this.FLP_Btns.Size = new System.Drawing.Size(225, 165);
             this.FLP_Btns.TabIndex = 16;
-            // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.DeleteBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.DeleteBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.DeleteBtn.BorderRadius = 10;
-            this.DeleteBtn.BorderSize = 0;
-            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteBtn.FlatAppearance.BorderSize = 0;
-            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteBtn.Location = new System.Drawing.Point(0, 125);
-            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.DeleteBtn.Size = new System.Drawing.Size(225, 40);
-            this.DeleteBtn.TabIndex = 2;
-            this.DeleteBtn.Text = "SİL";
-            this.DeleteBtn.TextColor = System.Drawing.Color.White;
-            this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DeleteBtn.UseVisualStyleBackColor = false;
-            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
-            // 
-            // UpdateBtn
-            // 
-            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.UpdateBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.UpdateBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.UpdateBtn.BorderRadius = 10;
-            this.UpdateBtn.BorderSize = 0;
-            this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UpdateBtn.FlatAppearance.BorderSize = 0;
-            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.UpdateBtn.ForeColor = System.Drawing.Color.White;
-            this.UpdateBtn.Location = new System.Drawing.Point(0, 73);
-            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.UpdateBtn.Size = new System.Drawing.Size(225, 40);
-            this.UpdateBtn.TabIndex = 1;
-            this.UpdateBtn.Text = "GÜNCELLE";
-            this.UpdateBtn.TextColor = System.Drawing.Color.White;
-            this.UpdateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.UpdateBtn.UseVisualStyleBackColor = false;
-            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.AddBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.AddBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.AddBtn.BorderRadius = 10;
-            this.AddBtn.BorderSize = 0;
-            this.AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddBtn.FlatAppearance.BorderSize = 0;
-            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.AddBtn.ForeColor = System.Drawing.Color.White;
-            this.AddBtn.Location = new System.Drawing.Point(0, 21);
-            this.AddBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddBtn.Size = new System.Drawing.Size(225, 40);
-            this.AddBtn.TabIndex = 0;
-            this.AddBtn.Text = "EKLE";
-            this.AddBtn.TextColor = System.Drawing.Color.White;
-            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.UseVisualStyleBackColor = false;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // LabelService
             // 
@@ -417,48 +259,6 @@
             this.TxtService.Size = new System.Drawing.Size(239, 25);
             this.TxtService.TabIndex = 1;
             this.TxtService.TextChanged += new System.EventHandler(this.TxtService_TextChanged);
-            // 
-            // BtnCopyPassword
-            // 
-            this.BtnCopyPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyPassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyPassword.BorderRadius = 3;
-            this.BtnCopyPassword.BorderSize = 0;
-            this.BtnCopyPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCopyPassword.FlatAppearance.BorderSize = 0;
-            this.BtnCopyPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCopyPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnCopyPassword.ForeColor = System.Drawing.Color.White;
-            this.BtnCopyPassword.Location = new System.Drawing.Point(318, 149);
-            this.BtnCopyPassword.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.BtnCopyPassword.Name = "BtnCopyPassword";
-            this.BtnCopyPassword.Size = new System.Drawing.Size(27, 27);
-            this.BtnCopyPassword.TabIndex = 9;
-            this.BtnCopyPassword.TextColor = System.Drawing.Color.White;
-            this.BtnCopyPassword.UseVisualStyleBackColor = false;
-            this.BtnCopyPassword.Click += new System.EventHandler(this.BtnCopyPassword_Click);
-            // 
-            // BtnCopyEmail
-            // 
-            this.BtnCopyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyEmail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyEmail.BorderRadius = 3;
-            this.BtnCopyEmail.BorderSize = 0;
-            this.BtnCopyEmail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCopyEmail.FlatAppearance.BorderSize = 0;
-            this.BtnCopyEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCopyEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnCopyEmail.ForeColor = System.Drawing.Color.White;
-            this.BtnCopyEmail.Location = new System.Drawing.Point(318, 90);
-            this.BtnCopyEmail.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.BtnCopyEmail.Name = "BtnCopyEmail";
-            this.BtnCopyEmail.Size = new System.Drawing.Size(27, 27);
-            this.BtnCopyEmail.TabIndex = 5;
-            this.BtnCopyEmail.TextColor = System.Drawing.Color.White;
-            this.BtnCopyEmail.UseVisualStyleBackColor = false;
-            this.BtnCopyEmail.Click += new System.EventHandler(this.BtnCopyEmail_Click);
             // 
             // LabelNote
             // 
@@ -582,7 +382,7 @@
             // 
             this.lightThemeToolStripMenuItem.Name = "lightThemeToolStripMenuItem";
             this.lightThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.lightThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.lightThemeToolStripMenuItem.Text = "Light Theme";
             this.lightThemeToolStripMenuItem.Click += new System.EventHandler(this.LightThemeToolStripMenuItem_Click);
             // 
@@ -590,7 +390,7 @@
             // 
             this.darkThemeToolStripMenuItem.Name = "darkThemeToolStripMenuItem";
             this.darkThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.darkThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.darkThemeToolStripMenuItem.Text = "Dark Theme";
             this.darkThemeToolStripMenuItem.Click += new System.EventHandler(this.DarkThemeToolStripMenuItem_Click);
             // 
@@ -598,7 +398,7 @@
             // 
             this.systemThemeToolStripMenuItem.Name = "systemThemeToolStripMenuItem";
             this.systemThemeToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.systemThemeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.systemThemeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.systemThemeToolStripMenuItem.Text = "System Theme";
             this.systemThemeToolStripMenuItem.Click += new System.EventHandler(this.SystemThemeToolStripMenuItem_Click);
             // 
@@ -608,6 +408,7 @@
             this.arabicToolStripMenuItem,
             this.chineseToolStripMenuItem,
             this.englishToolStripMenuItem,
+            this.dutchToolStripMenuItem,
             this.frenchToolStripMenuItem,
             this.germanToolStripMenuItem,
             this.hindiToolStripMenuItem,
@@ -623,11 +424,41 @@
             this.languageToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.languageToolStripMenuItem.Text = "Language";
             // 
+            // arabicToolStripMenuItem
+            // 
+            this.arabicToolStripMenuItem.Name = "arabicToolStripMenuItem";
+            this.arabicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arabicToolStripMenuItem.Text = "Arabic";
+            // 
+            // chineseToolStripMenuItem
+            // 
+            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
+            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chineseToolStripMenuItem.Text = "Chinese";
+            // 
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.englishToolStripMenuItem.Text = "English";
+            // 
+            // frenchToolStripMenuItem
+            // 
+            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
+            this.frenchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.frenchToolStripMenuItem.Text = "French";
+            // 
+            // germanToolStripMenuItem
+            // 
+            this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
+            this.germanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.germanToolStripMenuItem.Text = "German";
+            // 
+            // hindiToolStripMenuItem
+            // 
+            this.hindiToolStripMenuItem.Name = "hindiToolStripMenuItem";
+            this.hindiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hindiToolStripMenuItem.Text = "Hindi";
             // 
             // italianToolStripMenuItem
             // 
@@ -635,11 +466,41 @@
             this.italianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.italianToolStripMenuItem.Text = "Italian";
             // 
+            // japaneseToolStripMenuItem
+            // 
+            this.japaneseToolStripMenuItem.Name = "japaneseToolStripMenuItem";
+            this.japaneseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.japaneseToolStripMenuItem.Text = "Japanese";
+            // 
+            // koreanToolStripMenuItem
+            // 
+            this.koreanToolStripMenuItem.Name = "koreanToolStripMenuItem";
+            this.koreanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.koreanToolStripMenuItem.Text = "Korean";
+            // 
             // polishToolStripMenuItem
             // 
             this.polishToolStripMenuItem.Name = "polishToolStripMenuItem";
             this.polishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.polishToolStripMenuItem.Text = "Polish";
+            // 
+            // portugueseToolStripMenuItem
+            // 
+            this.portugueseToolStripMenuItem.Name = "portugueseToolStripMenuItem";
+            this.portugueseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.portugueseToolStripMenuItem.Text = "Portuguese";
+            // 
+            // russianToolStripMenuItem
+            // 
+            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
+            this.russianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.russianToolStripMenuItem.Text = "Russian";
+            // 
+            // spanishToolStripMenuItem
+            // 
+            this.spanishToolStripMenuItem.Name = "spanishToolStripMenuItem";
+            this.spanishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.spanishToolStripMenuItem.Text = "Spanish";
             // 
             // turkishToolStripMenuItem
             // 
@@ -647,11 +508,11 @@
             this.turkishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.turkishToolStripMenuItem.Text = "Turkish";
             // 
-            // arabicToolStripMenuItem
+            // dutchToolStripMenuItem
             // 
-            this.arabicToolStripMenuItem.Name = "arabicToolStripMenuItem";
-            this.arabicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.arabicToolStripMenuItem.Text = "Arabic";
+            this.dutchToolStripMenuItem.Name = "dutchToolStripMenuItem";
+            this.dutchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dutchToolStripMenuItem.Text = "Dutch";
             // 
             // startupToolStripMenuItem
             // 
@@ -701,7 +562,7 @@
             this.astelExportFileToolStripMenuItem.Name = "astelExportFileToolStripMenuItem";
             this.astelExportFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.D1)));
-            this.astelExportFileToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.astelExportFileToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.astelExportFileToolStripMenuItem.Text = "Astel Export File";
             this.astelExportFileToolStripMenuItem.Click += new System.EventHandler(this.AstelExportFileToolStripMenuItem_Click);
             // 
@@ -710,7 +571,7 @@
             this.cSVExportFileToolStripMenuItem.Name = "cSVExportFileToolStripMenuItem";
             this.cSVExportFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.D2)));
-            this.cSVExportFileToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.cSVExportFileToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.cSVExportFileToolStripMenuItem.Text = "CSV Export File";
             this.cSVExportFileToolStripMenuItem.Click += new System.EventHandler(this.CSVExportFileToolStripMenuItem_Click);
             // 
@@ -831,7 +692,7 @@
             this.tSWizardToolStripMenuItem.Name = "tSWizardToolStripMenuItem";
             this.tSWizardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
             | System.Windows.Forms.Keys.S)));
-            this.tSWizardToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.tSWizardToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.tSWizardToolStripMenuItem.Text = "TSWizard";
             this.tSWizardToolStripMenuItem.Click += new System.EventHandler(this.TSWizardToolStripMenuItem_Click);
             // 
@@ -854,59 +715,207 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
-            // chineseToolStripMenuItem
+            // BtnOpenUrl
             // 
-            this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
-            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.chineseToolStripMenuItem.Text = "Chinese";
+            this.BtnOpenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BorderRadius = 3;
+            this.BtnOpenUrl.BorderSize = 0;
+            this.BtnOpenUrl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnOpenUrl.FlatAppearance.BorderSize = 0;
+            this.BtnOpenUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOpenUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnOpenUrl.ForeColor = System.Drawing.Color.White;
+            this.BtnOpenUrl.Location = new System.Drawing.Point(678, 31);
+            this.BtnOpenUrl.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.BtnOpenUrl.Name = "BtnOpenUrl";
+            this.BtnOpenUrl.Size = new System.Drawing.Size(27, 27);
+            this.BtnOpenUrl.TabIndex = 13;
+            this.BtnOpenUrl.TextColor = System.Drawing.Color.White;
+            this.BtnOpenUrl.UseVisualStyleBackColor = false;
+            this.BtnOpenUrl.Click += new System.EventHandler(this.BtnOpenUrl_Click);
             // 
-            // frenchToolStripMenuItem
+            // BtnRndPssGen
             // 
-            this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
-            this.frenchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.frenchToolStripMenuItem.Text = "French";
+            this.BtnRndPssGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnRndPssGen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnRndPssGen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnRndPssGen.BorderRadius = 3;
+            this.BtnRndPssGen.BorderSize = 0;
+            this.BtnRndPssGen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRndPssGen.FlatAppearance.BorderSize = 0;
+            this.BtnRndPssGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRndPssGen.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnRndPssGen.ForeColor = System.Drawing.Color.White;
+            this.BtnRndPssGen.Location = new System.Drawing.Point(285, 149);
+            this.BtnRndPssGen.Name = "BtnRndPssGen";
+            this.BtnRndPssGen.Size = new System.Drawing.Size(27, 27);
+            this.BtnRndPssGen.TabIndex = 8;
+            this.BtnRndPssGen.TextColor = System.Drawing.Color.White;
+            this.BtnRndPssGen.UseVisualStyleBackColor = false;
+            this.BtnRndPssGen.Click += new System.EventHandler(this.BtnRndPssGen_Click);
             // 
-            // germanToolStripMenuItem
+            // BtnCopyUrl
             // 
-            this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
-            this.germanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.germanToolStripMenuItem.Text = "German";
+            this.BtnCopyUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyUrl.BorderRadius = 3;
+            this.BtnCopyUrl.BorderSize = 0;
+            this.BtnCopyUrl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCopyUrl.FlatAppearance.BorderSize = 0;
+            this.BtnCopyUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCopyUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnCopyUrl.ForeColor = System.Drawing.Color.White;
+            this.BtnCopyUrl.Location = new System.Drawing.Point(645, 31);
+            this.BtnCopyUrl.Name = "BtnCopyUrl";
+            this.BtnCopyUrl.Size = new System.Drawing.Size(27, 27);
+            this.BtnCopyUrl.TabIndex = 12;
+            this.BtnCopyUrl.TextColor = System.Drawing.Color.White;
+            this.BtnCopyUrl.UseVisualStyleBackColor = false;
+            this.BtnCopyUrl.Click += new System.EventHandler(this.BtnCopyUrl_Click);
             // 
-            // hindiToolStripMenuItem
+            // CmbService
             // 
-            this.hindiToolStripMenuItem.Name = "hindiToolStripMenuItem";
-            this.hindiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.hindiToolStripMenuItem.Text = "Hindi";
+            this.CmbService.ArrowColor = System.Drawing.SystemColors.WindowText;
+            this.CmbService.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.CmbService.ButtonColor = System.Drawing.SystemColors.ControlDark;
+            this.CmbService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CmbService.DisabledArrowColor = System.Drawing.SystemColors.GrayText;
+            this.CmbService.DisabledBackColor = System.Drawing.SystemColors.Control;
+            this.CmbService.DisabledButtonColor = System.Drawing.SystemColors.ControlDark;
+            this.CmbService.DisabledForeColor = System.Drawing.SystemColors.GrayText;
+            this.CmbService.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CmbService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbService.FocusedBorderColor = System.Drawing.Color.DodgerBlue;
+            this.CmbService.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.CmbService.FormattingEnabled = true;
+            this.CmbService.HoverBackColor = System.Drawing.SystemColors.Window;
+            this.CmbService.HoverButtonColor = System.Drawing.SystemColors.ControlDark;
+            this.CmbService.Location = new System.Drawing.Point(245, 32);
+            this.CmbService.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.CmbService.Name = "CmbService";
+            this.CmbService.Size = new System.Drawing.Size(100, 25);
+            this.CmbService.TabIndex = 2;
+            this.CmbService.SelectedIndexChanged += new System.EventHandler(this.CmbService_SelectedIndexChanged);
             // 
-            // japaneseToolStripMenuItem
+            // DeleteBtn
             // 
-            this.japaneseToolStripMenuItem.Name = "japaneseToolStripMenuItem";
-            this.japaneseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.japaneseToolStripMenuItem.Text = "Japanese";
+            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.DeleteBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.DeleteBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.DeleteBtn.BorderRadius = 10;
+            this.DeleteBtn.BorderSize = 0;
+            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteBtn.FlatAppearance.BorderSize = 0;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteBtn.Location = new System.Drawing.Point(0, 125);
+            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.DeleteBtn.Size = new System.Drawing.Size(225, 40);
+            this.DeleteBtn.TabIndex = 2;
+            this.DeleteBtn.Text = "SİL";
+            this.DeleteBtn.TextColor = System.Drawing.Color.White;
+            this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
-            // koreanToolStripMenuItem
+            // UpdateBtn
             // 
-            this.koreanToolStripMenuItem.Name = "koreanToolStripMenuItem";
-            this.koreanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.koreanToolStripMenuItem.Text = "Korean";
+            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.UpdateBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.UpdateBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.UpdateBtn.BorderRadius = 10;
+            this.UpdateBtn.BorderSize = 0;
+            this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateBtn.FlatAppearance.BorderSize = 0;
+            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.UpdateBtn.ForeColor = System.Drawing.Color.White;
+            this.UpdateBtn.Location = new System.Drawing.Point(0, 73);
+            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.UpdateBtn.Size = new System.Drawing.Size(225, 40);
+            this.UpdateBtn.TabIndex = 1;
+            this.UpdateBtn.Text = "GÜNCELLE";
+            this.UpdateBtn.TextColor = System.Drawing.Color.White;
+            this.UpdateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
-            // portugueseToolStripMenuItem
+            // AddBtn
             // 
-            this.portugueseToolStripMenuItem.Name = "portugueseToolStripMenuItem";
-            this.portugueseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.portugueseToolStripMenuItem.Text = "Portuguese";
+            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.AddBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.AddBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.AddBtn.BorderRadius = 10;
+            this.AddBtn.BorderSize = 0;
+            this.AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddBtn.FlatAppearance.BorderSize = 0;
+            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.AddBtn.ForeColor = System.Drawing.Color.White;
+            this.AddBtn.Location = new System.Drawing.Point(0, 21);
+            this.AddBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddBtn.Size = new System.Drawing.Size(225, 40);
+            this.AddBtn.TabIndex = 0;
+            this.AddBtn.Text = "EKLE";
+            this.AddBtn.TextColor = System.Drawing.Color.White;
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
-            // russianToolStripMenuItem
+            // BtnCopyPassword
             // 
-            this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
-            this.russianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.russianToolStripMenuItem.Text = "Russian";
+            this.BtnCopyPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyPassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyPassword.BorderRadius = 3;
+            this.BtnCopyPassword.BorderSize = 0;
+            this.BtnCopyPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCopyPassword.FlatAppearance.BorderSize = 0;
+            this.BtnCopyPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCopyPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnCopyPassword.ForeColor = System.Drawing.Color.White;
+            this.BtnCopyPassword.Location = new System.Drawing.Point(318, 149);
+            this.BtnCopyPassword.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.BtnCopyPassword.Name = "BtnCopyPassword";
+            this.BtnCopyPassword.Size = new System.Drawing.Size(27, 27);
+            this.BtnCopyPassword.TabIndex = 9;
+            this.BtnCopyPassword.TextColor = System.Drawing.Color.White;
+            this.BtnCopyPassword.UseVisualStyleBackColor = false;
+            this.BtnCopyPassword.Click += new System.EventHandler(this.BtnCopyPassword_Click);
             // 
-            // spanishToolStripMenuItem
+            // BtnCopyEmail
             // 
-            this.spanishToolStripMenuItem.Name = "spanishToolStripMenuItem";
-            this.spanishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.spanishToolStripMenuItem.Text = "Spanish";
+            this.BtnCopyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyEmail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyEmail.BorderRadius = 3;
+            this.BtnCopyEmail.BorderSize = 0;
+            this.BtnCopyEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCopyEmail.FlatAppearance.BorderSize = 0;
+            this.BtnCopyEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCopyEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnCopyEmail.ForeColor = System.Drawing.Color.White;
+            this.BtnCopyEmail.Location = new System.Drawing.Point(318, 90);
+            this.BtnCopyEmail.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.BtnCopyEmail.Name = "BtnCopyEmail";
+            this.BtnCopyEmail.Size = new System.Drawing.Size(27, 27);
+            this.BtnCopyEmail.TabIndex = 5;
+            this.BtnCopyEmail.TextColor = System.Drawing.Color.White;
+            this.BtnCopyEmail.UseVisualStyleBackColor = false;
+            this.BtnCopyEmail.Click += new System.EventHandler(this.BtnCopyEmail_Click);
             // 
             // AstelMain
             // 
@@ -1008,6 +1017,7 @@
         private System.Windows.Forms.ToolStripMenuItem portugueseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem russianToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem spanishToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dutchToolStripMenuItem;
     }
 }
 
