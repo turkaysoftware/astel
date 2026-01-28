@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AstelAbout));
             this.PanelTxt = new System.Windows.Forms.Panel();
             this.About_DonateBtn = new Astel.TSCustomButton();
             this.AboutTable = new System.Windows.Forms.DataGridView();
@@ -318,7 +317,7 @@
             this.Controls.Add(this.PanelTxt);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = Properties.Resources.AstelLogo;
+            this.Icon = global::Astel.Properties.Resources.AstelLogo;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AstelAbout";

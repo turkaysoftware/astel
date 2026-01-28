@@ -53,6 +53,7 @@ namespace Astel{
         |   ------------------------------------------------------------------------------------------
         |   0 = Dark Theme    |  Moved to             |  0 = Windowed           |  0 = Off
         |   1 = Light Theme   |  TSModules.cs         |  1 = Full Screen        |  1 = On
+        |   2 = System Theme
         |   ------------------------------------------------------------------------------------------
         */
         private bool Software_preloader(){
@@ -223,23 +224,8 @@ namespace Astel{
             if (IsDisposed || !IsHandleCreated)
                 return;
             // DYNAMIC STARTUP
-            TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
-            string session_mode = software_read_settings.TSReadSettings(ts_session_container, "SessionMode");
-            //
-            AstelSignIn astelSignIn = new AstelSignIn();
-            AstelLogin astelLogin = new AstelLogin();
-            //
-            switch (session_mode){
-                case "0":
-                    astelSignIn.Show();
-                    break;
-                case "1":
-                    astelLogin.Show();
-                    break;
-                default:
-                    astelSignIn.Show();
-                    break;
-            }
+            string bootstrap_mode = new TSSettingsSave(ts_session_file).TSReadSettings(ts_session_container, "SessionMode");
+            (bootstrap_mode == "1" ? (Form)new AstelLogin() : new AstelSignIn()).Show();
             //
             Hide();
         }
