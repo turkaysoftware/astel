@@ -15,7 +15,7 @@ Astel is free and will always be. If you find it useful, consider supporting the
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-DF313F?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/turkaysoftware)
 
-[Official Website](https://www.turkaysoftware.com/astel) | [Report a Bug](https://github.com/turkaysoftware/astel/issues)
+[Official Website](https://www.turkaysoftware.com) | [Report a Bug](https://github.com/turkaysoftware/astel/issues)
 
 ---
 
