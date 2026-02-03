@@ -36,6 +36,11 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 * **Advanced Password Generator:** Create complex, secure passwords tailored to your specific requirements.
 * **Flexible Data Transfer:** Easily export or import your vault data in both encrypted `*.astel` and standard `*.csv` formats.
 * **Multi-Architecture Support:** Native compatibility for x64, x86, and ARM64 processor architectures.
+
+---
+
+## 🛠️ Automatic Updates and Translation Support
+
 * **TS Wizard Integration:** Fully compatible with [TS Wizard](https://www.turkaysoftware.com/ts-wizard) for automatic updates and system monitoring.
 * **Translation Support:** Community-driven localization via the official [Translation Guide](https://github.com/turkaysoftware/astel/discussions/3).
 
