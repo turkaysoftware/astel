@@ -1,59 +1,82 @@
-# Astel - Password Management Software
+# 🔐 Astel | Advanced Password Management Software
 
-> [!TIP]
-**_This program is completely free to use. I do not earn any income from its use. However, you can support me by donating to the address below so that I can continue my work 💚 Even if you cannot provide financial support, you can help spread the software and increase its visibility by sharing it._**
+![GitHub Repo stars](https://img.shields.io/github/stars/turkaysoftware/astel?style=for-the-badge&color=gold)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/turkaysoftware/astel?style=for-the-badge&color=blue)
+![GitHub license](https://img.shields.io/github/license/turkaysoftware/astel?style=for-the-badge)
+![Platform](https://img.shields.io/badge/platform-Windows-0078D4?style=for-the-badge&logo=windows)
 
-**[DONATE LINK](https://buymeacoffee.com/turkaysoftware)**
+**Astel** is a secure and powerful **password management software** developed by **Eray Türkay**. Built with a focus on maximum security, it ensures that none of your personal information ever leaves your computer. Every piece of data is stored locally and encrypted, providing a private vault for your digital life.
 
-**Astel** is a **password management software** developed by **Eray Türkay**.  **None of your personal information is transferred to any other medium other than your computer**. Therefore it is completely secure. 
+---
 
-Programmed with C# and .NET Framework only. No external libraries, no dependencies.
+### ☕ Support the Project
+Astel is completely free to use. If you find it valuable for your digital security, consider supporting the development!.
 
-[Click here](https://www.turkaysoftware.com/astel) for full specifications.
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-orange?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/turkaysoftware)
 
-<img width="1010" height="633" alt="Astel UI" src="https://github.com/user-attachments/assets/c34a067c-cbfe-4496-845c-7e36a4d490bc" />
+[Official Website](https://www.turkaysoftware.com/astel) | [Report a Bug](https://github.com/turkaysoftware/astel/issues)
 
-# Astel Passoword Generator Feature
+---
 
-<img width="586" height="533" alt="Astel - Password Generator" src="https://github.com/user-attachments/assets/bfe7d287-9fba-41b8-a3a6-a9dd37e17176" />
+## ✨ Key Features
 
-# Download Astel
+* 🛡️ **Privacy First:** Your data stays on your machine; no information is transferred to external servers.
+* 🚀 **Pure Performance:** Developed using only C# and .NET Framework with **zero external libraries** or dependencies.
+* 🌓 **Modern UI:** Clean interface with Light, Dark, and System theme support for a seamless Windows experience.
+* 🌍 **Multilingual:** Fully supports 15+ languages including English, Turkish, German, and more.
+* 📦 **Portable:** No installation required. Simply extract and run to access your vault.
+* 🔄 **Automatic Backup:** Encrypted backups are created at specified intervals to prevent any data loss.
 
-Download: [Astel Latest Version](https://github.com/turkaysoftware/astel/releases/latest)
+---
 
-# How to use Astel?
+## 🛠️ Advanced Capabilities
 
-After downloading the Astel application, you will find two options: **Astel_x64.exe** and **Astel_arm64.exe**. Which file to choose depends on your computer’s processor architecture. Here’s a guide to help you decide which version is right for you:
+Astel goes beyond simple storage, offering tools to manage your digital identity securely:
 
-#### 1. Astel_x64.exe
-- **Astel_x64.exe** is designed for computers with an x64 (64-bit) processor architecture.
-- If you’re using a standard Windows PC or laptop, you likely need the x64 version.
-- Most devices with Intel or AMD processors use the x64 architecture.
+* **Advanced Password Generator:** Create complex, secure passwords tailored to your specific requirements.
+* **Flexible Data Transfer:** Easily export or import your vault data in both encrypted `*.astel` and standard `*.csv` formats.
+* **Multi-Architecture Support:** Native compatibility for x64, x86, and ARM64 processor architectures.
+* **TS Wizard Integration:** Fully compatible with [TS Wizard](https://www.turkaysoftware.com/ts-wizard) for automatic updates and system monitoring.
+* **Translation Support:** Community-driven localization via the official [Translation Guide](https://github.com/turkaysoftware/astel/discussions/3).
 
-#### 2. Astel_arm64.exe
-- **Astel_arm64.exe** is specifically developed for devices with an ARM64 architecture.
-- It’s suitable for Windows devices that use **ARM processors** (such as some Surface models).
-- ARM architecture is commonly found in devices that prioritize lower power consumption and portability.
+---
 
-#### Usage Instructions
-1. **After downloading the ZIP file, make sure to extract all files from the ZIP**. The Astel application is a portable software, so it doesn’t require installation, but all files must be in the same folder for it to run correctly.
-2. Once extracted, run the appropriate file for your device (**Astel_x64.exe** or **Astel_arm64.exe**) to start using the application immediately.
+## 📸 Interface Preview
 
-With these instructions, you can download and use the correct version of Astel for your device. If you need further assistance, please feel free to reach out!
+![Astel UI](https://github.com/user-attachments/assets/c34a067c-cbfe-4496-845c-7e36a4d490bc)
+> *Manage your passwords securely with Astel's intuitive and modern dashboard.*
 
-# Advanced Features
-- **Multi-Architecture Support:** Fully compatible with x64-x86 and ARM processors.
-- **Multi-Language System:** Fully supports 15 or more languages. **Supported Languages:** _Arabic, Chinese, English, Dutch, French, German, Hindi, Italian, Japanase, Korean, Polish, Portuguese, Russian, Spanish, Turkish_ | **For translation support: [Translation Guide for Astel](https://github.com/turkaysoftware/astel/discussions/3)**
-- Advanced interface features such as Light / Dark / System Theme.
-- **Data Transfer:** You can export/import your data in both *.astel and *.csv formats.
-- **Automatic Backup:** The system automatically backs up your data at specified intervals in an encrypted format, preventing data loss.
-- **Advanced Password Generator:** You can create secure passwords using our advanced password generator, which can meet all your needs.
-- [TS Wizard](https://www.turkaysoftware.com/ts-wizard) provides an automatic update and monitoring system.
+---
 
-# System Requirements
+## 💻 System Requirements
 
-|  | Minimum Requirements | Recommended Requirements |
-| -- | :--: | :--: |
-| OS: | Windows 10 x64 | Windows 10 22H2 x64|
-| RAM: | 25 MB Free RAM | 50 MB Free RAM |
-| .NET: | .NET Framework 4.8.1 | .NET Framework 4.8.1 |
+| Feature | Minimum Requirements | Recommended Requirements |
+| :--- | :--- | :--- |
+| **OS** | Windows 10 x64 | Windows 10 22H2 x64 |
+| **RAM** | 25 MB Free RAM | 50 MB Free RAM |
+| **.NET** | .NET Framework 4.8.1 | .NET Framework 4.8.1 |
+
+---
+
+## 🚀 Getting Started
+
+1.  Navigate to the **[Releases](https://github.com/turkaysoftware/astel/releases/latest)** page.
+2.  Download the latest ZIP file.
+3.  **Extract all files from the ZIP** to a secure folder (The application requires all files in the same folder to function).
+4.  Launch the executable:
+    * `Astel_x64.exe`: For standard 64-bit Intel/AMD systems.
+    * `Astel_arm64.exe`: For ARM-based devices like Surface Pro.
+
+---
+
+## 🛡️ Security & Integrity
+
+* **Local Encryption:** All data is encrypted and stored locally on your device.
+* **No Dependencies:** Built from the ground up to eliminate risks associated with third-party libraries.
+* **Open Source:** Transparent code available for community audit.
+
+---
+
+## 📄 License
+
+This software is provided for free as part of the Türkay Software security suite.
