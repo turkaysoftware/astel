@@ -10,7 +10,7 @@
 ---
 
 ### ☕ Support the Project
-Astel is completely free to use. If you find it valuable for your digital security, consider supporting the development!.
+Astel is free and will always be. If you find it useful, consider supporting the development!
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-orange?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/turkaysoftware)
 
@@ -49,7 +49,6 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 ## 📸 Interface Preview
 
 ![Astel UI](https://github.com/user-attachments/assets/c34a067c-cbfe-4496-845c-7e36a4d490bc)
-> *Manage your passwords securely with Astel's intuitive and modern dashboard.*
 
 ---
 
@@ -67,21 +66,21 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 1.  Navigate to the **[Releases](https://github.com/turkaysoftware/astel/releases/latest)** page.
 2.  Download the latest ZIP file.
-3.  **Extract all files from the ZIP** to a secure folder (The application requires all files in the same folder to function).
+3.  **Extract all files from the ZIP** (Important: Application requires all folder contents to run correctly).
 4.  Launch the executable:
     * `Astel_x64.exe`: For standard 64-bit Intel/AMD systems.
     * `Astel_arm64.exe`: For ARM-based devices like Surface Pro.
 
 ---
 
-## 🛡️ Security & Integrity
+## 🛡️ Security
 
-* **Local Encryption:** All data is encrypted and stored locally on your device.
-* **No Dependencies:** Built from the ground up to eliminate risks associated with third-party libraries.
-* **Open Source:** Transparent code available for community audit.
+* **Zero Data Export Policy:** Your privacy is our priority; no data leaves your machine.
+* **No Dependencies:** Developed entirely from scratch using its own source code, there are no risks from security vulnerabilities in third-party libraries.
+* **Open Source:** All source code for the program is open and can be reviewed by anyone.
 
 ---
 
 ## 📄 License
 
-This software is provided for free as part of the Türkay Software security suite.
+This software is offered free of charge as part of the **Türkay Software solutions package** and is protected under the [**MIT License**](https://github.com/turkaysoftware/astel?tab=MIT-1-ov-file).
