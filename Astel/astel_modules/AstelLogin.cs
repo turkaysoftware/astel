@@ -50,6 +50,9 @@ namespace Astel.astel_modules{
                 LabelHeader.BackColor = TS_ThemeEngine.ColorMode(theme_mode, "PageContainerUIBGColor");
                 LabelHeader.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "ContentLabelLeftColor");
                 CheckPassword.ForeColor = TS_ThemeEngine.ColorMode(theme_mode, "ContentLabelLeftColor");
+                CheckPassword.CheckedColor = TS_ThemeEngine.ColorMode(theme_mode, "AccentColor");
+                CheckPassword.CheckMarkColor = TS_ThemeEngine.ColorMode(theme_mode, "SelectBoxBGColor");
+                CheckPassword.UncheckedBorderColor = TS_ThemeEngine.ColorMode(theme_mode, "CheckBoxUnCheckBorderColor");
                 // ======================================================================================================
                 string lang_code = software_read_settings.TSReadSettings(ts_settings_container, "LanguageStatus");
                 string selectedLangCode = TSPreloaderSetDefaultLanguage(lang_code);

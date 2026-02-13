@@ -36,11 +36,20 @@
             this.Panel_Main = new System.Windows.Forms.Panel();
             this.DataMainTable = new System.Windows.Forms.DataGridView();
             this.Panel_Footer = new System.Windows.Forms.Panel();
+            this.BtnOpenUrl = new Astel.TSCustomButton();
+            this.BtnRndPssGen = new Astel.TSCustomButton();
+            this.BtnCopyUrl = new Astel.TSCustomButton();
             this.LabelUrl = new System.Windows.Forms.Label();
             this.TxtUrl = new System.Windows.Forms.TextBox();
+            this.CmbService = new Astel.TSCustomComboBox();
             this.FLP_Btns = new System.Windows.Forms.FlowLayoutPanel();
+            this.DeleteBtn = new Astel.TSCustomButton();
+            this.UpdateBtn = new Astel.TSCustomButton();
+            this.AddBtn = new Astel.TSCustomButton();
             this.LabelService = new System.Windows.Forms.Label();
             this.TxtService = new System.Windows.Forms.TextBox();
+            this.BtnCopyPassword = new Astel.TSCustomButton();
+            this.BtnCopyEmail = new Astel.TSCustomButton();
             this.LabelNote = new System.Windows.Forms.Label();
             this.TxtNote = new System.Windows.Forms.TextBox();
             this.LabelPassword = new System.Windows.Forms.Label();
@@ -58,6 +67,7 @@
             this.arabicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.chineseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dutchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frenchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.germanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hindiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +79,6 @@
             this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.spanishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.turkishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dutchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fullScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -93,15 +102,6 @@
             this.tSWizardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.donateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.BtnOpenUrl = new Astel.TSCustomButton();
-            this.BtnRndPssGen = new Astel.TSCustomButton();
-            this.BtnCopyUrl = new Astel.TSCustomButton();
-            this.CmbService = new Astel.TSCustomComboBox();
-            this.DeleteBtn = new Astel.TSCustomButton();
-            this.UpdateBtn = new Astel.TSCustomButton();
-            this.AddBtn = new Astel.TSCustomButton();
-            this.BtnCopyPassword = new Astel.TSCustomButton();
-            this.BtnCopyEmail = new Astel.TSCustomButton();
             this.Panel_Main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataMainTable)).BeginInit();
             this.Panel_Footer.SuspendLayout();
@@ -198,6 +198,67 @@
             this.Panel_Footer.Size = new System.Drawing.Size(988, 180);
             this.Panel_Footer.TabIndex = 1;
             // 
+            // BtnOpenUrl
+            // 
+            this.BtnOpenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnOpenUrl.BorderRadius = 3;
+            this.BtnOpenUrl.BorderSize = 0;
+            this.BtnOpenUrl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnOpenUrl.FlatAppearance.BorderSize = 0;
+            this.BtnOpenUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOpenUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnOpenUrl.ForeColor = System.Drawing.Color.White;
+            this.BtnOpenUrl.Location = new System.Drawing.Point(678, 31);
+            this.BtnOpenUrl.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.BtnOpenUrl.Name = "BtnOpenUrl";
+            this.BtnOpenUrl.Size = new System.Drawing.Size(27, 27);
+            this.BtnOpenUrl.TabIndex = 13;
+            this.BtnOpenUrl.TextColor = System.Drawing.Color.White;
+            this.BtnOpenUrl.UseVisualStyleBackColor = false;
+            this.BtnOpenUrl.Click += new System.EventHandler(this.BtnOpenUrl_Click);
+            // 
+            // BtnRndPssGen
+            // 
+            this.BtnRndPssGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnRndPssGen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnRndPssGen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnRndPssGen.BorderRadius = 3;
+            this.BtnRndPssGen.BorderSize = 0;
+            this.BtnRndPssGen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRndPssGen.FlatAppearance.BorderSize = 0;
+            this.BtnRndPssGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRndPssGen.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnRndPssGen.ForeColor = System.Drawing.Color.White;
+            this.BtnRndPssGen.Location = new System.Drawing.Point(285, 149);
+            this.BtnRndPssGen.Name = "BtnRndPssGen";
+            this.BtnRndPssGen.Size = new System.Drawing.Size(27, 27);
+            this.BtnRndPssGen.TabIndex = 8;
+            this.BtnRndPssGen.TextColor = System.Drawing.Color.White;
+            this.BtnRndPssGen.UseVisualStyleBackColor = false;
+            this.BtnRndPssGen.Click += new System.EventHandler(this.BtnRndPssGen_Click);
+            // 
+            // BtnCopyUrl
+            // 
+            this.BtnCopyUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyUrl.BorderRadius = 3;
+            this.BtnCopyUrl.BorderSize = 0;
+            this.BtnCopyUrl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCopyUrl.FlatAppearance.BorderSize = 0;
+            this.BtnCopyUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCopyUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnCopyUrl.ForeColor = System.Drawing.Color.White;
+            this.BtnCopyUrl.Location = new System.Drawing.Point(645, 31);
+            this.BtnCopyUrl.Name = "BtnCopyUrl";
+            this.BtnCopyUrl.Size = new System.Drawing.Size(27, 27);
+            this.BtnCopyUrl.TabIndex = 12;
+            this.BtnCopyUrl.TextColor = System.Drawing.Color.White;
+            this.BtnCopyUrl.UseVisualStyleBackColor = false;
+            this.BtnCopyUrl.Click += new System.EventHandler(this.BtnCopyUrl_Click);
+            // 
             // LabelUrl
             // 
             this.LabelUrl.AutoSize = true;
@@ -222,6 +283,33 @@
             this.TxtUrl.Size = new System.Drawing.Size(279, 25);
             this.TxtUrl.TabIndex = 11;
             // 
+            // CmbService
+            // 
+            this.CmbService.ArrowColor = System.Drawing.SystemColors.WindowText;
+            this.CmbService.BorderColor = System.Drawing.SystemColors.ControlDark;
+            this.CmbService.ButtonColor = System.Drawing.SystemColors.ControlDark;
+            this.CmbService.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CmbService.DisabledArrowColor = System.Drawing.SystemColors.GrayText;
+            this.CmbService.DisabledBackColor = System.Drawing.SystemColors.Control;
+            this.CmbService.DisabledButtonColor = System.Drawing.SystemColors.ControlDark;
+            this.CmbService.DisabledForeColor = System.Drawing.SystemColors.GrayText;
+            this.CmbService.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CmbService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbService.FocusedBorderColor = System.Drawing.Color.DodgerBlue;
+            this.CmbService.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
+            this.CmbService.FormattingEnabled = true;
+            this.CmbService.HoverBackColor = System.Drawing.SystemColors.Window;
+            this.CmbService.HoverButtonColor = System.Drawing.SystemColors.ControlDark;
+            this.CmbService.HoverForeColor = System.Drawing.SystemColors.WindowText;
+            this.CmbService.Location = new System.Drawing.Point(206, 32);
+            this.CmbService.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.CmbService.Name = "CmbService";
+            this.CmbService.SelectedBackColor = System.Drawing.SystemColors.Highlight;
+            this.CmbService.SelectedForeColor = System.Drawing.SystemColors.HighlightText;
+            this.CmbService.Size = new System.Drawing.Size(139, 25);
+            this.CmbService.TabIndex = 2;
+            this.CmbService.SelectedIndexChanged += new System.EventHandler(this.CmbService_SelectedIndexChanged);
+            // 
             // FLP_Btns
             // 
             this.FLP_Btns.AutoSize = true;
@@ -234,6 +322,81 @@
             this.FLP_Btns.Name = "FLP_Btns";
             this.FLP_Btns.Size = new System.Drawing.Size(225, 165);
             this.FLP_Btns.TabIndex = 16;
+            // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.DeleteBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.DeleteBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.DeleteBtn.BorderRadius = 10;
+            this.DeleteBtn.BorderSize = 0;
+            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteBtn.FlatAppearance.BorderSize = 0;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
+            this.DeleteBtn.Location = new System.Drawing.Point(0, 125);
+            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.DeleteBtn.Size = new System.Drawing.Size(225, 40);
+            this.DeleteBtn.TabIndex = 2;
+            this.DeleteBtn.Text = "SİL";
+            this.DeleteBtn.TextColor = System.Drawing.Color.White;
+            this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.UpdateBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.UpdateBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.UpdateBtn.BorderRadius = 10;
+            this.UpdateBtn.BorderSize = 0;
+            this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UpdateBtn.FlatAppearance.BorderSize = 0;
+            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.UpdateBtn.ForeColor = System.Drawing.Color.White;
+            this.UpdateBtn.Location = new System.Drawing.Point(0, 73);
+            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(0, 7, 0, 7);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.UpdateBtn.Size = new System.Drawing.Size(225, 40);
+            this.UpdateBtn.TabIndex = 1;
+            this.UpdateBtn.Text = "GÜNCELLE";
+            this.UpdateBtn.TextColor = System.Drawing.Color.White;
+            this.UpdateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.UpdateBtn.UseVisualStyleBackColor = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
+            // 
+            // AddBtn
+            // 
+            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.AddBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.AddBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.AddBtn.BorderRadius = 10;
+            this.AddBtn.BorderSize = 0;
+            this.AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddBtn.FlatAppearance.BorderSize = 0;
+            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.AddBtn.ForeColor = System.Drawing.Color.White;
+            this.AddBtn.Location = new System.Drawing.Point(0, 21);
+            this.AddBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.AddBtn.Name = "AddBtn";
+            this.AddBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
+            this.AddBtn.Size = new System.Drawing.Size(225, 40);
+            this.AddBtn.TabIndex = 0;
+            this.AddBtn.Text = "EKLE";
+            this.AddBtn.TextColor = System.Drawing.Color.White;
+            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.AddBtn.UseVisualStyleBackColor = false;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // LabelService
             // 
@@ -256,9 +419,51 @@
             this.TxtService.Margin = new System.Windows.Forms.Padding(3, 3, 3, 12);
             this.TxtService.MaxLength = 64;
             this.TxtService.Name = "TxtService";
-            this.TxtService.Size = new System.Drawing.Size(239, 25);
+            this.TxtService.Size = new System.Drawing.Size(200, 25);
             this.TxtService.TabIndex = 1;
             this.TxtService.TextChanged += new System.EventHandler(this.TxtService_TextChanged);
+            // 
+            // BtnCopyPassword
+            // 
+            this.BtnCopyPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyPassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyPassword.BorderRadius = 3;
+            this.BtnCopyPassword.BorderSize = 0;
+            this.BtnCopyPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCopyPassword.FlatAppearance.BorderSize = 0;
+            this.BtnCopyPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCopyPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnCopyPassword.ForeColor = System.Drawing.Color.White;
+            this.BtnCopyPassword.Location = new System.Drawing.Point(318, 149);
+            this.BtnCopyPassword.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.BtnCopyPassword.Name = "BtnCopyPassword";
+            this.BtnCopyPassword.Size = new System.Drawing.Size(27, 27);
+            this.BtnCopyPassword.TabIndex = 9;
+            this.BtnCopyPassword.TextColor = System.Drawing.Color.White;
+            this.BtnCopyPassword.UseVisualStyleBackColor = false;
+            this.BtnCopyPassword.Click += new System.EventHandler(this.BtnCopyPassword_Click);
+            // 
+            // BtnCopyEmail
+            // 
+            this.BtnCopyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyEmail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.BtnCopyEmail.BorderRadius = 3;
+            this.BtnCopyEmail.BorderSize = 0;
+            this.BtnCopyEmail.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCopyEmail.FlatAppearance.BorderSize = 0;
+            this.BtnCopyEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCopyEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
+            this.BtnCopyEmail.ForeColor = System.Drawing.Color.White;
+            this.BtnCopyEmail.Location = new System.Drawing.Point(318, 90);
+            this.BtnCopyEmail.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
+            this.BtnCopyEmail.Name = "BtnCopyEmail";
+            this.BtnCopyEmail.Size = new System.Drawing.Size(27, 27);
+            this.BtnCopyEmail.TabIndex = 5;
+            this.BtnCopyEmail.TextColor = System.Drawing.Color.White;
+            this.BtnCopyEmail.UseVisualStyleBackColor = false;
+            this.BtnCopyEmail.Click += new System.EventHandler(this.BtnCopyEmail_Click);
             // 
             // LabelNote
             // 
@@ -427,92 +632,92 @@
             // arabicToolStripMenuItem
             // 
             this.arabicToolStripMenuItem.Name = "arabicToolStripMenuItem";
-            this.arabicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.arabicToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.arabicToolStripMenuItem.Text = "Arabic";
             // 
             // chineseToolStripMenuItem
             // 
             this.chineseToolStripMenuItem.Name = "chineseToolStripMenuItem";
-            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.chineseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.chineseToolStripMenuItem.Text = "Chinese";
             // 
             // englishToolStripMenuItem
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
-            this.englishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.englishToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.englishToolStripMenuItem.Text = "English";
+            // 
+            // dutchToolStripMenuItem
+            // 
+            this.dutchToolStripMenuItem.Name = "dutchToolStripMenuItem";
+            this.dutchToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.dutchToolStripMenuItem.Text = "Dutch";
             // 
             // frenchToolStripMenuItem
             // 
             this.frenchToolStripMenuItem.Name = "frenchToolStripMenuItem";
-            this.frenchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.frenchToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.frenchToolStripMenuItem.Text = "French";
             // 
             // germanToolStripMenuItem
             // 
             this.germanToolStripMenuItem.Name = "germanToolStripMenuItem";
-            this.germanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.germanToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.germanToolStripMenuItem.Text = "German";
             // 
             // hindiToolStripMenuItem
             // 
             this.hindiToolStripMenuItem.Name = "hindiToolStripMenuItem";
-            this.hindiToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hindiToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.hindiToolStripMenuItem.Text = "Hindi";
             // 
             // italianToolStripMenuItem
             // 
             this.italianToolStripMenuItem.Name = "italianToolStripMenuItem";
-            this.italianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.italianToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.italianToolStripMenuItem.Text = "Italian";
             // 
             // japaneseToolStripMenuItem
             // 
             this.japaneseToolStripMenuItem.Name = "japaneseToolStripMenuItem";
-            this.japaneseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.japaneseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.japaneseToolStripMenuItem.Text = "Japanese";
             // 
             // koreanToolStripMenuItem
             // 
             this.koreanToolStripMenuItem.Name = "koreanToolStripMenuItem";
-            this.koreanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.koreanToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.koreanToolStripMenuItem.Text = "Korean";
             // 
             // polishToolStripMenuItem
             // 
             this.polishToolStripMenuItem.Name = "polishToolStripMenuItem";
-            this.polishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.polishToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.polishToolStripMenuItem.Text = "Polish";
             // 
             // portugueseToolStripMenuItem
             // 
             this.portugueseToolStripMenuItem.Name = "portugueseToolStripMenuItem";
-            this.portugueseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.portugueseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.portugueseToolStripMenuItem.Text = "Portuguese";
             // 
             // russianToolStripMenuItem
             // 
             this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
-            this.russianToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.russianToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.russianToolStripMenuItem.Text = "Russian";
             // 
             // spanishToolStripMenuItem
             // 
             this.spanishToolStripMenuItem.Name = "spanishToolStripMenuItem";
-            this.spanishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.spanishToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.spanishToolStripMenuItem.Text = "Spanish";
             // 
             // turkishToolStripMenuItem
             // 
             this.turkishToolStripMenuItem.Name = "turkishToolStripMenuItem";
-            this.turkishToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.turkishToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.turkishToolStripMenuItem.Text = "Turkish";
-            // 
-            // dutchToolStripMenuItem
-            // 
-            this.dutchToolStripMenuItem.Name = "dutchToolStripMenuItem";
-            this.dutchToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dutchToolStripMenuItem.Text = "Dutch";
             // 
             // startupToolStripMenuItem
             // 
@@ -714,208 +919,6 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
-            // 
-            // BtnOpenUrl
-            // 
-            this.BtnOpenUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnOpenUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnOpenUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnOpenUrl.BorderRadius = 3;
-            this.BtnOpenUrl.BorderSize = 0;
-            this.BtnOpenUrl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnOpenUrl.FlatAppearance.BorderSize = 0;
-            this.BtnOpenUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOpenUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnOpenUrl.ForeColor = System.Drawing.Color.White;
-            this.BtnOpenUrl.Location = new System.Drawing.Point(678, 31);
-            this.BtnOpenUrl.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.BtnOpenUrl.Name = "BtnOpenUrl";
-            this.BtnOpenUrl.Size = new System.Drawing.Size(27, 27);
-            this.BtnOpenUrl.TabIndex = 13;
-            this.BtnOpenUrl.TextColor = System.Drawing.Color.White;
-            this.BtnOpenUrl.UseVisualStyleBackColor = false;
-            this.BtnOpenUrl.Click += new System.EventHandler(this.BtnOpenUrl_Click);
-            // 
-            // BtnRndPssGen
-            // 
-            this.BtnRndPssGen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnRndPssGen.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnRndPssGen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnRndPssGen.BorderRadius = 3;
-            this.BtnRndPssGen.BorderSize = 0;
-            this.BtnRndPssGen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnRndPssGen.FlatAppearance.BorderSize = 0;
-            this.BtnRndPssGen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRndPssGen.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnRndPssGen.ForeColor = System.Drawing.Color.White;
-            this.BtnRndPssGen.Location = new System.Drawing.Point(285, 149);
-            this.BtnRndPssGen.Name = "BtnRndPssGen";
-            this.BtnRndPssGen.Size = new System.Drawing.Size(27, 27);
-            this.BtnRndPssGen.TabIndex = 8;
-            this.BtnRndPssGen.TextColor = System.Drawing.Color.White;
-            this.BtnRndPssGen.UseVisualStyleBackColor = false;
-            this.BtnRndPssGen.Click += new System.EventHandler(this.BtnRndPssGen_Click);
-            // 
-            // BtnCopyUrl
-            // 
-            this.BtnCopyUrl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyUrl.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyUrl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyUrl.BorderRadius = 3;
-            this.BtnCopyUrl.BorderSize = 0;
-            this.BtnCopyUrl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCopyUrl.FlatAppearance.BorderSize = 0;
-            this.BtnCopyUrl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCopyUrl.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnCopyUrl.ForeColor = System.Drawing.Color.White;
-            this.BtnCopyUrl.Location = new System.Drawing.Point(645, 31);
-            this.BtnCopyUrl.Name = "BtnCopyUrl";
-            this.BtnCopyUrl.Size = new System.Drawing.Size(27, 27);
-            this.BtnCopyUrl.TabIndex = 12;
-            this.BtnCopyUrl.TextColor = System.Drawing.Color.White;
-            this.BtnCopyUrl.UseVisualStyleBackColor = false;
-            this.BtnCopyUrl.Click += new System.EventHandler(this.BtnCopyUrl_Click);
-            // 
-            // CmbService
-            // 
-            this.CmbService.ArrowColor = System.Drawing.SystemColors.WindowText;
-            this.CmbService.BorderColor = System.Drawing.SystemColors.ControlDark;
-            this.CmbService.ButtonColor = System.Drawing.SystemColors.ControlDark;
-            this.CmbService.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CmbService.DisabledArrowColor = System.Drawing.SystemColors.GrayText;
-            this.CmbService.DisabledBackColor = System.Drawing.SystemColors.Control;
-            this.CmbService.DisabledButtonColor = System.Drawing.SystemColors.ControlDark;
-            this.CmbService.DisabledForeColor = System.Drawing.SystemColors.GrayText;
-            this.CmbService.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CmbService.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CmbService.FocusedBorderColor = System.Drawing.Color.DodgerBlue;
-            this.CmbService.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.CmbService.FormattingEnabled = true;
-            this.CmbService.HoverBackColor = System.Drawing.SystemColors.Window;
-            this.CmbService.HoverButtonColor = System.Drawing.SystemColors.ControlDark;
-            this.CmbService.Location = new System.Drawing.Point(245, 32);
-            this.CmbService.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.CmbService.Name = "CmbService";
-            this.CmbService.Size = new System.Drawing.Size(100, 25);
-            this.CmbService.TabIndex = 2;
-            this.CmbService.SelectedIndexChanged += new System.EventHandler(this.CmbService_SelectedIndexChanged);
-            // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.DeleteBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.DeleteBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.DeleteBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.DeleteBtn.BorderRadius = 10;
-            this.DeleteBtn.BorderSize = 0;
-            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteBtn.FlatAppearance.BorderSize = 0;
-            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.DeleteBtn.ForeColor = System.Drawing.Color.White;
-            this.DeleteBtn.Location = new System.Drawing.Point(0, 125);
-            this.DeleteBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.DeleteBtn.Size = new System.Drawing.Size(225, 40);
-            this.DeleteBtn.TabIndex = 2;
-            this.DeleteBtn.Text = "SİL";
-            this.DeleteBtn.TextColor = System.Drawing.Color.White;
-            this.DeleteBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.DeleteBtn.UseVisualStyleBackColor = false;
-            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
-            // 
-            // UpdateBtn
-            // 
-            this.UpdateBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.UpdateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.UpdateBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.UpdateBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.UpdateBtn.BorderRadius = 10;
-            this.UpdateBtn.BorderSize = 0;
-            this.UpdateBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UpdateBtn.FlatAppearance.BorderSize = 0;
-            this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.UpdateBtn.ForeColor = System.Drawing.Color.White;
-            this.UpdateBtn.Location = new System.Drawing.Point(0, 73);
-            this.UpdateBtn.Margin = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            this.UpdateBtn.Name = "UpdateBtn";
-            this.UpdateBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.UpdateBtn.Size = new System.Drawing.Size(225, 40);
-            this.UpdateBtn.TabIndex = 1;
-            this.UpdateBtn.Text = "GÜNCELLE";
-            this.UpdateBtn.TextColor = System.Drawing.Color.White;
-            this.UpdateBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.UpdateBtn.UseVisualStyleBackColor = false;
-            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
-            // 
-            // AddBtn
-            // 
-            this.AddBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.AddBtn.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.AddBtn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.AddBtn.BorderRadius = 10;
-            this.AddBtn.BorderSize = 0;
-            this.AddBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AddBtn.FlatAppearance.BorderSize = 0;
-            this.AddBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.AddBtn.ForeColor = System.Drawing.Color.White;
-            this.AddBtn.Location = new System.Drawing.Point(0, 21);
-            this.AddBtn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.AddBtn.Name = "AddBtn";
-            this.AddBtn.Padding = new System.Windows.Forms.Padding(7, 0, 7, 0);
-            this.AddBtn.Size = new System.Drawing.Size(225, 40);
-            this.AddBtn.TabIndex = 0;
-            this.AddBtn.Text = "EKLE";
-            this.AddBtn.TextColor = System.Drawing.Color.White;
-            this.AddBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.AddBtn.UseVisualStyleBackColor = false;
-            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
-            // 
-            // BtnCopyPassword
-            // 
-            this.BtnCopyPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyPassword.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyPassword.BorderRadius = 3;
-            this.BtnCopyPassword.BorderSize = 0;
-            this.BtnCopyPassword.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCopyPassword.FlatAppearance.BorderSize = 0;
-            this.BtnCopyPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCopyPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnCopyPassword.ForeColor = System.Drawing.Color.White;
-            this.BtnCopyPassword.Location = new System.Drawing.Point(318, 149);
-            this.BtnCopyPassword.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.BtnCopyPassword.Name = "BtnCopyPassword";
-            this.BtnCopyPassword.Size = new System.Drawing.Size(27, 27);
-            this.BtnCopyPassword.TabIndex = 9;
-            this.BtnCopyPassword.TextColor = System.Drawing.Color.White;
-            this.BtnCopyPassword.UseVisualStyleBackColor = false;
-            this.BtnCopyPassword.Click += new System.EventHandler(this.BtnCopyPassword_Click);
-            // 
-            // BtnCopyEmail
-            // 
-            this.BtnCopyEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyEmail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
-            this.BtnCopyEmail.BorderRadius = 3;
-            this.BtnCopyEmail.BorderSize = 0;
-            this.BtnCopyEmail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnCopyEmail.FlatAppearance.BorderSize = 0;
-            this.BtnCopyEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCopyEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 10.5F, System.Drawing.FontStyle.Bold);
-            this.BtnCopyEmail.ForeColor = System.Drawing.Color.White;
-            this.BtnCopyEmail.Location = new System.Drawing.Point(318, 90);
-            this.BtnCopyEmail.Margin = new System.Windows.Forms.Padding(3, 3, 12, 3);
-            this.BtnCopyEmail.Name = "BtnCopyEmail";
-            this.BtnCopyEmail.Size = new System.Drawing.Size(27, 27);
-            this.BtnCopyEmail.TabIndex = 5;
-            this.BtnCopyEmail.TextColor = System.Drawing.Color.White;
-            this.BtnCopyEmail.UseVisualStyleBackColor = false;
-            this.BtnCopyEmail.Click += new System.EventHandler(this.BtnCopyEmail_Click);
             // 
             // AstelMain
             // 

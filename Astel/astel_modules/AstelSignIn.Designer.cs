@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AstelSignIn));
             this.Panel_BG = new System.Windows.Forms.Panel();
-            this.CheckPassword = new System.Windows.Forms.CheckBox();
+            this.CheckPassword = new Astel.TSCustomCheckBox();
             this.BtnSignIn = new Astel.TSCustomButton();
             this.LabelPasswordRepeat = new System.Windows.Forms.Label();
             this.TxtPasswordRepeat = new System.Windows.Forms.TextBox();
@@ -60,14 +59,23 @@
             // CheckPassword
             // 
             this.CheckPassword.AutoSize = true;
+            this.CheckPassword.BorderRadius = 2F;
+            this.CheckPassword.BorderThickness = 1F;
+            this.CheckPassword.CheckedColor = System.Drawing.Color.DodgerBlue;
+            this.CheckPassword.CheckMarkColor = System.Drawing.Color.White;
             this.CheckPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckPassword.DrawUncheckedFill = false;
             this.CheckPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.CheckPassword.Location = new System.Drawing.Point(10, 191);
             this.CheckPassword.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.CheckPassword.MaxBorderRadius = 8F;
+            this.CheckPassword.MaxBorderThickness = 4F;
             this.CheckPassword.Name = "CheckPassword";
-            this.CheckPassword.Size = new System.Drawing.Size(107, 21);
+            this.CheckPassword.Size = new System.Drawing.Size(114, 21);
             this.CheckPassword.TabIndex = 5;
             this.CheckPassword.Text = "Şifreyi Göster";
+            this.CheckPassword.UncheckedBackColor = System.Drawing.Color.Transparent;
+            this.CheckPassword.UncheckedBorderColor = System.Drawing.Color.Gray;
             this.CheckPassword.UseVisualStyleBackColor = true;
             this.CheckPassword.CheckedChanged += new System.EventHandler(this.CheckPassword_CheckedChanged);
             // 
@@ -170,7 +178,7 @@
             this.Controls.Add(this.Panel_BG);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = Properties.Resources.AstelLogo;
+            this.Icon = global::Astel.Properties.Resources.AstelLogo;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AstelSignIn";
@@ -187,7 +195,7 @@
         #endregion
 
         private System.Windows.Forms.Panel Panel_BG;
-        private System.Windows.Forms.CheckBox CheckPassword;
+        private TSCustomCheckBox CheckPassword;
         private TSCustomButton BtnSignIn;
         internal System.Windows.Forms.Label LabelPasswordRepeat;
         private System.Windows.Forms.TextBox TxtPasswordRepeat;

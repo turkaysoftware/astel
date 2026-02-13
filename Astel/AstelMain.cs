@@ -895,6 +895,9 @@ namespace Astel{
                 CmbService.HoverButtonColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBGColor2");
                 CmbService.BorderColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBorderColor");
                 CmbService.FocusedBorderColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBorderColor");
+                CmbService.HoverForeColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxFEColor");
+                CmbService.SelectedBackColor = TS_ThemeEngine.ColorMode(theme, "AccentColor");
+                CmbService.SelectedForeColor = TS_ThemeEngine.ColorMode(theme, "SelectBoxBGColor");
                 // DATA TABLE
                 DataMainTable.BackgroundColor = TS_ThemeEngine.ColorMode(theme, "DataGridBGColor");
                 DataMainTable.GridColor = TS_ThemeEngine.ColorMode(theme, "DataGridGridColor");

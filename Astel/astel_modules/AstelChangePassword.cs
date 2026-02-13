@@ -15,8 +15,8 @@ namespace Astel.astel_modules{
             try{
                 TSThemeModeHelper.InitializeThemeForForm(this);
                 //
-                BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "PageContainerUIBGColor");
-                Panel_BG.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "HeaderBGColor2");
+                BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "PageContainerUIBGColor");
+                Panel_BG.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "HeaderBGColor2");
                 //
                 foreach (Control control in Panel_BG.Controls){
                     if (control is Label label){
@@ -41,9 +41,12 @@ namespace Astel.astel_modules{
                 //
                 TSImageRenderer(BtnChangePassword, AstelMain.theme == 1 ? Properties.Resources.ct_confirm_light : Properties.Resources.ct_confirm_dark, 18, ContentAlignment.MiddleRight);
                 //
-                LabelHeader.BackColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "PageContainerUIBGColor");
-                LabelHeader.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "ContentLabelLeftColor");
-                CheckPassword.ForeColor = TS_ThemeEngine.ColorMode(Convert.ToInt32(AstelMain.theme), "ContentLabelLeftColor");
+                LabelHeader.BackColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "PageContainerUIBGColor");
+                LabelHeader.ForeColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "ContentLabelLeftColor");
+                CheckPassword.ForeColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "ContentLabelLeftColor");
+                CheckPassword.CheckedColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "AccentColor");
+                CheckPassword.CheckMarkColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "SelectBoxBGColor");
+                CheckPassword.UncheckedBorderColor = TS_ThemeEngine.ColorMode(AstelMain.theme, "CheckBoxUnCheckBorderColor");
                 // ======================================================================================================
                 TSGetLangs software_lang = new TSGetLangs(AstelMain.lang_path);
                 // TEXTS

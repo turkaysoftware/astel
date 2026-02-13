@@ -30,38 +30,37 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Panel_BG = new System.Windows.Forms.Panel();
+            this.PassGenLenght = new Astel.TSCustomTrackBar();
             this.PassResultLabel = new System.Windows.Forms.Label();
             this.TLP_Control = new System.Windows.Forms.TableLayoutPanel();
             this.Panel_Feature = new System.Windows.Forms.Panel();
             this.LabelFeature = new System.Windows.Forms.Label();
-            this.CheckSpecialChars = new System.Windows.Forms.CheckBox();
-            this.CheckNumeric = new System.Windows.Forms.CheckBox();
-            this.CheckLowercase = new System.Windows.Forms.CheckBox();
-            this.CheckUppercase = new System.Windows.Forms.CheckBox();
+            this.CheckSpecialChars = new Astel.TSCustomCheckBox();
+            this.CheckNumeric = new Astel.TSCustomCheckBox();
+            this.CheckLowercase = new Astel.TSCustomCheckBox();
+            this.CheckUppercase = new Astel.TSCustomCheckBox();
             this.Panel_Mode = new System.Windows.Forms.Panel();
             this.LabelMode = new System.Windows.Forms.Label();
-            this.RadioMixed = new System.Windows.Forms.RadioButton();
-            this.RadioWrite = new System.Windows.Forms.RadioButton();
-            this.RadioRead = new System.Windows.Forms.RadioButton();
+            this.RadioMixed = new Astel.TSCustomRadioButton();
+            this.RadioWrite = new Astel.TSCustomRadioButton();
+            this.RadioRead = new Astel.TSCustomRadioButton();
             this.BtnGenPass = new Astel.TSCustomButton();
             this.PassLenghtLabel = new System.Windows.Forms.Label();
-            this.PassGenLenght = new System.Windows.Forms.TrackBar();
             this.LabelHeader = new System.Windows.Forms.Label();
             this.MainToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.Panel_BG.SuspendLayout();
             this.TLP_Control.SuspendLayout();
             this.Panel_Feature.SuspendLayout();
             this.Panel_Mode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PassGenLenght)).BeginInit();
             this.SuspendLayout();
             // 
             // Panel_BG
             // 
+            this.Panel_BG.Controls.Add(this.PassGenLenght);
             this.Panel_BG.Controls.Add(this.PassResultLabel);
             this.Panel_BG.Controls.Add(this.TLP_Control);
             this.Panel_BG.Controls.Add(this.BtnGenPass);
             this.Panel_BG.Controls.Add(this.PassLenghtLabel);
-            this.Panel_BG.Controls.Add(this.PassGenLenght);
             this.Panel_BG.Controls.Add(this.LabelHeader);
             this.Panel_BG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_BG.Location = new System.Drawing.Point(0, 0);
@@ -69,6 +68,32 @@
             this.Panel_BG.Padding = new System.Windows.Forms.Padding(10);
             this.Panel_BG.Size = new System.Drawing.Size(584, 501);
             this.Panel_BG.TabIndex = 0;
+            // 
+            // PassGenLenght
+            // 
+            this.PassGenLenght.BackColor = System.Drawing.Color.White;
+            this.PassGenLenght.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PassGenLenght.Location = new System.Drawing.Point(10, 319);
+            this.PassGenLenght.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
+            this.PassGenLenght.Maximum = 32;
+            this.PassGenLenght.Minimum = 6;
+            this.PassGenLenght.Name = "PassGenLenght";
+            this.PassGenLenght.Size = new System.Drawing.Size(564, 45);
+            this.PassGenLenght.TabIndex = 3;
+            this.PassGenLenght.Text = "tsCustomTrackBar1";
+            this.PassGenLenght.ThumbBorderColor = System.Drawing.Color.DimGray;
+            this.PassGenLenght.ThumbBorderThickness = 0F;
+            this.PassGenLenght.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.PassGenLenght.ThumbHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.PassGenLenght.ThumbPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.PassGenLenght.ThumbRadius = 10F;
+            this.PassGenLenght.TrackColor = System.Drawing.Color.LightGray;
+            this.PassGenLenght.TrackFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.PassGenLenght.TrackHeight = 8F;
+            this.PassGenLenght.TrackRadius = 5F;
+            this.PassGenLenght.Value = 12;
+            this.PassGenLenght.Vertical = false;
+            this.PassGenLenght.ValueChanged += new System.EventHandler(this.PassGenLenght_ValueChanged);
             // 
             // PassResultLabel
             // 
@@ -138,61 +163,97 @@
             // CheckSpecialChars
             // 
             this.CheckSpecialChars.AutoSize = true;
+            this.CheckSpecialChars.BorderRadius = 2F;
+            this.CheckSpecialChars.BorderThickness = 1F;
             this.CheckSpecialChars.Checked = true;
+            this.CheckSpecialChars.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.CheckSpecialChars.CheckMarkColor = System.Drawing.Color.White;
             this.CheckSpecialChars.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckSpecialChars.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckSpecialChars.DrawUncheckedFill = false;
             this.CheckSpecialChars.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.CheckSpecialChars.Location = new System.Drawing.Point(10, 160);
             this.CheckSpecialChars.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.CheckSpecialChars.MaxBorderRadius = 8F;
+            this.CheckSpecialChars.MaxBorderThickness = 4F;
             this.CheckSpecialChars.Name = "CheckSpecialChars";
-            this.CheckSpecialChars.Size = new System.Drawing.Size(108, 21);
+            this.CheckSpecialChars.Size = new System.Drawing.Size(115, 21);
             this.CheckSpecialChars.TabIndex = 4;
             this.CheckSpecialChars.Text = "Özel Karakter";
+            this.CheckSpecialChars.UncheckedBackColor = System.Drawing.Color.Transparent;
+            this.CheckSpecialChars.UncheckedBorderColor = System.Drawing.Color.Gray;
             this.CheckSpecialChars.UseVisualStyleBackColor = true;
             // 
             // CheckNumeric
             // 
             this.CheckNumeric.AutoSize = true;
+            this.CheckNumeric.BorderRadius = 2F;
+            this.CheckNumeric.BorderThickness = 1F;
             this.CheckNumeric.Checked = true;
+            this.CheckNumeric.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.CheckNumeric.CheckMarkColor = System.Drawing.Color.White;
             this.CheckNumeric.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckNumeric.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckNumeric.DrawUncheckedFill = false;
             this.CheckNumeric.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.CheckNumeric.Location = new System.Drawing.Point(10, 126);
             this.CheckNumeric.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.CheckNumeric.MaxBorderRadius = 8F;
+            this.CheckNumeric.MaxBorderThickness = 4F;
             this.CheckNumeric.Name = "CheckNumeric";
-            this.CheckNumeric.Size = new System.Drawing.Size(68, 21);
+            this.CheckNumeric.Size = new System.Drawing.Size(75, 21);
             this.CheckNumeric.TabIndex = 3;
             this.CheckNumeric.Text = "Rakam";
+            this.CheckNumeric.UncheckedBackColor = System.Drawing.Color.Transparent;
+            this.CheckNumeric.UncheckedBorderColor = System.Drawing.Color.Gray;
             this.CheckNumeric.UseVisualStyleBackColor = true;
             // 
             // CheckLowercase
             // 
             this.CheckLowercase.AutoSize = true;
+            this.CheckLowercase.BorderRadius = 2F;
+            this.CheckLowercase.BorderThickness = 1F;
             this.CheckLowercase.Checked = true;
+            this.CheckLowercase.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.CheckLowercase.CheckMarkColor = System.Drawing.Color.White;
             this.CheckLowercase.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckLowercase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckLowercase.DrawUncheckedFill = false;
             this.CheckLowercase.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.CheckLowercase.Location = new System.Drawing.Point(10, 92);
             this.CheckLowercase.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.CheckLowercase.MaxBorderRadius = 8F;
+            this.CheckLowercase.MaxBorderThickness = 4F;
             this.CheckLowercase.Name = "CheckLowercase";
-            this.CheckLowercase.Size = new System.Drawing.Size(94, 21);
+            this.CheckLowercase.Size = new System.Drawing.Size(101, 21);
             this.CheckLowercase.TabIndex = 2;
             this.CheckLowercase.Text = "Küçük Harf";
+            this.CheckLowercase.UncheckedBackColor = System.Drawing.Color.Transparent;
+            this.CheckLowercase.UncheckedBorderColor = System.Drawing.Color.Gray;
             this.CheckLowercase.UseVisualStyleBackColor = true;
             // 
             // CheckUppercase
             // 
             this.CheckUppercase.AutoSize = true;
+            this.CheckUppercase.BorderRadius = 2F;
+            this.CheckUppercase.BorderThickness = 1F;
             this.CheckUppercase.Checked = true;
+            this.CheckUppercase.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
+            this.CheckUppercase.CheckMarkColor = System.Drawing.Color.White;
             this.CheckUppercase.CheckState = System.Windows.Forms.CheckState.Checked;
             this.CheckUppercase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CheckUppercase.DrawUncheckedFill = false;
             this.CheckUppercase.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
             this.CheckUppercase.Location = new System.Drawing.Point(10, 58);
             this.CheckUppercase.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
+            this.CheckUppercase.MaxBorderRadius = 8F;
+            this.CheckUppercase.MaxBorderThickness = 4F;
             this.CheckUppercase.Name = "CheckUppercase";
-            this.CheckUppercase.Size = new System.Drawing.Size(95, 21);
+            this.CheckUppercase.Size = new System.Drawing.Size(102, 21);
             this.CheckUppercase.TabIndex = 1;
             this.CheckUppercase.Text = "Büyük Harf";
+            this.CheckUppercase.UncheckedBackColor = System.Drawing.Color.Transparent;
+            this.CheckUppercase.UncheckedBorderColor = System.Drawing.Color.Gray;
             this.CheckUppercase.UseVisualStyleBackColor = true;
             // 
             // Panel_Mode
@@ -228,44 +289,50 @@
             // 
             this.RadioMixed.AutoSize = true;
             this.RadioMixed.Checked = true;
+            this.RadioMixed.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.RadioMixed.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RadioMixed.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.RadioMixed.Location = new System.Drawing.Point(10, 126);
+            this.RadioMixed.Location = new System.Drawing.Point(10, 122);
             this.RadioMixed.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.RadioMixed.MinimumSize = new System.Drawing.Size(0, 21);
             this.RadioMixed.Name = "RadioMixed";
-            this.RadioMixed.Size = new System.Drawing.Size(65, 21);
+            this.RadioMixed.Size = new System.Drawing.Size(79, 28);
             this.RadioMixed.TabIndex = 3;
             this.RadioMixed.TabStop = true;
             this.RadioMixed.Text = "Karışık";
+            this.RadioMixed.UnCheckedColor = System.Drawing.Color.Gray;
             this.RadioMixed.UseVisualStyleBackColor = true;
             // 
             // RadioWrite
             // 
             this.RadioWrite.AutoSize = true;
+            this.RadioWrite.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.RadioWrite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RadioWrite.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.RadioWrite.Location = new System.Drawing.Point(10, 92);
+            this.RadioWrite.Location = new System.Drawing.Point(10, 88);
             this.RadioWrite.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.RadioWrite.MinimumSize = new System.Drawing.Size(0, 21);
             this.RadioWrite.Name = "RadioWrite";
-            this.RadioWrite.Size = new System.Drawing.Size(111, 21);
+            this.RadioWrite.Size = new System.Drawing.Size(125, 28);
             this.RadioWrite.TabIndex = 2;
             this.RadioWrite.Text = "Yazması Kolay";
+            this.RadioWrite.UnCheckedColor = System.Drawing.Color.Gray;
             this.RadioWrite.UseVisualStyleBackColor = true;
             // 
             // RadioRead
             // 
             this.RadioRead.AutoSize = true;
+            this.RadioRead.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(122)))), ((int)(((byte)(25)))));
             this.RadioRead.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RadioRead.Font = new System.Drawing.Font("Segoe UI Semibold", 9.5F, System.Drawing.FontStyle.Bold);
-            this.RadioRead.Location = new System.Drawing.Point(10, 58);
+            this.RadioRead.Location = new System.Drawing.Point(10, 54);
             this.RadioRead.Margin = new System.Windows.Forms.Padding(3, 3, 3, 10);
             this.RadioRead.MinimumSize = new System.Drawing.Size(0, 21);
             this.RadioRead.Name = "RadioRead";
-            this.RadioRead.Size = new System.Drawing.Size(116, 21);
+            this.RadioRead.Size = new System.Drawing.Size(130, 28);
             this.RadioRead.TabIndex = 1;
             this.RadioRead.Text = "Okuması Kolay";
+            this.RadioRead.UnCheckedColor = System.Drawing.Color.Gray;
             this.RadioRead.UseVisualStyleBackColor = true;
             // 
             // BtnGenPass
@@ -309,24 +376,6 @@
             this.PassLenghtLabel.Text = "Şifre Uzunluğu:";
             this.PassLenghtLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // PassGenLenght
-            // 
-            this.PassGenLenght.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.PassGenLenght.BackColor = System.Drawing.Color.White;
-            this.PassGenLenght.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PassGenLenght.LargeChange = 1;
-            this.PassGenLenght.Location = new System.Drawing.Point(10, 319);
-            this.PassGenLenght.Margin = new System.Windows.Forms.Padding(3, 3, 3, 5);
-            this.PassGenLenght.Maximum = 32;
-            this.PassGenLenght.Minimum = 6;
-            this.PassGenLenght.Name = "PassGenLenght";
-            this.PassGenLenght.Size = new System.Drawing.Size(564, 45);
-            this.PassGenLenght.TabIndex = 3;
-            this.PassGenLenght.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.PassGenLenght.Value = 15;
-            this.PassGenLenght.ValueChanged += new System.EventHandler(this.PassGenLenght_ValueChanged);
-            // 
             // LabelHeader
             // 
             this.LabelHeader.BackColor = System.Drawing.Color.White;
@@ -362,13 +411,11 @@
             this.Text = "AstelPasswordGenerator";
             this.Load += new System.EventHandler(this.AstelPasswordGenerator_Load);
             this.Panel_BG.ResumeLayout(false);
-            this.Panel_BG.PerformLayout();
             this.TLP_Control.ResumeLayout(false);
             this.Panel_Feature.ResumeLayout(false);
             this.Panel_Feature.PerformLayout();
             this.Panel_Mode.ResumeLayout(false);
             this.Panel_Mode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PassGenLenght)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,19 +427,19 @@
         private System.Windows.Forms.TableLayoutPanel TLP_Control;
         private System.Windows.Forms.Panel Panel_Feature;
         internal System.Windows.Forms.Label LabelFeature;
-        private System.Windows.Forms.CheckBox CheckSpecialChars;
-        private System.Windows.Forms.CheckBox CheckNumeric;
-        private System.Windows.Forms.CheckBox CheckLowercase;
-        private System.Windows.Forms.CheckBox CheckUppercase;
+        private TSCustomCheckBox CheckSpecialChars;
+        private TSCustomCheckBox CheckNumeric;
+        private TSCustomCheckBox CheckLowercase;
+        private TSCustomCheckBox CheckUppercase;
         private System.Windows.Forms.Panel Panel_Mode;
         internal System.Windows.Forms.Label LabelMode;
-        private System.Windows.Forms.RadioButton RadioMixed;
-        private System.Windows.Forms.RadioButton RadioWrite;
-        private System.Windows.Forms.RadioButton RadioRead;
+        private TSCustomRadioButton RadioMixed;
+        private TSCustomRadioButton RadioWrite;
+        private TSCustomRadioButton RadioRead;
         private TSCustomButton BtnGenPass;
         private System.Windows.Forms.Label PassLenghtLabel;
-        private System.Windows.Forms.TrackBar PassGenLenght;
         internal System.Windows.Forms.Label LabelHeader;
         private System.Windows.Forms.ToolTip MainToolTip;
+        private TSCustomTrackBar PassGenLenght;
     }
 }
