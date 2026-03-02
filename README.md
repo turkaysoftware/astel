@@ -49,7 +49,7 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ## 📸 Interface Preview
 
-<img width="1010" height="633" alt="Astel UI" src="https://github.com/user-attachments/assets/3b87a1c4-cfdf-4856-ae93-47990bfd0e60" />
+<img width="1010" height="633" alt="Astel UI" src="https://github.com/user-attachments/assets/1f2aafaf-615a-4ec2-a7c0-498adc43d6c8" />
 
 ## 📸 Password Generator
 
