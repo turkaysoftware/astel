@@ -123,7 +123,7 @@ namespace Astel.astel_modules{
             BtnChangePassword.Enabled = false;
             //
             bool change_password_status = await Task.Run(() =>{
-                TSSettingsSave read = new TSSettingsSave(ts_session_file);
+                TSSettingsModule read = new TSSettingsModule(ts_session_file);
                 string saved_salt = read.TSReadSettings(ts_session_container, "PasswordSalt");
                 string saved_password = read.TSReadSettings(ts_session_container, "PasswordHash");
                 //
@@ -138,7 +138,7 @@ namespace Astel.astel_modules{
                 string new_salt = GenerateSalt();
                 string new_hashed = TSHashPassword(password_new, new_salt);
                 //
-                TSSettingsSave write = new TSSettingsSave(ts_session_file);
+                TSSettingsModule write = new TSSettingsModule(ts_session_file);
                 write.TSWriteSettings(ts_session_container, "PasswordSalt", new_salt);
                 write.TSWriteSettings(ts_session_container, "PasswordHash", new_hashed);
                 return true;

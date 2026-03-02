@@ -1,6 +1,7 @@
 ﻿// ======================================================================================================
 // Astel - Password Management Software
 // © Copyright 2024-2026, Eray Türkay.
+// Publisher: Türkay Software
 // Project Type: Open Source
 // License: MIT License
 // Website: https://www.turkaysoftware.com/astel
@@ -148,10 +149,10 @@ namespace Astel{
             BtnOpenUrl.Height = TxtUrl.Height + 2;
             // THEME - LANG - VIEW MODE PRELOADER
             // ======================================================================================================
-            TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
+            TSSettingsModule software_read_settings = new TSSettingsModule(ts_sf);
             //
             int theme_mode = int.TryParse(software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus"), out int the_status) && (the_status == 0 || the_status == 1 || the_status == 2) ? the_status : 1;
-            if (theme_mode == 2) { themeSystem = 2; Theme_engine(GetSystemTheme(2)); } else Theme_engine(theme_mode);
+            if (theme_mode == 2) { themeSystem = 2; Theme_engine(TSThemeModeHelper.GetSystemTheme(2)); } else Theme_engine(theme_mode);
             darkThemeToolStripMenuItem.Checked = theme_mode == 0;
             lightThemeToolStripMenuItem.Checked = theme_mode == 1;
             systemThemeToolStripMenuItem.Checked = theme_mode == 2;
@@ -328,7 +329,7 @@ namespace Astel{
             if (!File.Exists(ts_data_xml_path)){
                 CreateEmptyXmlFile();
             }
-            TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
+            TSSettingsModule software_read_settings = new TSSettingsModule(ts_session_file);
             TSGetLangs software_lang = new TSGetLangs(lang_path);
             var ts_xDoc = await InitializeAESAsync();
             var root = ts_xDoc.Element("Datas");
@@ -772,7 +773,7 @@ namespace Astel{
             }
         }
         private void SystemThemeToolStripMenuItem_Click(object sender, EventArgs e){
-            themeSystem = 2; Theme_engine(GetSystemTheme(2)); SaveTheme(2); Select_theme_active(sender);
+            themeSystem = 2; Theme_engine(TSThemeModeHelper.GetSystemTheme(2)); SaveTheme(2); Select_theme_active(sender);
         }
         private void LightThemeToolStripMenuItem_Click(object sender, EventArgs e){
             themeSystem = 0; Theme_engine(1); SaveTheme(1); Select_theme_active(sender);
@@ -780,11 +781,11 @@ namespace Astel{
         private void DarkThemeToolStripMenuItem_Click(object sender, EventArgs e){
             themeSystem = 0; Theme_engine(0); SaveTheme(0); Select_theme_active(sender);
         }
-        private void TSUseSystemTheme(){ if (themeSystem == 2) Theme_engine(GetSystemTheme(2)); }
+        private void TSUseSystemTheme(){ if (themeSystem == 2) Theme_engine(TSThemeModeHelper.GetSystemTheme(2)); }
         private void SaveTheme(int ts){
             // SAVE CURRENT THEME
             try{
-                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                TSSettingsModule software_setting_save = new TSSettingsModule(ts_sf);
                 software_setting_save.TSWriteSettings(ts_settings_container, "ThemeStatus", Convert.ToString(ts));
             }catch (Exception){ }
         }
@@ -967,7 +968,7 @@ namespace Astel{
         private void Lang_preload(string lang_type, string lang_code){
             Lang_engine(lang_type, lang_code);
             try{
-                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                TSSettingsModule software_setting_save = new TSSettingsModule(ts_sf);
                 software_setting_save.TSWriteSettings(ts_settings_container, "LanguageStatus", lang_code);
             }catch (Exception){ }
             // LANG CHANGE NOTIFICATION
@@ -1129,7 +1130,7 @@ namespace Astel{
         }
         private void Startup_mode_settings(string get_startup_value){
             try{
-                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                TSSettingsModule software_setting_save = new TSSettingsModule(ts_sf);
                 software_setting_save.TSWriteSettings(ts_settings_container, "StartupStatus", get_startup_value);
             }catch (Exception){ }
         }
@@ -1158,7 +1159,7 @@ namespace Astel{
         }
         private void Safety_warnings_mode_settings(string get_safety_warnings_value){
             try{
-                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                TSSettingsModule software_setting_save = new TSSettingsModule(ts_sf);
                 software_setting_save.TSWriteSettings(ts_settings_container, "SafetyWarnings", get_safety_warnings_value);
             }catch (Exception){ }
         }
@@ -1202,7 +1203,7 @@ namespace Astel{
             }
         private void Auto_backup_mode_settings(string get_abackup_value){
             try{
-                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                TSSettingsModule software_setting_save = new TSSettingsModule(ts_sf);
                 software_setting_save.TSWriteSettings(ts_settings_container, "AutoBackupStatus", get_abackup_value);
             }catch (Exception){ }
         }
@@ -1470,7 +1471,7 @@ namespace Astel{
                     }
                 }
                 //
-                TSSettingsSave software_read_settings = new TSSettingsSave(ts_session_file);
+                TSSettingsModule software_read_settings = new TSSettingsModule(ts_session_file);
                 var ts_xDoc = XDocument.Load(ts_data_xml_path);
                 var root = ts_xDoc.Element("Datas");
                 string saved_crossLinker64 = software_read_settings.TSReadSettings(ts_session_container, "CrossLinker");

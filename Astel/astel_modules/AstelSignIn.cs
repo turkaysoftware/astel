@@ -14,9 +14,9 @@ namespace Astel.astel_modules{
         string signin_global_lang;
         public void Login_system_preloader(){
             try{
-                TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
+                TSSettingsModule software_read_settings = new TSSettingsModule(ts_sf);
                 int theme_mode = int.TryParse(software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus"), out int the_status) && (the_status == 0 || the_status == 1 || the_status == 2) ? the_status : 1;
-                theme_mode = GetSystemTheme(theme_mode);
+                theme_mode = TSThemeModeHelper.GetSystemTheme(theme_mode);
                 //
                 TSThemeModeHelper.SetThemeMode(theme_mode == 0);
                 TSThemeModeHelper.InitializeThemeForForm(this);
@@ -125,7 +125,7 @@ namespace Astel.astel_modules{
                     string salt = GenerateSalt();
                     string hashed_password = TSHashPassword(password_1, salt);
                     //
-                    TSSettingsSave software_setting_save = new TSSettingsSave(ts_session_file);
+                    TSSettingsModule software_setting_save = new TSSettingsModule(ts_session_file);
                     software_setting_save.TSWriteSettings(ts_session_container, "SessionMode", "1");
                     software_setting_save.TSWriteSettings(ts_session_container, "PasswordHash", hashed_password);
                     software_setting_save.TSWriteSettings(ts_session_container, "PasswordSalt", salt);

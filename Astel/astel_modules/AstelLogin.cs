@@ -14,9 +14,9 @@ namespace Astel.astel_modules{
         string login_global_lang;
         public void Login_system_preloader(){
             try{
-                TSSettingsSave software_read_settings = new TSSettingsSave(ts_sf);
+                TSSettingsModule software_read_settings = new TSSettingsModule(ts_sf);
                 int theme_mode = int.TryParse(software_read_settings.TSReadSettings(ts_settings_container, "ThemeStatus"), out int the_status) && (the_status == 0 || the_status == 1 || the_status == 2) ? the_status : 1;
-                theme_mode = GetSystemTheme(theme_mode);
+                theme_mode = TSThemeModeHelper.GetSystemTheme(theme_mode);
                 //
                 TSThemeModeHelper.SetThemeMode(theme_mode == 0);
                 TSThemeModeHelper.InitializeThemeForForm(this);
@@ -101,7 +101,7 @@ namespace Astel.astel_modules{
             BtnLogin.Enabled = false;
             //
             bool login_status = await Task.Run(() =>{
-                TSSettingsSave read = new TSSettingsSave(ts_session_file);
+                TSSettingsModule read = new TSSettingsModule(ts_session_file);
                 string saved_salt = read.TSReadSettings(ts_session_container, "PasswordSalt");
                 string saved_password = read.TSReadSettings(ts_session_container, "PasswordHash");
                 string hashed_input = TSHashPassword(get_password, saved_salt);
@@ -131,7 +131,7 @@ namespace Astel.astel_modules{
                 TxtPassword.UseSystemPasswordChar = true;
             }
             try{
-                TSSettingsSave software_setting_save = new TSSettingsSave(ts_sf);
+                TSSettingsModule software_setting_save = new TSSettingsModule(ts_sf);
                 software_setting_save.TSWriteSettings(ts_settings_container, "LoginPassVisible", (CheckPassword.Checked ? 1 : 0).ToString());
             }catch (Exception) { }
         }
