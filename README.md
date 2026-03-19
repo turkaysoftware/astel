@@ -1,17 +1,16 @@
-# 🔐 Astel - Advanced Password Management Software
+# Astel - Advanced Password Management Software
 
 ![GitHub all releases](https://img.shields.io/github/downloads/turkaysoftware/astel/total?style=for-the-badge&color=DF313F)
 ![GitHub Repo stars](https://img.shields.io/github/stars/turkaysoftware/astel?style=for-the-badge&color=167C33)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/turkaysoftware/astel?style=for-the-badge&color=9A194C)
 ![Platform](https://img.shields.io/badge/platform-Windows-366194?style=for-the-badge&logo=windows)
-![GitHub license](https://img.shields.io/github/license/turkaysoftware/astel?style=for-the-badge&color=17796E)
 
 **Astel** is a secure and powerful **password management software** developed by **Eray Türkay**. Built with a focus on maximum security, it ensures that none of your personal information ever leaves your computer. Every piece of data is stored locally and encrypted, providing a private vault for your digital life.
 
 ---
 
-### ☕ Support the Project
-Astel is free and will always be. If you find it useful, consider supporting the development!
+### Donate
+You can support this project by making a donation to help ensure its sustainability and the development of new features.
 
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-DF313F?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/turkaysoftware)
 
@@ -19,18 +18,18 @@ Astel is free and will always be. If you find it useful, consider supporting the
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-* 🛡️ **Privacy First:** Your data stays on your machine; no information is transferred to external servers.
-* 🚀 **Pure Performance:** Developed using only C# and .NET Framework with **zero external libraries** or dependencies.
-* 🌓 **Modern UI:** Clean interface with Light, Dark, and System theme support for a seamless Windows experience.
-* 🌍 **Multilingual:** Fully supports 15+ languages including English, Turkish, German, and more.
-* 📦 **Portable:** No installation required. Simply extract and run to access your vault.
-* 🔄 **Automatic Backup:** Encrypted backups are created at specified intervals to prevent any data loss.
+* **Privacy First:** Your data stays on your machine; no information is transferred to external servers.
+* **Pure Performance:** Developed using only C# and .NET Framework with **zero external libraries** or dependencies.
+* **Modern UI:** Clean interface with Light, Dark, and System theme support for a seamless Windows experience.
+* **Multilingual:** Fully supports 15+ languages including English, Turkish, German, and more.
+* **Portable:** No installation required. Simply extract and run to access your vault.
+* **Automatic Backup:** Encrypted backups are created at specified intervals to prevent any data loss.
 
 ---
 
-## 🛠️ Advanced Capabilities
+## Advanced Capabilities
 
 Astel goes beyond simple storage, offering tools to manage your digital identity securely:
 
@@ -40,24 +39,24 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ---
 
-## 🛠️ Automatic Updates and Translation Support
+## Automatic Updates and Translation Support
 
 * **TS Wizard Integration:** Fully compatible with [TS Wizard](https://www.turkaysoftware.com/ts-wizard) for automatic updates and system monitoring.
 * **Translation Support:** Community-driven localization via the official [Translation Guide](https://github.com/turkaysoftware/astel/discussions/3).
 
 ---
 
-## 📸 Interface Preview
+## Interface Preview
 
 <img width="1010" height="633" alt="Astel UI" src="https://github.com/user-attachments/assets/1f2aafaf-615a-4ec2-a7c0-498adc43d6c8" />
 
-## 📸 Password Generator
+## Password Generator
 
 <img width="586" height="533" alt="Astel Password Generator" src="https://github.com/user-attachments/assets/54ecb11a-fffd-40c2-ad66-337c7dc5623d" />
 
 ---
 
-## 💻 System Requirements
+## System Requirements
 
 | Feature | Minimum Requirements | Recommended Requirements |
 | :--- | :--- | :--- |
@@ -67,7 +66,7 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 1.  Navigate to the **[Releases](https://github.com/turkaysoftware/astel/releases/latest)** page.
 2.  Download the latest ZIP file.
@@ -78,7 +77,7 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ---
 
-## 🛡️ Security
+## Security
 
 * **Zero Data Export Policy:** Your privacy is our priority; no data leaves your machine.
 * **No Dependencies:** Developed entirely from scratch using its own source code, there are no risks from security vulnerabilities in third-party libraries.
@@ -86,6 +85,6 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ---
 
-## 📄 License
+## License
 
 This software is offered free of charge as part of the **Türkay Software solutions package** and is protected under the [**MIT License**](https://github.com/turkaysoftware/astel?tab=MIT-1-ov-file).
