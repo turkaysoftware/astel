@@ -1,9 +1,9 @@
 # Astel - Advanced Password Management Software
 
-[![GitHub downloads](https://img.shields.io/github/downloads/turkaysoftware/astel/total?style=flat&color=1a893c)](https://github.com/turkaysoftware/astel/releases)
-[![GitHub stars](https://img.shields.io/github/stars/turkaysoftware/astel?style=flat&color=0062cc)](https://github.com/turkaysoftware/astel/stargazers)
-[![GitHub release](https://img.shields.io/github/v/release/turkaysoftware/astel?style=flat&color=5a32a3)](https://github.com/turkaysoftware/astel/releases/latest)
-[![Platform](https://img.shields.io/badge/platform-Windows-b31d28?style=flat)](https://github.com/turkaysoftware/astel)
+[![GitHub downloads](https://img.shields.io/github/downloads/turkaysoftware/astel/total?style=flat&color=1a893c&label=Downloads)](https://github.com/turkaysoftware/astel/releases)
+[![GitHub stars](https://img.shields.io/github/stars/turkaysoftware/astel?style=flat&color=0062cc&label=Stars)](https://github.com/turkaysoftware/astel/stargazers)
+[![GitHub release](https://img.shields.io/github/v/release/turkaysoftware/astel?style=flat&color=5a32a3&label=Latest%20Release)](https://github.com/turkaysoftware/astel/releases/latest)
+[![Platform](https://img.shields.io/badge/platform-Windows-b31d28?style=flat&label=Platform)](https://github.com/turkaysoftware/astel)
 
 **Astel** is a secure and powerful **password management software** developed by **Eray Türkay**. Built with a focus on maximum security, it ensures that none of your personal information ever leaves your computer. Every piece of data is stored locally and encrypted, providing a private vault for your digital life.
 
