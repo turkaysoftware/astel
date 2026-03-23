@@ -1,9 +1,9 @@
 # Astel - Advanced Password Management Software
 
-![GitHub all releases](https://img.shields.io/github/downloads/turkaysoftware/astel/total?style=for-the-badge&color=DF313F)
-![GitHub Repo stars](https://img.shields.io/github/stars/turkaysoftware/astel?style=for-the-badge&color=167C33)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/turkaysoftware/astel?style=for-the-badge&color=9A194C)
-![Platform](https://img.shields.io/badge/platform-Windows-366194?style=for-the-badge&logo=windows)
+[![GitHub downloads](https://img.shields.io/github/downloads/turkaysoftware/astel/total?style=flat&color=1a893c)](https://github.com/turkaysoftware/astel/releases)
+[![GitHub stars](https://img.shields.io/github/stars/turkaysoftware/astel?style=flat&color=0062cc)](https://github.com/turkaysoftware/astel/stargazers)
+[![GitHub release](https://img.shields.io/github/v/release/turkaysoftware/astel?style=flat&color=5a32a3)](https://github.com/turkaysoftware/astel/releases/latest)
+[![Platform](https://img.shields.io/badge/platform-Windows-b31d28?style=flat)](https://github.com/turkaysoftware/astel)
 
 **Astel** is a secure and powerful **password management software** developed by **Eray Türkay**. Built with a focus on maximum security, it ensures that none of your personal information ever leaves your computer. Every piece of data is stored locally and encrypted, providing a private vault for your digital life.
 
@@ -12,9 +12,7 @@
 ### Donate
 You can support this project by making a donation to help ensure its sustainability and the development of new features.
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-DF313F?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/turkaysoftware)
-
-[Official Website](https://www.turkaysoftware.com) | [Report a Bug](https://github.com/turkaysoftware/astel/issues)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-0a6628?style=flat&logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/turkaysoftware)
 
 ---
 
