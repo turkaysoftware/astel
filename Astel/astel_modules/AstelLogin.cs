@@ -137,6 +137,8 @@ namespace Astel.astel_modules{
         }
         // EXIT
         // ======================================================================================================
-        private void AstelLogin_FormClosing(object sender, FormClosingEventArgs e){ Application.Exit(); }
+        private void AstelLogin_FormClosing(object sender, FormClosingEventArgs e) {
+            Application.Exit();
+        }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Management;
-using System.Threading;
 using System.Windows.Forms;
 //
 using static Astel.TSModules;
@@ -11,9 +10,6 @@ namespace Astel{
         /// <summary>
         /// Uygulamanın ana girdi noktası.
         /// </summary>
-        // ======================================================================================================
-        // GLOBAL TS CANCEL TOKEN
-        public static CancellationTokenSource TS_TokenEngine;
         // ======================================================================================================
         // GLOBAL SYSTEM INFO
         public static int windows_mode = 0;

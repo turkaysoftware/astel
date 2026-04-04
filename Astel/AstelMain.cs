@@ -1657,6 +1657,9 @@ namespace Astel{
                 }
             }catch (Exception){ }
         }
-        private void Astel_FormClosing(object sender, FormClosingEventArgs e){ StopAutoBackup(); Application.Exit(); }
+        private void Astel_FormClosing(object sender, FormClosingEventArgs e){
+            StopAutoBackup();
+            Application.Exit();
+        }
     }
 }
