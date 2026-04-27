@@ -27,6 +27,16 @@ You can support this project by making a donation to help ensure its sustainabil
 
 ---
 
+## Interface Preview
+
+<img width="1010" height="633" alt="Astel UI" src="https://github.com/user-attachments/assets/6627074c-ed35-4ccf-ae94-bfb44f40c4a6" />
+
+## Password Generator
+
+<img width="586" height="533" alt="Astel Password Generator" src="https://github.com/user-attachments/assets/54ecb11a-fffd-40c2-ad66-337c7dc5623d" />
+
+---
+
 ## Advanced Capabilities
 
 Astel goes beyond simple storage, offering tools to manage your digital identity securely:
@@ -37,20 +47,9 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ---
 
-## Automatic Updates and Translation Support
+## Translation Support
 
-* **TS Wizard Integration:** Fully compatible with [TS Wizard](https://www.turkaysoftware.com/ts-wizard) for automatic updates and system monitoring.
 * **Translation Support:** Community-driven localization via the official [Translation Guide](https://github.com/turkaysoftware/astel/discussions/3).
-
----
-
-## Interface Preview
-
-<img width="1010" height="633" alt="Astel UI" src="https://github.com/user-attachments/assets/6627074c-ed35-4ccf-ae94-bfb44f40c4a6" />
-
-## Password Generator
-
-<img width="586" height="533" alt="Astel Password Generator" src="https://github.com/user-attachments/assets/54ecb11a-fffd-40c2-ad66-337c7dc5623d" />
 
 ---
 
