@@ -1,9 +1,9 @@
 # Astel - Advanced Password Management Software
 
-[![GitHub downloads](https://img.shields.io/github/downloads/turkaysoftware/astel/total?style=flat&color=1a893c&label=Downloads)](https://github.com/turkaysoftware/astel/releases)
-[![GitHub stars](https://img.shields.io/github/stars/turkaysoftware/astel?style=flat&color=0062cc&label=Stars)](https://github.com/turkaysoftware/astel/stargazers)
-[![GitHub release](https://img.shields.io/github/v/release/turkaysoftware/astel?style=flat&color=5a32a3&label=Latest%20Release)](https://github.com/turkaysoftware/astel/releases/latest)
-[![Platform](https://img.shields.io/badge/platform-Windows-b31d28?style=flat&label=Platform)](https://github.com/turkaysoftware/astel)
+[![GitHub downloads](https://img.shields.io/github/downloads/turkaysoft/astel/total?style=flat&color=1a893c&label=Downloads)](https://github.com/turkaysoft/astel/releases)
+[![GitHub stars](https://img.shields.io/github/stars/turkaysoft/astel?style=flat&color=0062cc&label=Stars)](https://github.com/turkaysoft/astel/stargazers)
+[![GitHub release](https://img.shields.io/github/v/release/turkaysoft/astel?style=flat&color=5a32a3&label=Latest%20Release)](https://github.com/turkaysoft/astel/releases/latest)
+[![Platform](https://img.shields.io/badge/platform-Windows-b31d28?style=flat&label=Platform)](https://github.com/turkaysoft/astel)
 
 **Astel** is a secure and powerful **password management software** developed by **Eray Türkay**. Built with a focus on maximum security, it ensures that none of your personal information ever leaves your computer. Every piece of data is stored locally and encrypted, providing a private vault for your digital life.
 
@@ -12,7 +12,7 @@
 ### Donate
 You can support this project by making a donation to help ensure its sustainability and the development of new features.
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-0a6628?style=flat&logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/turkaysoftware)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Donate-0a6628?style=flat&logo=buy-me-a-coffee&logoColor=white)](https://buymeacoffee.com/turkaysoft)
 
 ---
 
@@ -49,7 +49,7 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ## Translation Support
 
-* **Translation Support:** Community-driven localization via the official [Translation Guide](https://github.com/turkaysoftware/astel/discussions/3).
+* **Translation Support:** Community-driven localization via the official [Translation Guide](https://github.com/turkaysoft/astel/discussions/3).
 
 ---
 
@@ -66,7 +66,7 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ## Getting Started
 
-1.  Navigate to the **[Releases](https://github.com/turkaysoftware/astel/releases/latest)** page.
+1.  Navigate to the **[Releases](https://github.com/turkaysoft/astel/releases/latest)** page.
 2.  Download the latest ZIP file.
 3.  **Extract all files from the ZIP** (Important: Application requires all folder contents to run correctly).
 4.  Launch the executable:
@@ -85,4 +85,4 @@ Astel goes beyond simple storage, offering tools to manage your digital identity
 
 ## License
 
-This software is offered free of charge as part of the **Türkay Software solutions package** and is protected under the [**MIT License**](https://github.com/turkaysoftware/astel?tab=MIT-1-ov-file).
+This software is offered free of charge as part of the **Türkay Software solutions package** and is protected under the [**MIT License**](https://github.com/turkaysoft/astel?tab=MIT-1-ov-file).
